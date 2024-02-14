@@ -18,6 +18,7 @@ master.menu.sign-out = Salir
 # master.menu.anonymous #######################################################
 
 master.menu.anonymous = Anónimo
+master.menu.anonymous.daniel.favourite-link = 77864922D: Ruiz López, Daniel
 master.menu.anonymous.favourite-link = 77860168Q: Gavira Sánchez, Ramón
 
 # master.menu.administrator ###################################################
