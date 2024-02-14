@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-The Acme-SF-D01 project of the Design and Testing II course, is a project for purely educational purposes, which seeks to 
+The Acme-SF-D01 project of the Design and Testing II subject, is a project for purely educational purposes, which seeks to 
 improve our skills and work as web developers. The objective is to learn how to produce a typical small to medium sized
 web information system (WIS) based on an informal requirements specification and using industrial-based methods and tools.
 Furthermore, it is also about learning how to work as a team, using the latter mentioned tools and methodology.

@@ -10,11 +10,16 @@
 
 master.company.title = The company
 master.company.text = \
-	Hello World, Inc. is a fictitious company that provides a starter \
-	project for the students of the Design and Testing subject of the \
-	Software Engineering Curriculum of the University of Seville.
-master.company.name = Acme, Inc.
-master.company.address = 01 Acme Drive, Wondercity, Wonderland
-master.company.phone = +1 000 111 222
-master.company.email = contact@acme.com
+	Acme-SF-D01 is a fictitious company that will \
+	be developing throughout the course projects and \
+	deliverables for the subject Design and Testing II \
+	of the Software Engineering degree at the University \
+	of Seville. Its members are third year students who are \
+	looking to improve and enhance their skills as software \
+	developers and engineers.
+	
+master.company.name = Acme-SF-D01, Inc.
+master.company.address = 07 Acme-SF Drive, Seville, Spain
+master.company.phone = +34 688 735 829
+master.company.email = contact@acme-sf-d01.com
 
