@@ -21,6 +21,7 @@
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.daniel.favourite-link" action="https://www.bet365.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.ramon.favourite-link" action="https://sevillafc.es/"/>
+			<acme:menu-suboption code="master.menu.anonymous.rafael.favourite-link" action="https://www.marvel.com"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
