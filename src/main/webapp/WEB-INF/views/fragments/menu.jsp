@@ -23,6 +23,7 @@
 			<acme:menu-suboption code="master.menu.anonymous.ramon.favourite-link" action="https://sevillafc.es/"/>
 			<acme:menu-suboption code="master.menu.anonymous.rafael.favourite-link" action="https://www.marvel.com"/>
 			<acme:menu-suboption code="master.menu.anonymous.alberto.favourite-link" action="https://www.realbetisbalompie.es/"/>
+			<acme:menu-suboption code="master.menu.anonymous.marco.favourite-link" action="https://www.youtube.com/watch?v=xvFZjo5PgG0"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
