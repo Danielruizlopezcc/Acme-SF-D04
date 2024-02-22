@@ -21,10 +21,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Acme-SF-D01</name>
+	<name>Acme-SF-D02</name>
 	<description>This is the first Deliverable</description>
 	
-	<artifactId>Acme-SF-D01</artifactId>
+	<artifactId>Acme-SF-D02</artifactId>
 	<packaging>war</packaging>
 	
 	<parent>
