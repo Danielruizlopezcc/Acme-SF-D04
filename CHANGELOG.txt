@@ -10,4 +10,5 @@
 
 ** Year 2024
 
-24.1.0	This is the first version of Acme-SF-D01
+D01	This is the first version of Acme-SF
+D02 This is the second version of Acme-SF with new entities
