@@ -10,7 +10,7 @@
 
 master.company.title = La empresa
 master.company.text = \
-	Acme-SF-D01 es una empresa ficticia que irá \
+	Acme-SF es una empresa ficticia que irá \
 	desarrollando a lo largo del curso, proyectos \
 	y entregables para la asignatura Diseño y Pruebas \
 	II de la titulación de  Ingeniería del Software en la \
@@ -18,7 +18,7 @@ master.company.text = \
 	tercer año que están buscando mejorar sus aptitudes como \
 	desarrolladores e ingenieros del software.
 	
-master.company.name = Acme, Inc.
-master.company.address = 01 Acme Drive, Wondercity, Wonderland
-master.company.phone = +1 000 111 222
-master.company.email = contact@acme.com
+master.company.name = Acme-SF, Inc.
+master.company.address = 07 Acme-SF Drive, Seville, Spain
+master.company.phone = +34 688 735 829
+master.company.email = contact@acme-sf.com
