@@ -36,12 +36,15 @@ public class Risk extends AbstractEntity {
 	@Column(unique = true)
 	private String				reference;
 
+	@NotNull
 	@Past
 	private Date				identificationDate;
 
+	@NotNull
 	@Min(0)
 	private Double				impact;
 
+	@NotNull
 	@Min(0)
 	private Double				probability;
 
