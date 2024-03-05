@@ -68,6 +68,6 @@ public class Claim extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private UserAccount			account;
+	private UserAccount			userAccount;
 
 }

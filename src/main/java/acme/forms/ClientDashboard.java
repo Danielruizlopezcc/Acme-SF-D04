@@ -29,12 +29,12 @@ public class ClientDashboard extends AbstractForm {
 
 	// average, deviation, minimum, and maximum budget of the contracts
 
-	private Double				average;
+	private Double				averageBudget;
 
-	private Double				deviation;
+	private Double				deviationBudget;
 
-	private Double				minimum;
+	private Double				minimumBudget;
 
-	private Double				maximum;
+	private Double				maximumBudget;
 
 }

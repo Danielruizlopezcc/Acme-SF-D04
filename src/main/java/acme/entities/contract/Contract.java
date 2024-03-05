@@ -17,6 +17,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 
 import acme.client.data.AbstractEntity;
+import acme.client.data.datatypes.Money;
 import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,6 +38,7 @@ public class Contract extends AbstractEntity {
 	@Column(unique = true)
 	private String				code;
 
+	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				instantiationMoment;
@@ -53,8 +55,8 @@ public class Contract extends AbstractEntity {
 	@Length(max = 100)
 	private String				goals;
 
-	//Custom restriction implementada en los services
-	private Integer				budget;
+	@NotNull
+	private Money				budget;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -64,7 +66,5 @@ public class Contract extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Project				project;
-
-	//deberia pvincularlo a un cliente??
 
 }

@@ -5,9 +5,10 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.FutureOrPresent;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -17,6 +18,7 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.accounts.UserAccount;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,6 +34,7 @@ public class Objective extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				instantiationMoment;
 
 	@NotBlank
@@ -43,7 +46,6 @@ public class Objective extends AbstractEntity {
 	private String				description;
 
 	@NotNull
-	@Min(0)
 	private Priority			priority;
 
 	@NotNull
@@ -51,6 +53,7 @@ public class Objective extends AbstractEntity {
 
 	@NotNull
 	@FutureOrPresent
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				duration;
 
 	@URL
@@ -63,6 +66,11 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private UserAccount			user;
+	private UserAccount			userAccount;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project				project;
 
 }

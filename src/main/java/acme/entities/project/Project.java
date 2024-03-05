@@ -5,7 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -14,7 +13,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.accounts.UserAccount;
+import acme.client.data.datatypes.Money;
+import acme.roles.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +29,7 @@ public class Project extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{4}$")
 	@Column(unique = true)
 	private String				code;
 
@@ -39,16 +39,18 @@ public class Project extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	private String				extracto;
+	private String				abstractProject;
 
 	@NotNull
 	private Boolean				indication;
 
-	@Min(0)
-	private Integer				cost;
+	@NotNull
+	private Money				cost;
 
 	@URL
 	private String				optionalLink;
+
+	private Boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -57,6 +59,6 @@ public class Project extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private UserAccount			user;
+	private Manager				manager;
 
 }

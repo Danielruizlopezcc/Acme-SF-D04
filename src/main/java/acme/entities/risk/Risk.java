@@ -6,6 +6,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -17,7 +19,8 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.accounts.UserAccount;
+import acme.client.data.accounts.Administrator;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,12 +35,13 @@ public class Risk extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "R-[0-9]{3}")
+	@Pattern(regexp = "^R-[0-9]{3}$")
 	@Column(unique = true)
 	private String				reference;
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.DATE)
 	private Date				identificationDate;
 
 	@NotNull
@@ -68,6 +72,11 @@ public class Risk extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private UserAccount user;
+	private Administrator	admin;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project			project;
 
 }

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
@@ -15,7 +17,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.accounts.UserAccount;
+import acme.client.data.accounts.Administrator;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -32,15 +34,13 @@ public class Banner extends AbstractEntity {
 
 	@NotNull
 	@Past
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				instantiationMoment;
 
 	@NotNull
 	@FutureOrPresent
-	private Date				displayPeriodStart;
-
-	@NotNull
-	@FutureOrPresent
-	private Date				displayPeriodEnd;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				displayPeriod;
 
 	@URL
 	@NotBlank
@@ -56,18 +56,11 @@ public class Banner extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 
-
-	private Date displayPeriod() {
-		Long difference = this.displayPeriodEnd.getTime() - this.displayPeriodStart.getTime();
-		return new Date(difference);
-	}
-
 	// Relationships ----------------------------------------------------------
-
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private UserAccount user;
+	private Administrator		admin;
 
 }
