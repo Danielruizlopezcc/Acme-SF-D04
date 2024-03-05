@@ -1,5 +1,5 @@
 
-package acme.entities.contract;
+package acme.entities.progressLogs;
 
 import java.util.Date;
 
@@ -15,16 +15,17 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 
 import acme.client.data.AbstractEntity;
-import acme.entities.project.Project;
+import acme.entities.contract.Contract;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Contract extends AbstractEntity {
+public class ProgressLog extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -33,28 +34,24 @@ public class Contract extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$")
+	@Pattern(regexp = "^PG-[A-Z]{1,2}-[0-9]{4}$ ")
 	@Column(unique = true)
-	private String				code;
+	private String				recordId;
 
-	@Past
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				instantiationMoment;
-
-	@NotBlank
-	@Length(max = 75)
-	private String				providerName;
-
-	@NotBlank
-	@Length(max = 75)
-	private String				customerName;
+	@Range(min = 0, max = 100)
+	private Double				completeness;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				goals;
+	private String				comment;
 
-	//Custom restriction implementada en los services
-	private Integer				budget;
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				registrationMoment;
+
+	@NotBlank
+	@Length(max = 75)
+	private String				responsiblePerson;
 
 	// Derived attributes -----------------------------------------------------
 
@@ -63,8 +60,6 @@ public class Contract extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Project				project;
-
-	//deberia pvincularlo a un cliente??
+	private Contract			contract;
 
 }
