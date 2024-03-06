@@ -5,3 +5,5 @@ user-account-provider-01,true,"UserIdentity{name: 'Laurel', surname: 'Provider',
 user-account-provider-02,true,"UserIdentity{name: 'Martina', surname: 'коза თხა', email: 'martina@acme.com'}",provider2,provider2
 user-account-client-01,true,"UserIdentity{name: 'John', surname: 'Client', email: 'john@acme.com'}",client1,client1
 user-account-client-02,true,"UserIdentity{name: 'Juanillo', surname: 'Караџић', email: 'juanillo@acme.com'}",client2,client2
+user-account-sponsor-01,true,"UserIdentity{name: 'Alberto', surname: 'Carmona', email: 'albcarsic@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'Javier', surname: 'Iniesta', email: 'javi@acme.com'}",sponsor2,sponsor2
