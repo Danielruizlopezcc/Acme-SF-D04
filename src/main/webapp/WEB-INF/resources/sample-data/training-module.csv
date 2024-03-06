@@ -1,0 +1,27 @@
+key,code,creation-moment,details,difficulty-level,update-moment,estimated-total-time,key:project,key:developer
+training-module-01,AA-000,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-02,AA-001,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-03,A-000,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-04,A-001,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-05,AAA-001,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-06,AB-000,2022/07/29 23:58,detalles,BASIC,2022/07/29 23:59,10,project-01,developer-01
+training-module-07,AB-001,2022/07/29 23:57,detalles,BASIC,2022/07/29 23:59,10,project-01,developer-01
+training-module-08,AB-002,2010/07/29 23:58,detalles,BASIC,2022/07/29 23:59,10,project-01,developer-01
+training-module-09,AB-003,2001/07/29 23:58,detalles,BASIC,2022/07/29 23:59,10,project-01,developer-01
+training-module-10,AB-004,2001/07/29 23:57,detalles,BASIC,2022/07/29 23:59,10,project-01,developer-01
+training-module-11,AB-005,2022/03/01 00:00,detalles,INTERMEDIATE,2022/03/02 00:00,10,project-01,developer-01
+training-module-12,AB-006,2022/03/01 00:00,detalles,ADVANCED,2022/03/02 00:00,10,project-01,developer-01
+training-module-13,AB-007,2001/07/01 00:00,detalles,BASIC,null,10,project-01,developer-01
+training-module-14,AB-008,2001/07/01 00:00,detalles,BASIC,2010/07/29 23:59,10,project-01,developer-01
+training-module-15,AB-009,2001/07/01 00:00,detalles,BASIC,2022/07/29 23:58,10,project-01,developer-01
+training-module-16,AB-010,2001/07/01 00:00,detalles,BASIC,2001/07/29 23:59,10,project-01,developer-01
+training-module-17,AB-011,2001/07/01 00:00,detalles,BASIC,2001/07/29 23:58,10,project-01,developer-01
+training-module-18,AB-012,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,1,project-01,developer-01
+training-module-19,AB-013,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,2,project-01,developer-01
+training-module-20,AB-014,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-02,developer-01
+training-module-21,AB-015,2022/07/01 00:00,detalles,BASIC,2022/07/02 00:00,10,project-01,developer-02
+training-module-22,AB-016,2022/07/01 00:00,detallesdetallesdetallesdetallesdetallesdetallesde,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-23,AB-017,2022/07/01 00:00,d,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-24,AB-018,2022/07/01 00:00,de,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-25,AB-019,2022/07/01 00:00,detallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdeta,BASIC,2022/07/02 00:00,10,project-01,developer-01
+training-module-26,AB-020,2022/07/01 00:00,detallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdetallesdet,BASIC,2022/07/02 00:00,10,project-01,developer-01

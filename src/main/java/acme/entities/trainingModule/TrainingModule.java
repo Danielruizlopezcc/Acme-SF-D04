@@ -51,7 +51,6 @@ public class TrainingModule extends AbstractEntity {
 	@NotNull
 	private Difficulty			difficultyLevel;
 
-	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				updateMoment;

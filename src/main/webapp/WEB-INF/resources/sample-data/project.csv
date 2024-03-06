@@ -1,0 +1,30 @@
+key,code,title,abstract-project,indication,cost,link,draft-mode,key:manager
+project-01,PRJ-0001,Project2024,Abstract del proyecto,true,100,null,true,manager-01
+project-02,JDS-6452,Project2024,Abstract del proyecto,true,100,null,true,manager-01
+project-03,KSA-8653,Project2024,Abstract del proyecto,true,100,null,true,manager-02
+project-04,LDO-4567,Project2024,Abstract del proyecto,true,100,null,true,manager-01
+project-05,UYW-5678,Project2024,Abstract del proyecto,true,100,null,true,manager-02
+project-06,AMZ-6789,Project2024,Abstract del proyecto,true,100,null,true,manager-01
+project-07,PRJ-0002,InnovaSol,Abstract del proyecto,true,100,null,true,manager-01
+project-08,PRJ-0003,Նորարարական համակարգեր,Abstract del proyecto,true,100,null,true,manager-02
+project-09,PRJ-0004,ܛܟܢܘܠܘܓܝܐ ܕܡܟܬܒܢܘܬܐ ܘܚܕܬܐ ܒܪܝܬܐ,Abstract del proyecto,true,100,null,true,manager-01
+project-10,PRJ-0005,Η εξέλιξη της βιώσιμης ανάπτυξης και η προστασία του περιβάλλοντος,Abstract del proyecto,true,100,null,true,manager-02
+project-11,PRJ-0006,Xiānjìn jìshù yǔ kě chíxù fāzhǎn zhànlüè,Abstract del proyecto,true,100,null,true,manager-01
+project-12,PRJ-0007,Titulo1,Desarrollo sostenible y eco-eficiente en procesos industriales,true,100,null,true,manager-02
+project-13,PRJ-0008,Titulo1,通过先进技术提高生产效率和资源利用率,false,100,null,true,manager-01
+project-14,PRJ-0009,Titulo1,تحسين الأداء التشغيلي من خلال استخدام التكنولوجيا المتقدمة والابتكار,true,50,null,true,manager-02
+project-15,PRJ-0010,Titulo1,Ανάπτυξη βιώσιμων λύσεων για την ενίσχυση της περιβαλλοντικής απόδοσης και τη μείωση των κόστων,true,75,null,true,manager-01
+project-16,PRJ-0011,Titulo1,Ստեղծելու նորարարական լուծումներ էկոլոգիական համակարգերի համար որոնք կբարելավեն էֆֆեկտիվությունւն,true,110,null,true,manager-02
+project-17,PRJ-0012,Titulo1,Abstract del proyecto,true,100,null,true,manager-01
+project-18,PRJ-0013,Titulo1,Abstract del proyecto,false,100,null,true,manager-02
+project-19,PRJ-0014,Titulo1,Abstract del proyecto,true,0,null,true,manager-01
+project-20,PRJ-0015,Titulo1,Abstract del proyecto,true,127,null,true,manager-02
+project-21,PRJ-0016,Titulo1,Abstract del proyecto,true,1234,null,true,manager-01
+project-22,PRJ-0017,Titulo1,Abstract del proyecto,true,3123141,null,true,manager-02
+project-23,PRJ-0018,Titulo1,Abstract del proyecto,true,100,https://www.prueba.com,true,manager-01
+project-24,PRJ-0019,Titulo1,Abstract del proyecto,true,100,https://www.example-site-for-demonstration-purpose-only.com,true,manager-02
+project-25,PRJ-0020,Titulo1,Abstract del proyecto,true,100,https://www.this-is-an-extremely-long-url-example-for-demonstration-purposes-only-and-it-is-meant-to-show-how-a-255-character-url-might-look-like-when-you-are-trying-to-push-the-limits-of-url-length.com,false,manager-01
+project-26,PRJ-0021,Project2024,Abstract del proyecto,true,100,null,true,manager-01
+project-27,PRJ-0022,Project2024,Abstract del proyecto,true,100,null,false,manager-02
+project-28,PRJ-0023,Project2024,Abstract del proyecto,false,100,null,false,manager-01
+project-29,PRJ-0024,Project2024,Abstract del proyecto,false,100,null,false,manager-02
