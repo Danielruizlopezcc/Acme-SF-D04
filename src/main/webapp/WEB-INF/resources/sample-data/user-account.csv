@@ -7,5 +7,7 @@ user-account-manager-01,true,"UserIdentity{name: 'LeBron', surname: 'James', ema
 user-account-manager-02,true,"UserIdentity{name: 'Bronny', surname: 'James', email: 'bronnyjames@acme.com'}", manager2, manager2
 user-account-client-01,true,"UserIdentity{name: 'John', surname: 'Client', email: 'john@acme.com'}",client1,client1
 user-account-client-02,true,"UserIdentity{name: 'Juanillo', surname: 'Караџић', email: 'juanillo@acme.com'}",client2,client2
+user-account-sponsor-01,true,"UserIdentity{name: 'Alberto', surname: 'Carmona', email: 'albcarsic@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'Javier', surname: 'Iniesta', email: 'javi@acme.com'}",sponsor2,sponsor2
 user-account-developer-01,true,"UserIdentity{name: 'Rafael',surname: 'Pulido', email: 'rafpulcif@acme.com'}",developer1,developer1
 user-account-developer-02,true,"UserIdentity{name: 'Doe',surname: 'John', email: 'doe@acme.com'}",developer2,developer2
