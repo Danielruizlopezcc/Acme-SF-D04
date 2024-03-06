@@ -47,7 +47,7 @@ public class UserStory extends AbstractEntity {
 	private Priority			priority;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
