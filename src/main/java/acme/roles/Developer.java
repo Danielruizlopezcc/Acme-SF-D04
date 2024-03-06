@@ -38,7 +38,7 @@ public class Developer extends AbstractRole {
 	private String				email;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 

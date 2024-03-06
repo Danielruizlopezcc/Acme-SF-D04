@@ -15,12 +15,12 @@ public class DeveloperDashboard extends AbstractForm {
 
 	// Attributes -------------------------------------------------------------
 
-	Double						totalTrainingModulesWithUpdateMoment;
-	Double						totalTrainingSessionsWithLink;
-	Double						averageTrainingModulesTime;
-	Double						deviatonTrainingModulesTime;
-	Double						minimumTrainingModulesTime;
-	Double						maximumTrainingModulesTime;
+	double						totalTrainingModulesWithUpdateMoment;
+	double						totalTrainingSessionsWithLink;
+	double						averageTrainingModulesTime;
+	double						deviatonTrainingModulesTime;
+	double						minimumTrainingModulesTime;
+	double						maximumTrainingModulesTime;
 
 	// Derived attributes -----------------------------------------------------
 

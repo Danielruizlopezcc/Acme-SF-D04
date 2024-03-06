@@ -1,0 +1,32 @@
+key,record-id,completeness,comment,registration-moment,responsible-person,key:contract
+progress-log-01,PG-CO-0001,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-01
+progress-log-02,PG-AA-0001,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-02
+progress-log-03,PG-ZZ-0001,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-03
+progress-log-04,PG-A-9999,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-04
+progress-log-05,PG-Z-1111,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-05
+progress-log-06,PG-HG-7833,70.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-06
+progress-log-07,PG-CO-0002,0.0,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-01
+progress-log-08,PG-CO-0003,100.0,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-02
+progress-log-09,PG-CO-0004,0.1,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-03
+progress-log-10,PG-CO-0005,99.99,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-04
+progress-log-11,PG-CO-0006,50.00,El proyecto va bien,2022/07/25 00:00,Manolo Lama,contract-05
+progress-log-12,PG-CO-0007,70.00,E,2022/07/25 00:00,Manolo Lama,contract-01
+progress-log-13,PG-CO-0008,70.00,El,2022/07/25 00:00,Manolo Lama,contract-01
+progress-log-14,PG-CO-0009,70.00,El proyecto no puede ir mejor la verdad que esto es un gran dia porque estoy haciendo test de prueba,2022/07/25 00:00,Manolo Lama,contract-06
+progress-log-15,PG-CO-0010,70.00,El proyecto no puede ir mejor la verdad que esto es un gran dia porque estoy haciendo test de prueb,2022/07/25 00:00,Manolo Lama,contract-07
+progress-log-16,PG-CO-0011,70.00,El proyecto va espectacularmente bien esto es amazing,2022/07/25 00:00,Manolo Lama,contract-08
+progress-log-17,PG-CO-0012,70.00,сегодня я пытаюсь писать по-русски,2022/07/25 00:00,Manolo Lama,contract-09
+progress-log-18,PG-CO-0013,70.00,3! Pr0y#ect0 v@ bie¡n?,2022/07/25 00:00,Manolo Lama,contract-10
+progress-log-19,PG-CO-0014,70.00,El proyecto va bien,2022/07/29 23:59,Manolo Lama,contract-01
+progress-log-20,PG-CO-0015,70.00,El proyecto va bien,2022/07/29 22:00,Manolo Lama,contract-02
+progress-log-21,PG-CO-0016,70.00,El proyecto va bien,2001/07/25 00:00,Manolo Lama,contract-02
+progress-log-22,PG-CO-0017,70.00,El proyecto va bien,2010/07/25 00:00,Manolo Lama,contract-01
+progress-log-23,PG-CO-0018,70.00,El proyecto va bien,2001/07/25 01:00,Manolo Lama,contract-06
+progress-log-24,PG-CO-0019,70.00,El proyecto va bien,2022/07/25 00:00,R,contract-01
+progress-log-25,PG-CO-0020,70.00,El proyecto va bien,2022/07/25 00:00,R1,contract-01
+progress-log-26,PG-CO-0021,70.00,El proyecto va bien,2022/07/25 00:00,Esta es la persona mas responsable de longitud muy larga para hacer pruebas,contract-11
+progress-log-27,PG-CO-0022,70.00,El proyecto va bien,2022/07/25 00:00,Esta es la persona mas responsable de longitud muy larga para hacer prueba,contract-12
+progress-log-28,PG-CO-0023,70.00,El proyecto va bien,2022/07/25 00:00,久保 建英,contract-13
+progress-log-29,PG-CO-0024,55.23,"El proyecto va bien encaminado, vais por la mitad",2021/05/25 17:00,Manolo Lama,contract-14
+progress-log-30,PG-CO-0025,74.10,Seguíd asi.,2022/05/27 00:00,Paco González,contract-14
+progress-log-31,PG-CO-0026,100.00,Completado justo a tiempo,2022/07/28 23:00,Miguel Ángel Román,contract-14

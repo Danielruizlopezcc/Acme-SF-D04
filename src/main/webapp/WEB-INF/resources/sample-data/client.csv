@@ -1,0 +1,3 @@
+key,key:userAccount,identification,company-name,type,email,link
+client-01,user-account-client-01,CLI-0001,McJohn,COMPANY,mcjohn@mcjohn.com,https://www.mcjohn.com/
+client-02,user-account-client-02,CLI-0002,Стефановић Караџић,INDIVIDUAL,juanillo@individual.es,https://www.juanilloelserbio.com/

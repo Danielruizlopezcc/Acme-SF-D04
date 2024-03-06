@@ -41,7 +41,12 @@ public class TrainingSession extends AbstractEntity {
 	@NotNull
 	@Past
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				period;
+	private Date				sessionStart;
+
+	@NotNull
+	@Past
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				sessionEnd;
 
 	@NotBlank
 	@Length(max = 75)
@@ -56,7 +61,7 @@ public class TrainingSession extends AbstractEntity {
 	private String				contactEmail;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
