@@ -1,4 +1,4 @@
-key,code,moment,durationStart,durationEnd,amount,type,emailContact,link,key:project
+key,code,moment,duration-start,duration-end,amount,type,email-contact,link,key:project
 sponsorship-01,ACS-666,2013/06/24 14:40,2013/06/27 12:00,2013/08/27 12:00,EUR 1000.00,FINANCIAL,albcarsic@alum.us.es,https://www.link.com,project-01
 sponsorship-02,AC-666,2013/06/24 14:40,2013/06/27 12:00,2013/08/27 12:00,EUR 1000.00,FINANCIAL,albcarsic@alum.us.es,https://www.link.com,project-01
 sponsorship-03,A-666,2013/06/24 14:40,2013/06/27 12:00,2013/08/27 12:00,EUR 1000.00,FINANCIAL,albcarsic@alum.us.es,https://www.link.com,project-01
