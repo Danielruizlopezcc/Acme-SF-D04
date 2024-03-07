@@ -1,0 +1,13 @@
+key,code,executionDate,type,correctiveActions,mark,link,key:project
+code-audit-01,AB1-123,2024-03-07 18:00,STATIC,Acción correctiva 1,A_PLUS,http://example.com,project-04
+code-audit-02,BC2-456,2024-03-06 18:00,STATIC,Acción correctiva 2,A,http://example2.com,project-03
+code-audit-03,CD3-789,2024-03-05 18:00,STATIC,Acción correctiva 3,B,http://example3.com,project-02
+code-audit-04,DE4-012,2024-03-04 18:00,STATIC,Acción correctiva 4,C,http://example4.com,project-01
+code-audit-05,EF5-345,2024-03-03 18:00,STATIC,Acción correctiva 5,F,http://example5.com,project-04
+code-audit-06,FG6-678,2024-03-02 18:00,STATIC,Acción correctiva 6,F_MINUS,http://example6.com,project-05
+code-audit-07,GH7-901,2024-03-01 18:00,DYNAMIC,Acción correctiva 7,A_PLUS,http://example7.com,project-01
+code-audit-08,HI8-234,2024-02-28 18:00,DYNAMIC,Acción correctiva 8,A,http://example8.com,project-01
+code-audit-09,IJ9-567,2024-02-27 18:00,DYNAMIC,Acción correctiva 9,B,http://example9.com,project-02
+code-audit-10,JK0-890,2024-02-26 18:00,DYNAMIC,Acción correctiva 10,C,http://example10.com,project-03
+code-audit-11,KL1-123,2024-02-25 18:00,DYNAMIC,Acción correctiva 11,F,http://example11.com,project-07
+code-audit-12,LM2-456,2024-02-24 18:00,DYNAMIC,Acción correctiva 12,F_MINUS,http://example12.com,project-04

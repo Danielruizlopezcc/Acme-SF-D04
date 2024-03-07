@@ -1,0 +1,7 @@
+key,code,startPeriod,endPeriod,mark,link,key:codeAudit
+audit-record-01,AU-2024-001,2024-02-01 00:00,2024-02-28 23:59,A_PLUS,http://example1.com,code-audit-09
+audit-record-02,AU-2024-002,2024-03-01 00:00,2024-03-31 23:59,A,http://example2.com,code-audit-08
+audit-record-03,AU-2024-003,2024-04-01 00:00,2024-04-30 23:59,B,http://example3.com,code-audit-06
+audit-record-04,AU-2024-004,2024-05-01 00:00,2024-05-31 23:59,C,http://example4.com,code-audit-03
+audit-record-05,AU-2024-005,2024-06-01 00:00,2024-06-30 23:59,F,http://example5.com,code-audit-01
+audit-record-06,AU-2024-006,2024-07-01 00:00,2024-07-31 23:59,F_MINUS,http://example6.com,code-audit-02
