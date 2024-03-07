@@ -1,4 +1,4 @@
-key,code,registrationTime,dueDate,quantity,tax,link,key:sponsorship
+key,code,registration-time,due-date,quantity,tax,link,key:sponsorship
 invoice-01,IN-1234-5678,2020/11/17 12:00,2021/01/01 00:00,EUR 100.50,50.00,https://www.linkObsoleto.com,sponsorship-01
 invoice-02,IN-1111-5678,2020/11/17 12:00,2021/01/01 00:00,EUR 100.50,50.00,https://www.linkObsoleto.com,sponsorship-01
 invoice-03,IN-1234-5555,2020/11/17 12:00,2022/07/29 23:59,EUR 100.50,50.00,https://www.linkObsoleto.com,sponsorship-01
