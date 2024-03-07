@@ -4,10 +4,8 @@ package acme.entities.notice;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,7 +15,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.accounts.UserAccount;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -46,26 +43,17 @@ public class Notice extends AbstractEntity {
 	private String				message;
 
 	@Email
-	private String				optionalEmailAddress;
+	private String				emailAddress;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
-
-	private String author() {
-
-		return this.userAccount.getUsername() + " - " + this.userAccount.getIdentity().getSurname() + ", " + this.userAccount.getIdentity().getName();
-
-	}
+	@NotBlank
+	@Length(max = 75)
+	private String				author;
 
 	// Relationships ----------------------------------------------------------
-
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private UserAccount userAccount;
 
 }
