@@ -54,7 +54,7 @@ public class CodeAudits extends AbstractEntity {
 	private Mark				mark;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
