@@ -41,10 +41,8 @@ public class Project extends AbstractEntity {
 	@Length(max = 100)
 	private String				abstractProject;
 
-	@NotNull
 	private boolean				indication;
 
-	@NotNull
 	@Min(0)
 	private int					cost;
 

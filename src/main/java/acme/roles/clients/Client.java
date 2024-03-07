@@ -32,7 +32,7 @@ public class Client extends AbstractRole {
 	protected String			identification;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			companyName;
 
 	@NotNull

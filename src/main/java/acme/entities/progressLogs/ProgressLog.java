@@ -38,9 +38,8 @@ public class ProgressLog extends AbstractEntity {
 	@Column(unique = true)
 	private String				recordId;
 
-	@NotNull
 	@Range(min = 0, max = 100)
-	private Double				completeness;
+	private double				completeness;
 
 	@NotBlank
 	@Length(max = 100)

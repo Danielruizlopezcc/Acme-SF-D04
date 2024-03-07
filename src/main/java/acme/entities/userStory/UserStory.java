@@ -35,7 +35,6 @@ public class UserStory extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
-	@NotNull
 	@Min(1)
 	private int					estimatedCost;
 
@@ -44,7 +43,7 @@ public class UserStory extends AbstractEntity {
 	private String				acceptanceCriteria;
 
 	@NotNull
-	private Priority			priority;
+	private StoryPriority		priority;
 
 	@URL
 	private String				link;

@@ -58,9 +58,10 @@ public class TrainingModule extends AbstractEntity {
 	@URL
 	private String				link;
 
-	@NotNull
 	@Min(1)
 	private int					estimatedTotalTime;
+
+	private boolean				draftMode;
 
 	// Derived attributes -----------------------------------------------------
 
