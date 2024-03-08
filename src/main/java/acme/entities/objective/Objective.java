@@ -4,11 +4,8 @@ package acme.entities.objective;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
-import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
@@ -17,8 +14,6 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.client.data.accounts.UserAccount;
-import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -48,29 +43,21 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	private Priority			priority;
 
-	@NotNull
-	private Boolean				status;
+	private boolean				status;
 
 	@NotNull
-	@FutureOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				duration;
+	private Date				startDuration;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endDuration;
 
 	@URL
-	private String				optionalLink;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private UserAccount			userAccount;
-
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private Project				project;
 
 }

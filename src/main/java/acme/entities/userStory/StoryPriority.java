@@ -1,7 +1,7 @@
 
 package acme.entities.userStory;
 
-public enum Priority {
+public enum StoryPriority {
 
 	MUST, SHOULD, COULD, WONT
 

@@ -15,7 +15,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Developer extends AbstractRole {
+public class Sponsor extends AbstractRole {
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
@@ -24,21 +24,17 @@ public class Developer extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 75)
-	private String				degree;
+	private String				name;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				specialisation;
-
-	@NotBlank
-	@Length(max = 100)
-	private String				skills;
-
-	@Email
-	private String				email;
+	private String				expectedBenefits;
 
 	@URL
-	private String				link;
+	private String				webPage;
+
+	@Email
+	private String				emailContact;
 
 	// Derived attributes -----------------------------------------------------
 

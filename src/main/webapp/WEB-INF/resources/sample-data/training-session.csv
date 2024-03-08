@@ -1,0 +1,25 @@
+key,code,session-start,location,instructor,session-end,contact-email,link,key:trainingModule
+training-session-01,TS-AA-000,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-02,TS-AA-001,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-03,TS-A-000,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-04,TS-A-001,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-05,TS-AAA-000,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-06,TS-AB-000,2022/07/22 23:59,Sevilla,Juanito,2022/07/29 23:59,doe@acme.com,http://sesion1.com,training-module-01
+training-session-07,TS-AB-001,2022/07/22 23:58,Sevilla,Juanito,2022/07/17 23:59,doe@acme.com,http://sesion1.com,training-module-01
+training-session-08,TS-AB-002,2010/07/03 00:00,Sevilla,Juanito,2022/07/17 23:59,doe@acme.com,http://sesion1.com,training-module-01
+training-session-09,TS-AB-003,2001/07/03 23:59,Sevilla,Juanito,2022/07/17 23:59,doe@acme.com,http://sesion1.com,training-module-01
+training-session-10,TS-AB-004,2001/07/03 23:58,Sevilla,Juanito,2022/07/17 23:59,doe@acme.com,http://sesion1.com,training-module-01
+training-session-11,TS-AB-005,2022/07/03 00:00,S,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-12,TS-AB-006,2022/07/03 00:00,Se,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-13,TS-AB-007,2022/07/03 00:00,SevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevil,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-14,TS-AB-008,2022/07/03 00:00,SevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevillaSevi,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-15,TS-AB-009,2022/07/03 00:00,SevillaSevillaSevillaSevillaSevi,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-16,TS-AB-010,2022/07/03 00:00,Sevilla,Juanito,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-17,TS-AB-011,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,母鹿@acme.com,http://sesion1.com,training-module-01
+training-session-18,TS-AB-012,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://第1节.com,training-module-01
+training-session-19,TS-AB-013,2022/07/03 00:00,Sevilla,Juanito,2022/07/17 00:00,doe@acme.com,http://sesion1.com,training-module-02
+training-session-20,TS-AB-014,2022/07/03 00:00,Sevilla,J,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-21,TS-AB-015,2022/07/03 00:00,Sevilla,Ju,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-22,TS-AB-016,2022/07/03 00:00,Sevilla,JuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuani,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-23,TS-AB-017,2022/07/03 00:00,Sevilla,JuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuanitoJuan,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01
+training-session-24,TS-AB-018,2022/07/03 00:00,Sevilla,JuanitoJuanitoJuanitoJuanitoJuan,2022/07/10 00:00,doe@acme.com,http://sesion1.com,training-module-01

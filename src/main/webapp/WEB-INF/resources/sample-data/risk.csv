@@ -1,0 +1,28 @@
+key,reference,identification-date,impact,probability,description,link,value
+risk-01,R-001,2022/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-02,R-002,2022/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-03,R-999,2022/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-04,R-998,2022/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-05,R-500,2022/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-06,R-003,2022/07/29 23:59,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-07,R-004,2022/07/29 22:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-08,R-005,2001/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-09,R-006,2001/07/25 01:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-10,R-007,2012/07/25 00:00,50.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-11,R-008,2022/07/25 00:00,0.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-12,R-009,2022/07/25 00:00,0.1,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-13,R-010,2022/07/25 00:00,100.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-14,R-011,2022/07/25 00:00,99.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-15,R-012,2022/07/25 00:00,51.0,0.32,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-16,R-013,2022/07/25 00:00,50.0,0.0,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-17,R-014,2022/07/25 00:00,50.0,0.01,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-18,R-015,2022/07/25 00:00,50.0,0.99,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-19,R-016,2022/07/25 00:00,50.0,0.98,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-20,R-017,2022/07/25 00:00,50.0,0.50,Este riesgo es bastante peligroso pero poco probable,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-21,R-018,2022/07/25 00:00,50.0,0.32,Este riesgo es tan importante que ni soy capaz de ocupar todos los caracteres aunque quizas sí puedo,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-22,R-019,2022/07/25 00:00,50.0,0.32,Este riesgo es tan importante que ni soy capaz de ocupar todos los caracteres aunque quizas sí pued,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-23,R-020,2022/07/25 00:00,50.0,0.32,E,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-24,R-021,2022/07/25 00:00,50.0,0.32,Es,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-25,R-022,2022/07/25 00:00,50.0,0.32,3st3 ri3sg!#~€¬¬#esta m24l esc2rti9to,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-26,R-023,2022/07/25 00:00,50.0,0.32,Этот риск довольно опасе но маловероятен.,https://es.wikipedia.org/wiki/Riesgo,0.0
+risk-27,R-024,2021/05/27 00:00,32.0,0.90,"No es muy importante, hay fallos en un sistema",https://es.wikipedia.org/wiki/Riesgo,28.8

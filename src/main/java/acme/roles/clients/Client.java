@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -31,10 +32,10 @@ public class Client extends AbstractRole {
 	protected String			identification;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	protected String			companyName;
 
-	@NotBlank
+	@NotNull
 	protected ClientRoleType	type;
 
 	@NotBlank

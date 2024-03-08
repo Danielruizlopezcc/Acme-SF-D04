@@ -16,25 +16,25 @@ public class ClientDashboard extends AbstractForm {
 	// Attributes -------------------------------------------------------------
 
 	// total number of progress logs with a completeness rate below 25%
-	Integer						totalNumProgressLogLessThan25;
+	double						totalNumProgressLogLessThan25;
 
 	// total number of progress logs with a completeness rate between 25% and 50%
-	Integer						totalNumProgressLogLessBetween25And50;
+	double						totalNumProgressLogBetween25And50;
 
 	// total number of progress logs with a completeness rate between 50% and 75%
-	Integer						totalNumProgressLogLessBetween50And75;
+	double						totalNumProgressLogBetween50And75;
 
 	// total number of progress logs with a completeness rate above 75%
-	Integer						totalNumProgressLogAbove75;
+	double						totalNumProgressLogAbove75;
 
 	// average, deviation, minimum, and maximum budget of the contracts
 
-	Double						averageBudget;
+	double						averageBudget;
 
-	Double						deviationBudget;
+	double						deviationBudget;
 
-	Double						minimumBudget;
+	double						minimumBudget;
 
-	Double						maximumBudget;
+	double						maximumBudget;
 
 }
