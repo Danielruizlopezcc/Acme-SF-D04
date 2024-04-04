@@ -1,39 +1,48 @@
 
-package acme.features.developer;
+package acme.features.developer.trainingModule;
+
+import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
 import acme.entities.trainingModule.TrainingModule;
+import acme.entities.trainingSession.TrainingSession;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperCreateService extends AbstractService<Developer, TrainingModule> {
+public class DeveloperTrainingModulePublishService extends AbstractService<Developer, TrainingModule> {
 
 	@Autowired
-	private DeveloperRepository repository;
+	private DeveloperTrainingModuleRepository repository;
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		Boolean status;
+		int masterId;
+		TrainingModule tm;
+		Developer developer;
+
+		masterId = super.getRequest().getData("id", int.class);
+		tm = this.repository.findOneTMById(masterId);
+		developer = tm == null ? null : tm.getDeveloper();
+		status = tm != null && tm.isDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
 		TrainingModule object;
-		Developer developer;
+		int id;
 
-		Principal principal = super.getRequest().getPrincipal();
-		developer = this.repository.findOneDeveloperById(principal.getActiveRoleId());
-		object = new TrainingModule();
-		object.setDraftMode(true);
-		object.setDeveloper(developer);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneTMById(id);
 
 		super.getBuffer().addData(object);
 	}
@@ -66,12 +75,22 @@ public class DeveloperCreateService extends AbstractService<Developer, TrainingM
 
 		if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
 			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.update-date-not-valid");
+
+		{
+			Collection<TrainingSession> sessions;
+			int totalSessions;
+
+			sessions = this.repository.findAllTSByTMId(object.getId());
+			totalSessions = sessions.size();
+			super.state(totalSessions >= 1, "*", "developer.training-module.form.error.not-enough-training-sessions");
+		}
 	}
 
 	@Override
 	public void perform(final TrainingModule object) {
 		assert object != null;
 
+		object.setDraftMode(false);
 		this.repository.save(object);
 	}
 
@@ -86,5 +105,4 @@ public class DeveloperCreateService extends AbstractService<Developer, TrainingM
 		super.getResponse().addData(dataset);
 
 	}
-
 }
