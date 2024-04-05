@@ -12,7 +12,7 @@ import acme.entities.trainingModule.TrainingModule;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperUpdateService extends AbstractService<Developer, TrainingModule> {
+public class DeveloperTrainingModuleUpdateService extends AbstractService<Developer, TrainingModule> {
 
 	@Autowired
 	private DeveloperTrainingModuleRepository repository;
