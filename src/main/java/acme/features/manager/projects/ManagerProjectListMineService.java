@@ -13,7 +13,7 @@ import acme.entities.project.Project;
 import acme.roles.Manager;
 
 @Service
-public class ManagerProjectListMineServices extends AbstractService<Manager, Project> {
+public class ManagerProjectListMineService extends AbstractService<Manager, Project> {
 
 	@Autowired
 	private ManagerProjectRepository repository;
