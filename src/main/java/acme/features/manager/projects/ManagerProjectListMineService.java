@@ -26,14 +26,13 @@ public class ManagerProjectListMineService extends AbstractService<Manager, Proj
 
 	@Override
 	public void load() {
-		Collection<Project> modules;
+		Collection<Project> projects;
 		Principal principal;
-		String details;
 
 		principal = super.getRequest().getPrincipal();
-		modules = this.repository.findAllProjectsByManagerId(principal.getActiveRoleId());
+		projects = this.repository.findAllProjectsByManagerId(principal.getActiveRoleId());
 
-		super.getBuffer().addData(modules);
+		super.getBuffer().addData(projects);
 	}
 
 	@Override
