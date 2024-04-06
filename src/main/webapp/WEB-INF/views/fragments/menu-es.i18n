@@ -42,6 +42,15 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
+master.menu.manager.show = Mostrar los proyectos
+master.menu.manager.create = Crear un proyecto
+master.menu.manager.update = Actualizar un proyecto
+master.menu.manager.delete = Borrar un proyecto
+
+# master.menu.manager #########################################################
+
+master.menu.manager = Manager
+master.menu.manager.list-project = Ver mis proyectos
 
 # master.menu.user-account ####################################################
 

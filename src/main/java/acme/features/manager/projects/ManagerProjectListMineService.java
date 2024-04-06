@@ -41,7 +41,7 @@ public class ManagerProjectListMineService extends AbstractService<Manager, Proj
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link");
+		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}

@@ -48,20 +48,13 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void bind(final Project object) {
 		assert object != null;
-		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link");
+		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
 
 	}
 
 	@Override
 	public void validate(final Project object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Project existing;
-
-			existing = this.repository.findOneProjectByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.duplicated");
-		}
 
 		if (!super.getBuffer().getErrors().hasErrors("indication"))
 			super.state(object.isIndication() == false, "indication", "manager.project-module-form.error.existing-fatal-errors");
@@ -94,7 +87,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link");
+		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
 
