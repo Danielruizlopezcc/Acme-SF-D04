@@ -1,31 +1,33 @@
-key,title,description,estimated-cost,acceptance-criteria,priority,link,key:manager
-user-story-01,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-02,ソフト,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-03,Разработка мобильных приложений,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-04,การวิเคราะห์และออกแบบระบบสารสนเทศเพื่อการจัดการ,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-05,디지털 마케팅 전략의 설계 및 실행을 위한 프로젝트 계획,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-06,ботка и иссл,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-07,Login,ソフトウェア,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-08,Login,мобильных приложений,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-09,Login,Разработка и исследование новых методов для улучшения процессов,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-10,Login,การวิเคราะห์และออกแบ,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-11,Login,мобильных прило,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-12,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-13,Login,Historia de usuario para hacer login,27,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-14,Login,Historia de usuario para hacer login,92,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-15,Login,Historia de usuario para hacer login,136,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-16,Login,Historia de usuario para hacer login,304,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-17,Login,Historia de usuario para hacer login,1,成功済み,MUST,https://www.user/login,manager-01
-user-story-18,Login,Historia de usuario para hacer login,1,Пользователь успешно вошел в систему,MUST,https://www.user/login,manager-02
-user-story-19,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή,MUST,https://www.user/login,manager-01
-user-story-20,Login,Historia de usuario para hacer login,1,ผู้ใช้สามารถทำการซื้อผ่านแอปพลิเคชันได้อย่างราบรื่นไม่มีข้อผิดพลาด,MUST,https://www.user/login,manager-02
-user-story-21,Login,Historia de usuario para hacer login,1,يجب أن يتمكن المستخدم من استعادة كلمة المرور بنجاح عبر البريد الإلكتروني دون مشاكل,MUST,https://www.user/login,manager-01
-user-story-22,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-02
-user-story-23,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,SHOULD,https://www.user/login,manager-01
-user-story-24,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,COULD,https://www.user/login,manager-02
-user-story-25,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,WONT,https://www.user/login,manager-01
-user-story-26,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,manager-01
-user-story-27,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://portal.acceso-usuario.com/autenticacion/ingreso,manager-02
-user-story-28,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://seguridad.cuenta-online.net/acceso/verificacion/usuario,manager-01
-user-story-29,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://plataforma.servicio-global.usuarios/conectar/sesion-iniciar/validacion,manager-02
-user-story-30,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://acceso.directo.portal-web.servicios-integrados.com/identificacion/usuario/login/confirmacion,manager-01
+key,title,description,estimated-cost,acceptance-criteria,priority,link,draft-mode,key:manager
+user-story-01,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-02,ソフト,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-03,Разработка мобильных приложений,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
+user-story-04,การวิเคราะห์และออกแบบระบบสารสนเทศเพื่อการจัดการ,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01
+user-story-05,디지털 마케팅 전략의 설계 및 실행을 위한 프로젝트 계획,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-02
+user-story-06,ботка и иссл,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01
+user-story-07,Login,ソフトウェア,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-08,Login,мобильных приложений,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-02
+user-story-09,Login,Разработка и исследование новых методов для улучшения процессов,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01
+user-story-10,Login,การวิเคราะห์และออกแบ,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
+user-story-11,Login,мобильных прило,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-12,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
+user-story-13,Login,Historia de usuario para hacer login,27,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01
+user-story-14,Login,Historia de usuario para hacer login,92,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-02
+user-story-15,Login,Historia de usuario para hacer login,136,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01
+user-story-16,Login,Historia de usuario para hacer login,304,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-02
+user-story-17,Login,Historia de usuario para hacer login,1,成功済み,MUST,https://www.user/login,true,manager-01
+user-story-18,Login,Historia de usuario para hacer login,1,Пользователь успешно вошел в систему,MUST,https://www.user/login,false,manager-02
+user-story-19,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή,MUST,https://www.user/login,true,manager-01
+user-story-20,Login,Historia de usuario para hacer login,1,ผู้ใช้สามารถทำการซื้อผ่านแอปพลิเคชันได้อย่างราบรื่นไม่มีข้อผิดพลาด,MUST,https://www.user/login,true,manager-02
+user-story-21,Login,Historia de usuario para hacer login,1,يجب أن يتمكن المستخدم من استعادة كلمة المرور بنجاح عبر البريد الإلكتروني دون مشاكل,MUST,https://www.user/login,true,manager-01
+user-story-22,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
+user-story-23,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,SHOULD,https://www.user/login,true,manager-01
+user-story-24,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,COULD,https://www.user/login,false,manager-02
+user-story-25,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,WONT,https://www.user/login,true,manager-01
+user-story-26,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-27,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://portal.acceso-usuario.com/autenticacion/ingreso,false,manager-02
+user-story-28,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://seguridad.cuenta-online.net/acceso/verificacion/usuario,false,manager-01
+user-story-29,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://plataforma.servicio-global.usuarios/conectar/sesion-iniciar/validacion,false,manager-02
+user-story-30,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://acceso.directo.portal-web.servicios-integrados.com/identificacion/usuario/login/confirmacion,true,manager-01
+user-story-31,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-32,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,false,manager-01

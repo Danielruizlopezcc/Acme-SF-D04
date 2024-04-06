@@ -1,0 +1,47 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+manager.project.list.title = Listing of your projects
+manager.project.form.title = Project form
+
+#Cabecera de listado de proyectos
+
+manager.project.list.label.code = Code
+manager.project.list.label.title = Title
+manager.project.list.label.abstractProject = Abstract Project
+manager.project.list.label.indication = Indication
+manager.project.list.label.cost = Cost
+manager.project.list.label.link = Link
+manager.project.list.label.draftMode = DraftMode
+
+
+manager.project.form.label.code = Code:
+manager.project.form.label.title = Title:
+manager.project.form.label.abstractProject = Project Abstract:
+manager.project.form.label.indication = Indication (critical errors)
+manager.project.form.label.cost = Cost:
+manager.project.form.label.link = Link:
+manager.project.form.label.draftMode = DraftMode:
+
+manager.project.list.button.create-form=Create Project
+
+manager.project.form.button.create-project= Create
+manager.project.form.button.update=Update
+manager.project.form.button.delete=Delete
+manager.project.form.button.publish=Publish
+
+
+manager.project.form.button.user-stories-list = List user stories
+
+
+
+
