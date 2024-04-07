@@ -24,7 +24,8 @@
 	<name>Acme-SF-D03</name>
 	<description>This is the third Deliverable</description>
 	
-	<artifactId>Acme-SF-D03</artifactId>
+	<artifactId>Acme-SF</artifactId>
+	<version>D03</version>
 	<packaging>war</packaging>
 	
 	<parent>
