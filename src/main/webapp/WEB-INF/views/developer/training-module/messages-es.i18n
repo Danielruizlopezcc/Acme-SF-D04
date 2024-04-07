@@ -1,4 +1,4 @@
-# messages-en.i18n
+# messages-es.i18n
 #
 # Copyright (C) 2012-2024 Rafael Corchuelo.
 #
@@ -13,7 +13,7 @@
 developer.training-module.list.title = Listado de tus módulos de entrenamiento
 developer.training-module.form.title = Formulario
 
-#Cabecera de listado de proyectos
+#Cabecera de listado de módulos de entrenamiento
 
 developer.training-module.list.label.code = Código
 developer.training-module.list.label.creation-moment = Momento de creación

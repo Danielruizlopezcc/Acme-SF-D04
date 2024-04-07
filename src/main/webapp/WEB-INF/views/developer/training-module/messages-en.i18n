@@ -13,7 +13,7 @@
 developer.training-module.list.title = Listing of your Training Modules
 developer.training-module.form.title = Training Module form
 
-#Cabecera de listado de proyectos
+#Cabecera de listado de módulos de entrenamiento
 
 developer.training-module.list.label.code = Code
 developer.training-module.list.label.creation-moment = Creation Moment
