@@ -28,7 +28,7 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 		module = this.repository.findOneTMByTSId(sessionId);
 		status = module != null && module.isDraftMode() && super.getRequest().getPrincipal().hasRole(module.getDeveloper());
 
-		super.getResponse().addData(status);
+		super.getResponse().setAuthorised(status);
 
 	}
 
@@ -47,7 +47,7 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "creationMoment", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
+		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
 	}
 
 	@Override
@@ -69,7 +69,7 @@ public class DeveloperTrainingSessionDeleteService extends AbstractService<Devel
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "creationMoment", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
+		dataset = super.unbind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
 		dataset.put("masterId", object.getTrainingModule().getId());
 		dataset.put("draftMode", object.getTrainingModule().isDraftMode());
 

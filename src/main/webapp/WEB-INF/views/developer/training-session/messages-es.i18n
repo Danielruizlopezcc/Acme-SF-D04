@@ -22,6 +22,7 @@ developer.training-session.list.label.location = Ubicación
 developer.training-session.list.label.instructor = Instructor
 developer.training-session.list.label.contact-email = Correo de contacto
 developer.training-session.list.label.link = Enlace
+developer.training-session.list.label.draft-mode = DraftMode
 
 developer.training-session.form.label.code = Código:
 developer.training-session.form.label.session-start = Comienzo:
@@ -30,6 +31,7 @@ developer.training-session.form.label.location = Ubicación:
 developer.training-session.form.label.instructor = Instructor:
 developer.training-session.form.label.contact-email = Correo de contacto:
 developer.training-session.form.label.link = Enlace:
+developer.training-session.form.label.draft-mode = DraftMode:
 
 developer.training-session.list.button.create-form= Crear sesión de entrenamiento
 

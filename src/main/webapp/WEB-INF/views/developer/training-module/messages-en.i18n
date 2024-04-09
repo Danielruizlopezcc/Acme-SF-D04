@@ -22,7 +22,8 @@ developer.training-module.list.label.difficulty-level = Difficulty Level
 developer.training-module.list.label.update-moment = Update Moment
 developer.training-module.list.label.link = Link
 developer.training-module.list.label.estimated-total-time = Estimated Total Time
-developer.training-module.list.label.draftMode = DraftMode
+developer.training-module.list.label.project = Project
+developer.training-module.list.label.draftMode = Editable
 
 
 developer.training-module.form.label.code = Code:
@@ -32,7 +33,8 @@ developer.training-module.form.label.difficulty-level = Difficulty Level:
 developer.training-module.form.label.update-moment = Update Moment:
 developer.training-module.form.label.link = Link:
 developer.training-module.form.label.estimated-total-time = Estimated Total Time:
-developer.training-module.form.label.draftMode = DraftMode:
+developer.training-module.form.label.project = Project:
+developer.training-module.form.label.draftMode = Editable:
 
 developer.training-module.list.button.create-form=Create Training Module
 
@@ -42,7 +44,7 @@ developer.training-module.form.button.delete=Delete
 developer.training-module.form.button.publish=Publish
 
 
-developer.training-module.form.button.training-sessions-list = List training sessions
+developer.training-module.form.button.sessions = List training sessions
 
 
 

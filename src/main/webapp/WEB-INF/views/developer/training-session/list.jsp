@@ -20,12 +20,13 @@
 	<acme:list-column code="developer.training-session.list.label.session-start" path="sessionStart" width="10%"/>
 	<acme:list-column code="developer.training-session.list.label.session-end" path="sessionEnd" width="10%"/>	
 	<acme:list-column code="developer.training-session.list.label.location" path="location" width="10%"/>	
-	<acme:list-column code="developer.training-session.list.label.intructor" path="instructor" width="10%"/>	
+	<acme:list-column code="developer.training-session.list.label.instructor" path="instructor" width="10%"/>	
 	<acme:list-column code="developer.training-session.list.label.contact-email" path="contactEmail" width="10%"/>
 	<acme:list-column code="developer.training-session.list.label.link" path="link" width="10%"/>
+	<acme:list-column code="developer.training-session.list.label.draft-mode" path="draftMode" width="10%"/>
 
 </acme:list>
 
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="developer.training-session.list.button.create-form" action="/developer/training-session/create"/>
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="developer.training-session.list.button.create-form" action="/developer/training-session/create?masterId=${masterId}"/>
 </jstl:if>
