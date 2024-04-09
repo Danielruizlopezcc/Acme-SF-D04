@@ -53,6 +53,16 @@ master.menu.manager.update = Update my projects
 master.menu.manager.delete = Delete a projects
 
 
+# master.menu.developer ######################################################
+
+master.menu.developer = Developer
+master.menu.developer.list-training-module = List my Training modules
+master.menu.developer.show = Show my Training modules
+master.menu.developer.create = Create a Training modules
+master.menu.developer.update = Update a Training modules
+master.menu.developer.delete = Delete a Training modules
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
