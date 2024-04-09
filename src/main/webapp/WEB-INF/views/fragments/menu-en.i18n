@@ -61,6 +61,15 @@ master.menu.developer.create = Create a Training modules
 master.menu.developer.update = Update a Training modules
 master.menu.developer.delete = Delete a Training modules
 
+# master.menu.sponsor ######################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-sponsorship = List my sponsorships
+master.menu.sponsor.show = Show my sponsorships
+master.menu.sponsor.create = Create a sponsorship
+master.menu.sponsor.update = Update a sponsorship
+master.menu.sponsor.delete = Delete a sponsorship
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
