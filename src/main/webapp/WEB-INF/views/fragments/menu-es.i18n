@@ -60,6 +60,7 @@ master.menu.developer.show = Mostrar mis módulos de entrenamiento
 master.menu.developer.create = Crear un modulo de entrenamiento
 master.menu.developer.update = Actualizar un módulo de entrenamiento
 master.menu.developer.delete = Eliminar un módulo de entrenamiento
+master.menu.developer.list-training-session = Listar mis sesiones de entrenamiento
 
 # master.menu.user-account ####################################################
 

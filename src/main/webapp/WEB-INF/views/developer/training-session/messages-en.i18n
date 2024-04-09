@@ -1,0 +1,45 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+developer.training-session.list.title = Listing of your Training sessions
+developer.training-session.form.title = Training session form
+
+#Cabecera de listado de sesiones de entrenamiento
+
+developer.training-session.list.label.code = Code
+developer.training-session.list.label.session-start = Session Start
+developer.training-session.list.label.session-end = Session End
+developer.training-session.list.label.location = Location
+developer.training-session.list.label.instructor = Instructor
+developer.training-session.list.label.contact-email = Contact Email
+developer.training-session.list.label.link = Link
+developer.training-session.list.label.draft-mode = DraftMode
+
+developer.training-session.form.label.code = Code:
+developer.training-session.form.label.session-start = Session Start:
+developer.training-session.form.label.session-end = Session End:
+developer.training-session.form.label.location = Location:
+developer.training-session.form.label.instructor = Instructor:
+developer.training-session.form.label.contact-email = Contact Email:
+developer.training-session.form.label.link = Link:
+developer.training-session.form.label.draft-mode = DraftMode:
+
+developer.training-session.list.button.create-form=Create Training session
+
+developer.training-session.form.button.create-training-session= Create
+developer.training-session.form.button.update=Update
+developer.training-session.form.button.delete=Delete
+developer.training-session.form.button.publish=Publish
+
+
+
+

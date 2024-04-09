@@ -61,6 +61,7 @@ master.menu.developer.show = Show my Training modules
 master.menu.developer.create = Create a Training modules
 master.menu.developer.update = Update a Training modules
 master.menu.developer.delete = Delete a Training modules
+master.menu.developer.list-training-session = List my Training sessions
 
 
 # master.menu.user-account ####################################################

@@ -1,4 +1,4 @@
-# messages-en.i18n
+# messages-es.i18n
 #
 # Copyright (C) 2012-2024 Rafael Corchuelo.
 #
@@ -13,7 +13,7 @@
 developer.training-module.list.title = Listado de tus módulos de entrenamiento
 developer.training-module.form.title = Formulario
 
-#Cabecera de listado de proyectos
+#Cabecera de listado de módulos de entrenamiento
 
 developer.training-module.list.label.code = Código
 developer.training-module.list.label.creation-moment = Momento de creación
@@ -22,7 +22,8 @@ developer.training-module.list.label.difficulty-level = Nivel de dificultad
 developer.training-module.list.label.update-moment = Momento de actualización
 developer.training-module.list.label.link = Enlace
 developer.training-module.list.label.estimated-total-time = Tiempo total estimado
-developer.training-module.list.label.draftMode = DraftMode
+developer.training-module.list.label.project = Proyecto
+developer.training-module.list.label.draftMode = Editable
 
 
 developer.training-module.form.label.code = Código:
@@ -32,7 +33,8 @@ developer.training-module.form.label.difficulty-level = Nivel de dificultad:
 developer.training-module.form.label.update-moment = Momento de actualización:
 developer.training-module.form.label.link = Enlace:
 developer.training-module.form.label.estimated-total-time = Tiempo total estimado:
-developer.training-module.form.label.draftMode = DraftMode:
+developer.training-module.form.label.project = Proyecto:
+developer.training-module.form.label.draftMode = Editable:
 
 developer.training-module.list.button.create-form=Crear módulo de entrenamiento
 
@@ -41,5 +43,4 @@ developer.training-module.form.button.update=Actualizar
 developer.training-module.form.button.delete=Eliminar
 developer.training-module.form.button.publish=Publicar
 
-
-developer.training-module.form.button.training-sessions-list = Listar sesiones de entrenamiento
+developer.training-module.form.button.sessions = Listar sesiones de entrenamiento
