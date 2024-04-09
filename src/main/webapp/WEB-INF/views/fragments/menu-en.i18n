@@ -53,7 +53,6 @@ master.menu.manager.update = Update my projects
 master.menu.manager.delete = Delete a projects
 
 
-
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
@@ -62,3 +61,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.client #########################################################
+
+master.menu.client = Client
+master.menu.client.list-contract = List my contracts
