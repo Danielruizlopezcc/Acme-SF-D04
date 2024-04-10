@@ -11,9 +11,11 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.entities.invoice.Invoice;
 import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
+import acme.entities.sponsorship.SponsorshipType;
 import acme.roles.Sponsor;
 
 @Service
@@ -59,7 +61,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "draftMode");
+		super.bind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "project");
 		object.setProject(project);
 
 	}
@@ -72,7 +74,8 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			Sponsorship existing;
 
 			existing = this.repository.findOneSponsorshipByCode(object.getCode());
-			super.state(existing == null, "code", "sponsor.sponsorship.form.error.duplicated");
+			if (!object.getCode().equals(existing.getCode()))
+				super.state(existing == null, "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
@@ -89,8 +92,11 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			isMinimumDuration = MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
 			durationEndIsAfterStart = MomentHelper.isAfter(durationEnd, durationStart);
 
-			super.state(isMinimumDuration && durationEndIsAfterStart, "durationStart", "sponsor.sponsorhip.form.error.duration-not-valid");
+			super.state(isMinimumDuration && durationEndIsAfterStart, "durationStart", "sponsor.sponsorship.form.error.duration-not-valid");
 		}
+
+		if (!super.getBuffer().getErrors().hasErrors("amount"))
+			super.state(object.getAmount().getAmount() >= 0, "amount", "sponsor.sponsorship.form.error.amount-must-be-positive");
 		{
 			Collection<Invoice> invoices;
 			double sponsorshipAmount;
@@ -98,9 +104,9 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 			sponsorshipAmount = object.getAmount().getAmount();
-			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.getQuantity().getAmount()).sum();
+			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount()).sum();
 
-			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "developer.training-module.form.error.not-enough-training-sessions");
+			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-not-equal");
 		}
 	}
 
@@ -116,10 +122,19 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 
+		SelectChoices types;
+		SelectChoices projectsChoices;
+		Collection<Project> projects;
+
 		Dataset dataset;
+		types = SelectChoices.from(SponsorshipType.class, object.getType());
+		projects = this.repository.findAllProjects();
+		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
+		dataset = super.unbind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "draftMode", "project");
 
-		dataset = super.unbind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "draftMode");
-
+		dataset.put("type", types);
+		dataset.put("project", projectsChoices.getSelected().getKey());
+		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);
 
 	}

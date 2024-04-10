@@ -62,6 +62,15 @@ master.menu.developer.update = Actualizar un módulo de entrenamiento
 master.menu.developer.delete = Eliminar un módulo de entrenamiento
 master.menu.developer.list-training-session = Listar mis sesiones de entrenamiento
 
+# master.menu.sponsor ######################################################
+
+master.menu.sponsor = Patrocinador
+master.menu.sponsor.list-sponsorship = Listar mis patrocinios
+master.menu.sponsor.show = Mostrar mis patrocinios
+master.menu.sponsor.create = Crear un patrocinio
+master.menu.sponsor.update = Actualizar patrocinio
+master.menu.sponsor.delete = Eliminar patrocinio
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta
