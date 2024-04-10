@@ -1,0 +1,47 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+client.progress-log.list.title= Listado de sus registros de progreso
+client.progress-log.form.title= Detalles del registro de progreso
+
+#detalles del listado
+
+client.progressLog.list.label.recordId = Identificador del registro
+client.progressLog.list.label.completeness = Completitud
+client.progressLog.list.label.registrationMoment = Momento del registro
+client.progressLog.list.label.responsiblePerson = Persona Responsable
+client.progressLog.list.label.draftMode = Editable
+
+#detalles del form
+
+client.progress-log.form.label.recordId = Identificador del registro
+client.progress-log.form.label.completeness = Completitud
+client.progress-log.form.label.comment = Comentario
+client.progress-log.form.label.registrationMoment = Momento del registro
+client.progress-log.form.label.responsiblePerson = Persona Responsable
+
+#boton de crear
+client.progressLog.list.button.create = Crear registro de progreso
+
+#botones del form
+
+client.progress-log.form.button.update = Actualizar
+client.progress-log.form.button.delete = Borrar
+client.progress-log.form.button.publish = Publicar
+
+client.progress-log.form.button.create = Crear 
+
+client.progress-log.form.recordId.placeholder = PG-[A-Z]{1,2}-[0-9]{4}
+client.progress-log.form.completeness.placeholder = 0 - 100.00
+client.progress-log.form.comment.placeholder = Haz un comentario
+client.progress-log.form.responsiblePerson.placeholder = Persona responsable
+
+
+

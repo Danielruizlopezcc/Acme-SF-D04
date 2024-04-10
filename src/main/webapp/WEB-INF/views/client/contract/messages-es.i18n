@@ -44,6 +44,9 @@ client.contract.form.button.update = Actualizar
 client.contract.form.button.delete = Eliminar
 client.contract.form.button.publish = Publicar
 
+#errores
+client.progressLog.form.error.duplicated = Este identificador ya existe.
+
 
 client.contract.list.button.create-contract=Crear contrato
 client.contract.form.button.create-contract=Crear contrato
