@@ -54,6 +54,10 @@
 			<acme:menu-suboption code="master.menu.developer.list-training-module" action="/developer/training-module/list-mine"/>
 
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
+			<acme:menu-suboption code="master.menu.sponsor.list-sponsorship" action="/sponsor/sponsorship/list-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
