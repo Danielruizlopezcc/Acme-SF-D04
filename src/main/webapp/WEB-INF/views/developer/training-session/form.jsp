@@ -23,7 +23,6 @@
 	<acme:input-textbox code="developer.training-session.form.label.instructor" path="instructor"/>	
 	<acme:input-email code="developer.training-session.form.label.contact-email" path="contactEmail"/>
 	<acme:input-url code="developer.training-session.form.label.link" path="link"/>	
-	<acme:input-checkbox code="developer.training-session.form.label.draft-mode" path="draftMode"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">

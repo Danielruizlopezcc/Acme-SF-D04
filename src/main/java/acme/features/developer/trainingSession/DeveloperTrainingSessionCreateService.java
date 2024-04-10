@@ -53,7 +53,7 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
+		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
 	}
 
 	@Override
@@ -68,19 +68,19 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
-			Date minimumStart;
-
-			minimumStart = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumStart), "sessionStart", "developer.training-session.form.error.too-short");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
 			TrainingModule module;
 			int masterId;
 
 			masterId = super.getRequest().getData("masterId", int.class);
 			module = this.repository.findOneTMById(masterId);
-			super.state(MomentHelper.isAfter(module.getCreationMoment(), object.getSessionEnd()), "sessionEnd", "developer.training-session.form.error.too-close");
+			super.state(MomentHelper.isAfter(object.getSessionStart(), module.getCreationMoment()), "sessionStart", "developer.training-session.form.error.creation-moment-invalid");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
+			Date minimumEnd;
+
+			minimumEnd = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumEnd), "sessionEnd", "developer.training-session.form.error.too-close");
 		}
 
 	}
@@ -102,7 +102,6 @@ public class DeveloperTrainingSessionCreateService extends AbstractService<Devel
 
 		dataset = super.unbind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
 		dataset.put("masterId", super.getRequest().getData("masterId", int.class));
-		dataset.put("draftMode", object.getTrainingModule().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}

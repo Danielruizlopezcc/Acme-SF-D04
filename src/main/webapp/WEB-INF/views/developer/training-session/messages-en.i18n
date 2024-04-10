@@ -22,7 +22,7 @@ developer.training-session.list.label.location = Location
 developer.training-session.list.label.instructor = Instructor
 developer.training-session.list.label.contact-email = Contact Email
 developer.training-session.list.label.link = Link
-developer.training-session.list.label.draft-mode = DraftMode
+developer.training-session.list.label.draft-mode = Editable
 
 developer.training-session.form.label.code = Code:
 developer.training-session.form.label.session-start = Session Start:
@@ -31,7 +31,7 @@ developer.training-session.form.label.location = Location:
 developer.training-session.form.label.instructor = Instructor:
 developer.training-session.form.label.contact-email = Contact Email:
 developer.training-session.form.label.link = Link:
-developer.training-session.form.label.draft-mode = DraftMode:
+developer.training-session.form.label.draft-mode = Editable:
 
 developer.training-session.list.button.create-form=Create Training session
 
@@ -41,5 +41,6 @@ developer.training-session.form.button.delete=Delete
 developer.training-session.form.button.publish=Publish
 
 
-
-
+developer.training-session.form.error.duplicated = There is already a Training Session with that code
+developer.training-session.form.error.creation-moment-invalid = The start has to be after the module creation moment
+developer.training-session.form.error.too-close = The duration has to be of at least one week
