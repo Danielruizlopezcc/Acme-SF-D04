@@ -56,11 +56,7 @@ master.menu.manager.list-project = Ver mis proyectos
 
 master.menu.developer = Desarrollador
 master.menu.developer.list-training-module = Listar mis módulos de entrenamiento
-master.menu.developer.show = Mostrar mis módulos de entrenamiento
-master.menu.developer.create = Crear un modulo de entrenamiento
-master.menu.developer.update = Actualizar un módulo de entrenamiento
-master.menu.developer.delete = Eliminar un módulo de entrenamiento
-master.menu.developer.list-training-session = Listar mis sesiones de entrenamiento
+master.menu.developer.dashboard = Panel del desarrollador
 
 # master.menu.sponsor ######################################################
 
@@ -79,6 +75,8 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.developer = Datos de desarrollador
+master.menu.user-account.become-developer = Hazte desarrollador
 
 # master.menu.client #########################################################
 

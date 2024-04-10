@@ -57,11 +57,7 @@ master.menu.manager.delete = Delete a projects
 
 master.menu.developer = Developer
 master.menu.developer.list-training-module = List my Training modules
-master.menu.developer.show = Show my Training modules
-master.menu.developer.create = Create a Training modules
-master.menu.developer.update = Update a Training modules
-master.menu.developer.delete = Delete a Training modules
-master.menu.developer.list-training-session = List my Training sessions
+master.menu.developer.dashboard = Developer Dashboard
 
 
 # master.menu.sponsor ######################################################
@@ -81,6 +77,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.developer = Developer data
+master.menu.user-account.become-developer = Become a developer
 
 # master.menu.client #########################################################
 
