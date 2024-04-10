@@ -59,7 +59,6 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 		project = this.repository.findOneProjectById(projectId);
 
 		super.bind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "project");
-		object.setProject(project);
 
 	}
 

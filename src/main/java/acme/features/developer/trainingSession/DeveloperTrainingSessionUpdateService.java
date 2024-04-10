@@ -27,12 +27,14 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 		boolean status;
 		int sessionId;
 		TrainingModule module;
+		TrainingSession session;
 
 		sessionId = super.getRequest().getData("id", int.class);
 		module = this.repository.findOneTMByTSId(sessionId);
-		status = module != null && module.isDraftMode() && super.getRequest().getPrincipal().hasRole(module.getDeveloper());
+		session = this.repository.findOneTSById(sessionId);
+		status = module != null && module.isDraftMode() && super.getRequest().getPrincipal().hasRole(module.getDeveloper()) && session.isDraftMode();
 
-		super.getResponse().addData(status);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -50,7 +52,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "creationMoment", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
+		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
 	}
 
 	@Override
@@ -61,23 +63,23 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 			TrainingSession existing;
 
 			existing = this.repository.findOneTSByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-session.form.error.duplicated");
+			super.state(existing == null || existing.equals(object), "code", "developer.training-session.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
-			TrainingModule module;
 			Date minimumStart;
 
-			module = this.repository.findOneTMById(super.getRequest().getData("masterId", int.class));
 			minimumStart = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(module.getCreationMoment(), minimumStart), "session-start", "developer.training-session.form.error.too-close");
+			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumStart), "sessionStart", "developer.training-session.form.error.too-short");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
-			Date minimumEnd;
+			TrainingModule module;
+			int sessionId;
 
-			minimumEnd = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumEnd), "session-end", "developer.training-session.form.error.too-short");
+			sessionId = super.getRequest().getData("id", int.class);
+			module = this.repository.findOneTMByTSId(sessionId);
+			super.state(MomentHelper.isAfter(module.getCreationMoment(), object.getSessionEnd()), "sessionEnd", "developer.training-session.form.error.too-close");
 		}
 
 	}
@@ -96,7 +98,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "creationMoment", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
+		dataset = super.unbind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
 		dataset.put("masterId", object.getTrainingModule().getId());
 		dataset.put("draftMode", object.getTrainingModule().isDraftMode());
 
