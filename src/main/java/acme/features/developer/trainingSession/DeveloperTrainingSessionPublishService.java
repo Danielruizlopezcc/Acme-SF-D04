@@ -66,10 +66,10 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
 			TrainingModule module;
-			int masterId;
+			int id;
 
-			masterId = super.getRequest().getData("masterId", int.class);
-			module = this.repository.findOneTMById(masterId);
+			id = super.getRequest().getData("id", int.class);
+			module = this.repository.findOneTMByTSId(id);
 			super.state(MomentHelper.isAfter(object.getSessionStart(), module.getCreationMoment()), "sessionStart", "developer.training-session.form.error.creation-moment-invalid");
 		}
 
