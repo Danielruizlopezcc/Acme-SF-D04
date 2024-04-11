@@ -1,11 +1,16 @@
 
 package acme.features.developer.dashboard;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.trainingModule.TrainingModule;
+import acme.entities.trainingSession.TrainingSession;
 import acme.forms.DeveloperDashboard;
 import acme.roles.Developer;
 
@@ -18,19 +23,41 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		Principal principal = super.getRequest().getPrincipal();
+		int id = principal.getAccountId();
+		Developer developer = this.dashboardRepository.findDeveloperById(id);
+		status = developer != null && principal.hasRole(Developer.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
+		final Principal principal = super.getRequest().getPrincipal();
+		int userAccountId = principal.getAccountId();
 		DeveloperDashboard developerDashboard = new DeveloperDashboard();
+		Collection<TrainingModule> modules = this.dashboardRepository.findAllTMByDeveloperId(userAccountId);
+		Collection<TrainingSession> sessions = this.dashboardRepository.findAllTSByDeveloperId(userAccountId);
 
-		developerDashboard.setTotalTrainingSessionsWithLink(this.dashboardRepository.totalTrainingSessionsWithLink());
-		developerDashboard.setTotalTrainingModulesWithUpdateMoment(this.dashboardRepository.totalTrainingModulesWithUpdateMoment());
-		developerDashboard.setAverageTrainingModulesTime(this.dashboardRepository.averageTrainingModulesTime());
-		developerDashboard.setDeviatonTrainingModulesTime(this.dashboardRepository.deviatonTrainingModulesTime());
-		developerDashboard.setMinimumTrainingModulesTime(this.dashboardRepository.minimumTrainingModulesTime());
-		developerDashboard.setMaximumTrainingModulesTime(this.dashboardRepository.maximumTrainingModulesTime());
+		developerDashboard.setTotalTrainingSessionsWithLink(0);
+		developerDashboard.setTotalTrainingModulesWithUpdateMoment(0);
+		developerDashboard.setAverageTrainingModulesTime(0);
+		developerDashboard.setDeviatonTrainingModulesTime(0);
+		developerDashboard.setMinimumTrainingModulesTime(0);
+		developerDashboard.setMaximumTrainingModulesTime(0);
+
+		if (!modules.isEmpty()) {
+			developerDashboard.setTotalTrainingModulesWithUpdateMoment(this.dashboardRepository.totalTrainingModulesWithUpdateMoment(userAccountId));
+			developerDashboard.setAverageTrainingModulesTime(this.dashboardRepository.averageTrainingModulesTime(userAccountId));
+			developerDashboard.setDeviatonTrainingModulesTime(this.dashboardRepository.deviatonTrainingModulesTime(userAccountId));
+			developerDashboard.setMinimumTrainingModulesTime(this.dashboardRepository.minimumTrainingModulesTime(userAccountId));
+			developerDashboard.setMaximumTrainingModulesTime(this.dashboardRepository.maximumTrainingModulesTime(userAccountId));
+		}
+
+		if (!sessions.isEmpty())
+			developerDashboard.setTotalTrainingSessionsWithLink(this.dashboardRepository.totalTrainingSessionsWithLink(userAccountId));
 
 		super.getBuffer().addData(developerDashboard);
 
