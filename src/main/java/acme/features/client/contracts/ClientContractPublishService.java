@@ -72,26 +72,40 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 
 			existing = this.clientContractRepository.findOneContractByCode(object.getCode());
 			super.state(existing == null || existing.equals(object), "code", "client.contract.form.error.duplicated");
+
+			if (!super.getBuffer().getErrors().hasErrors("budget"))
+				super.state(this.checkContractsAmountsLessThanProjectCost(object), "budget", "client.contract.form.error.excededBudget");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("budget"))
-			super.state(this.checkContractsAmountsLessThanProjectCost(object), "budget", "client.contract.form.error.excededBudget");
 	}
 
 	private Boolean checkContractsAmountsLessThanProjectCost(final Contract object) {
+		assert object != null;
 
-		Collection<Contract> contratos = this.clientContractRepository.findManyContractByProjectId(object.getProject().getId());
+		if (object.getProject() != null) {
+			Collection<Contract> contratos = this.clientContractRepository.findManyContractByProjectId(object.getProject().getId());
 
-		Double budgetTotal = contratos.stream().filter(contract -> contract.isDraftMode() == false).mapToDouble(contract -> contract.getBudget().getAmount()).sum();
+			Double budgetTotal = contratos.stream().filter(contract -> !contract.isDraftMode()).mapToDouble(contract -> contract.getBudget().getAmount()).sum();
 
-		//Integer suma = sumContractsBudgetByProjectId(obect.project.getId)
-		Double projectCost = object.getProject().getCost().getAmount();
-		// Project project = repository.findProjectbyId(object.project())
+			Double projectCost = object.getProject().getCost().getAmount();
 
-		//return project.cost >= suma;
+			return projectCost >= budgetTotal + object.getBudget().getAmount();
+		}
 
-		return projectCost >= budgetTotal + object.getBudget().getAmount();
+		return true;
 	}
+
+	/*
+	 * private Double moneyToUSDollars(final Money money) {
+	 * 
+	 * if (money.getCurrency().equals("USD"))
+	 * return money.getAmount();
+	 * else if (money.getCurrency().equals("EUR"))
+	 * return money.getAmount() * 1.075;
+	 * 
+	 * return money.getAmount() * 1.2658;
+	 * }
+	 */
 
 	@Override
 	public void perform(final Contract object) {

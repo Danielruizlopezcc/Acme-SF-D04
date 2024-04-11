@@ -82,3 +82,5 @@ master.menu.user-account.become-developer = Hazte desarrollador
 
 master.menu.client = Cliente
 master.menu.client.list-contract = Ver mis contratos
+master.menu.user-account.become-client = Hazte cliente
+master.menu.user-account.client = Datos de cliente
