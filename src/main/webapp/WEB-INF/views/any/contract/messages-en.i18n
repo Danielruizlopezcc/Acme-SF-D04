@@ -1,0 +1,34 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.contract.list.title = Published contracts
+any.contract.form.title = Contract form
+
+#detalles del listado
+any.contract.list.label.code = Code
+any.contract.list.label.instantiationMoment = Instantiation Moment
+any.contract.list.label.providerName = Provider
+any.contract.list.label.customerName = Customer
+any.contract.list.label.budget = Budget
+any.contract.list.label.project = Project
+
+
+#detalles del formulario
+any.contract.form.label.code = Code
+any.contract.form.label.instantiationMoment = Instantiation Moment
+any.contract.form.label.providerName = Provider
+any.contract.form.label.customerName = Customer
+any.contract.form.label.goals = Goals
+any.contract.form.label.budget = Budget
+any.contract.form.label.project = Project
+
+#boton progress log
+
+any.contract.form.button.progress-logs = Progress Logs
