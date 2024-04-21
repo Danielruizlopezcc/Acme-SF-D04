@@ -1,0 +1,44 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+sponsor.invoice.list.title = Listado de tus facturas
+sponsor.invoice.form.title = Formulario
+
+#Cabecera de listado de facturas
+
+sponsor.invoice.list.label.code = Code
+sponsor.invoice.list.label.registration-time = Registration time
+sponsor.invoice.list.label.due-date = Due date
+sponsor.invoice.list.label.quantity = Quantity
+sponsor.invoice.list.label.tax = Tax
+sponsor.invoice.list.label.link = Link (optional)
+sponsor.invoice.list.label.draftMode = Editable
+
+#Cabecera de formulario de facturas
+
+sponsor.invoice.form.label.code = Code:
+sponsor.invoice.form.label.registration-time = Registration time:
+sponsor.invoice.form.label.due-date = Due date:
+sponsor.invoice.form.label.quantity = Quantity:
+sponsor.invoice.form.label.tax = Tax:
+sponsor.invoice.form.label.link = Link (optional):
+sponsor.invoice.form.label.draftMode = Editable:
+
+sponsor.invoice.list.button.create-form = Create invoice
+
+sponsor.invoice.form.button.create-invoice = Create
+sponsor.invoice.form.button.update = Update
+sponsor.invoice.form.button.delete = Delete
+sponsor.invoice.form.button.publish = Publish
+
+sponsor.invoice.form.error.due-date-not-valid = Due date must be ahead registration time. It must be at least one month long
+sponsor.invoice.form.error.quantity-must-be-positive = Quantity must be positive
