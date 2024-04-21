@@ -47,3 +47,6 @@ sponsor.sponsorship.form.button.publish = Publicar
 
 
 sponsor.sponsorship.form.button.invoices-list = Listar facturas
+
+sponsor.sponsorship.form.error.duration-not-valid = La duración del patrocinio debe ser de al menos un mes
+sponsor.sponsorship.form.error.amount-must-be-positive = La cantidad de dinero no puede ser nula
