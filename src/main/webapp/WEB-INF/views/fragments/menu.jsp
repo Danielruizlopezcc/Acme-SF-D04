@@ -26,12 +26,13 @@
 			<acme:menu-suboption code="master.menu.anonymous.marco.favourite-link" action="https://www.youtube.com/watch?v=xvFZjo5PgG0"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.published-modules" action="/any/training-module/list"/>
-      <acme:menu-separator/>
-      <acme:menu-suboption code="master.menu.anonymous.list-contracts" action="/any/contract/list"/>
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.anonymous.list-contracts" action="/any/contract/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code= "master.menu.anonymous.list-contracts" action="/any/contract/list"/>
+			<acme:menu-separator/>
       <acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
 		</acme:menu-option>
 
@@ -39,7 +40,9 @@
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/system/populate-initial"/>
-			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/system/populate-sample"/>			
+			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/system/populate-sample"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.list.banner" action="/administrator/banner/list" access="isAuthenticated()"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/system/shut-down"/>
 		</acme:menu-option>
