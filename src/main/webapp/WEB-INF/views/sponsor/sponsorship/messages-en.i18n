@@ -48,6 +48,7 @@ sponsor.sponsorship.form.button.publish = Publish
 
 sponsor.sponsorship.form.button.invoices-list = List invoices
 
-
+sponsor.sponsorship.form.error.duration-not-valid = Duration must be at least one month long
+sponsor.sponsorship.form.error.amount-must-be-positive = Amount must be positive
 
 

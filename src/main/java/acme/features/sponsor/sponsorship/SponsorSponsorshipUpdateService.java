@@ -73,8 +73,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			Sponsorship existing;
 
 			existing = this.repository.findOneSponsorshipByCode(object.getCode());
-			if (!object.getCode().equals(existing.getCode()))
-				super.state(existing == null, "code", "sponsor.sponsorship.form.error.duplicated");
+			super.state(existing == null || existing.equals(object), "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
