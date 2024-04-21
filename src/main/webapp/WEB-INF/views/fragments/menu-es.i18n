@@ -30,6 +30,12 @@ master.menu.anonymous.published-modules = Ver todos los módulos de entrenamient
 master.menu.auth = Autenticado
 master.menu.authenticated.published-modules = Ver todos los módulos de entrenamiento publicados
 
+master.menu.anonymous.list-contracts = Ver todos los contratos publicados
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Autentificado
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
@@ -37,7 +43,9 @@ master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
-master.menu.administrator.shut-down = Parar el sistema
+master.menu.administrator.shut-down = Parar el 
+
+
 
 # master.menu.provider ########################################################
 

@@ -30,6 +30,13 @@ master.menu.anonymous.published-modules = List all Training Modules published
 master.menu.authenticated = Authenticated
 master.menu.authenticated.published-modules = List all Training Modules published
 
+master.menu.anonymous.list-contracts = List published contracts
+
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

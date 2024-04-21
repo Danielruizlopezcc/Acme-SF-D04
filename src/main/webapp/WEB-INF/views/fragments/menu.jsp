@@ -26,10 +26,13 @@
 			<acme:menu-suboption code="master.menu.anonymous.marco.favourite-link" action="https://www.youtube.com/watch?v=xvFZjo5PgG0"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.published-modules" action="/any/training-module/list"/>
+      <acme:menu-separator/>
+      <acme:menu-suboption code="master.menu.anonymous.list-contracts" action="/any/contract/list"/>
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
-			<acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
+			<acme:menu-suboption code= "master.menu.anonymous.list-contracts" action="/any/contract/list"/>
+      <acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
