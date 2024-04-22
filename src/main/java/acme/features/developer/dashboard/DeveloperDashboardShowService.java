@@ -41,12 +41,12 @@ public class DeveloperDashboardShowService extends AbstractService<Developer, De
 		Collection<TrainingModule> modules = this.dashboardRepository.findAllTMByDeveloperId(userAccountId);
 		Collection<TrainingSession> sessions = this.dashboardRepository.findAllTSByDeveloperId(userAccountId);
 
-		developerDashboard.setTotalTrainingSessionsWithLink(0);
-		developerDashboard.setTotalTrainingModulesWithUpdateMoment(0);
-		developerDashboard.setAverageTrainingModulesTime(0);
-		developerDashboard.setDeviatonTrainingModulesTime(0);
-		developerDashboard.setMinimumTrainingModulesTime(0);
-		developerDashboard.setMaximumTrainingModulesTime(0);
+		developerDashboard.setTotalTrainingSessionsWithLink(Double.NaN);
+		developerDashboard.setTotalTrainingModulesWithUpdateMoment(Double.NaN);
+		developerDashboard.setAverageTrainingModulesTime(Double.NaN);
+		developerDashboard.setDeviatonTrainingModulesTime(Double.NaN);
+		developerDashboard.setMinimumTrainingModulesTime(Double.NaN);
+		developerDashboard.setMaximumTrainingModulesTime(Double.NaN);
 
 		if (!modules.isEmpty()) {
 			developerDashboard.setTotalTrainingModulesWithUpdateMoment(this.dashboardRepository.totalTrainingModulesWithUpdateMoment(userAccountId));
