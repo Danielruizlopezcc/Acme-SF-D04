@@ -42,7 +42,7 @@ client.progress-log.form.button.create = Create
 
 #errores
 
-client.progressLog.form.error.duplicated = This id is already in use.
+client.progress-log.form.error.duplicated = This id is already in use
 
 #placeholders
 

@@ -66,6 +66,14 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 	public void validate(final ProgressLog object) {
 
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			ProgressLog existing;
+
+			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
+			super.state(existing == null, "recordId", "client.progress-log.form.error.duplicated");
+		}
+
 	}
 
 	@Override

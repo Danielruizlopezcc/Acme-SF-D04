@@ -98,7 +98,7 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 	private Money calcularMedia(final Collection<Money> budgets) {
 		Money moneyFinal = new Money();
 		moneyFinal.setCurrency("USD");
-		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).average().orElse(0.0));
+		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).average().orElse(Double.NaN));
 
 		return moneyFinal;
 	}
@@ -106,14 +106,14 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 	private Money calcularMaximo(final Collection<Money> budgets) {
 		Money moneyFinal = new Money();
 		moneyFinal.setCurrency("USD");
-		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).max().orElse(0.0));
+		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).max().orElse(Double.NaN));
 		return moneyFinal;
 	}
 
 	private Money calcularMinimo(final Collection<Money> budgets) {
 		Money moneyFinal = new Money();
 		moneyFinal.setCurrency("USD");
-		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).min().orElse(0.0));
+		moneyFinal.setAmount(budgets.stream().map(x -> x.getAmount()).mapToDouble(Double::doubleValue).min().orElse(Double.NaN));
 		return moneyFinal;
 
 	}
@@ -123,7 +123,7 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		desviacion.setCurrency("USD");
 
 		// Calcular la media
-		double media = budgets.stream().mapToDouble(Money::getAmount).average().orElse(0.0);
+		double media = budgets.stream().mapToDouble(Money::getAmount).average().orElse(Double.NaN);
 
 		// Calcular la suma de las diferencias al cuadrado
 		double sumaDiferenciasCuadradas = budgets.stream().mapToDouble(budget -> Math.pow(budget.getAmount() - media, 2)).sum();
