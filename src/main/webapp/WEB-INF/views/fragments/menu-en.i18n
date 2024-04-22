@@ -23,6 +23,19 @@ master.menu.anonymous.ramon.favourite-link = 77860168Q: Gavira Sánchez, Ramón
 master.menu.anonymous.rafael.favourite-link = 29516380C: Pulido Cifuentes, Rafael
 master.menu.anonymous.alberto.favourite-link = 29643371M: Carmona Sicre, Alberto
 master.menu.anonymous.marco.favourite-link = 20064731Z: Padilla Gómez, Marco
+master.menu.anonymous.published-modules = List all Training Modules published
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.published-modules = List all Training Modules published
+
+master.menu.anonymous.list-contracts = List published contracts
+
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
 
 # master.menu.administrator ###################################################
 
@@ -31,6 +44,7 @@ master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
+master.menu.administrator.list.banner = List Banners
 master.menu.administrator.shut-down = Shut down
 
 # master.menu.provider ########################################################
@@ -49,6 +63,21 @@ master.menu.manager = Manager
 master.menu.manager.list-project = List my Projects
 master.menu.manager.list-user-stories = List the User Stories
 
+# master.menu.developer ######################################################
+
+master.menu.developer = Developer
+master.menu.developer.list-training-module = List my Training modules
+master.menu.developer.dashboard = Developer Dashboard
+
+
+# master.menu.sponsor ######################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.list-sponsorship = List my sponsorships
+master.menu.sponsor.show = Show my sponsorships
+master.menu.sponsor.create = Create a sponsorship
+master.menu.sponsor.update = Update a sponsorship
+master.menu.sponsor.delete = Delete a sponsorship
 
 # master.menu.user-account ####################################################
 
@@ -58,3 +87,13 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.developer = Developer data
+master.menu.user-account.become-developer = Become a developer
+
+# master.menu.client #########################################################
+
+master.menu.client = Client
+master.menu.client.list-contract = List my contracts
+master.menu.user-account.become-client = Become a client
+master.menu.user-account.client = Client data
+master.menu.client.dashboard = Client Dashboard

@@ -1,0 +1,50 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+developer.training-module.list.title = Listado de tus módulos de entrenamiento
+developer.training-module.form.title = Formulario
+
+#Cabecera de listado de módulos de entrenamiento
+
+developer.training-module.list.label.code = Código
+developer.training-module.list.label.creation-moment = Momento de creación
+developer.training-module.list.label.details = Detalles
+developer.training-module.list.label.difficulty-level = Nivel de dificultad
+developer.training-module.list.label.update-moment = Momento de actualización
+developer.training-module.list.label.link = Enlace
+developer.training-module.list.label.estimated-total-time = Tiempo total estimado
+developer.training-module.list.label.project = Proyecto
+developer.training-module.list.label.draftMode = Editable
+
+
+developer.training-module.form.label.code = Código:
+developer.training-module.form.label.creation-moment = Momento de creación:
+developer.training-module.form.label.details = Detalles:
+developer.training-module.form.label.difficulty-level = Nivel de dificultad:
+developer.training-module.form.label.update-moment = Momento de actualización:
+developer.training-module.form.label.link = Enlace:
+developer.training-module.form.label.estimated-total-time = Tiempo total estimado:
+developer.training-module.form.label.project = Proyecto:
+developer.training-module.form.label.draftMode = Editable:
+
+developer.training-module.list.button.create-form=Crear módulo de entrenamiento
+
+developer.training-module.form.button.create-training-module= Crear
+developer.training-module.form.button.update=Actualizar
+developer.training-module.form.button.delete=Eliminar
+developer.training-module.form.button.publish=Publicar
+
+developer.training-module.form.button.sessions = Listar sesiones de entrenamiento
+
+developer.training-module.form.error.duplicated = Ya existe un módulo de entrenamiento con ese código
+developer.training-module.form.error.update-date-not-valid = Debe ser posterior al momento de creación
+developer.training-module.form.error.not-enough-training-sessions = Un módulo de entrenamiento debe tener al menos una sesión de entrenamiento

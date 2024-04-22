@@ -1,0 +1,3 @@
+key,key:userAccount,name,expected-benefits,web-page,email-contact
+sponsor-01,user-account-sponsor-01,"Default sponsor number 1","Good expected benefits",https://sponsor1.com,sponsor1@gmail.com
+sponsor-02,user-account-sponsor-02,"Default sponsor number 2","Bad expected benefits",https://sponsor2.com,sponsor2@gmail.com

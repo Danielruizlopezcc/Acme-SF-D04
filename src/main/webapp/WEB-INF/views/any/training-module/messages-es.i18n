@@ -1,0 +1,23 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+any.training-module.form.label.code = Código
+any.training-module.form.label.creation-moment = Momento de creación
+any.training-module.form.label.details = Detalles
+any.training-module.form.label.difficulty-level = Nivel de dificultad
+any.training-module.form.label.update-moment = Momento de actualización
+any.training-module.form.label.link = Enlace
+any.training-module.form.label.estimated-total-time = Tiempo total estimado
+
+any.training-module.form.title = Módulo de entrenamiento
+any.training-module.list.title = Módulos de entrenamiento
+
+any.training-module.list.label.code = Código
+any.training-module.list.label.draftMode = Editable

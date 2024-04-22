@@ -9,7 +9,9 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
+import acme.entities.trainingModule.Difficulty;
 import acme.entities.trainingModule.TrainingModule;
 import acme.entities.trainingSession.TrainingSession;
 import acme.roles.Developer;
@@ -57,7 +59,7 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime");
+		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "project");
 		object.setProject(project);
 
 	}
@@ -70,10 +72,10 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 			TrainingModule existing;
 
 			existing = this.repository.findOneTMByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.duplicated");
+			super.state(existing == null || existing.equals(object), "code", "developer.training-module.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
+		if (object.getUpdateMoment() != null && !super.getBuffer().getErrors().hasErrors("updateMoment"))
 			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.update-date-not-valid");
 
 		{
@@ -97,12 +99,20 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 	@Override
 	public void unbind(final TrainingModule object) {
 		assert object != null;
+		SelectChoices choices;
+		SelectChoices projectsChoices;
+		Collection<Project> projects;
 
 		Dataset dataset;
-
-		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime");
-
+		choices = SelectChoices.from(Difficulty.class, object.getDifficultyLevel());
+		projects = this.repository.findAllProjects();
+		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "draftMode", "project");
+		dataset.put("difficulty", choices);
+		dataset.put("project", projectsChoices.getSelected().getKey());
+		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);
 
 	}
+
 }

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
+import acme.entities.trainingModule.Difficulty;
 import acme.entities.trainingModule.TrainingModule;
 import acme.entities.trainingSession.TrainingSession;
 import acme.roles.Developer;
@@ -56,7 +58,7 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime");
+		super.bind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "project");
 		object.setProject(project);
 
 	}
@@ -80,12 +82,20 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	@Override
 	public void unbind(final TrainingModule object) {
 		assert object != null;
+		SelectChoices choices;
+		SelectChoices projectsChoices;
+		Collection<Project> projects;
 
 		Dataset dataset;
-
-		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime");
-
+		choices = SelectChoices.from(Difficulty.class, object.getDifficultyLevel());
+		projects = this.repository.findAllProjects();
+		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "draftMode", "project");
+		dataset.put("difficulty", choices);
+		dataset.put("project", projectsChoices.getSelected().getKey());
+		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);
+
 	}
 
 }

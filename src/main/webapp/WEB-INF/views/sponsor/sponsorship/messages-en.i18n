@@ -1,0 +1,54 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+sponsor.sponsorship.list.title = Listing of your sponsorships
+sponsor.sponsorship.form.title = Sponsorship form
+
+#Cabecera de listado de patrocinios
+
+sponsor.sponsorship.list.label.code = Code
+sponsor.sponsorship.list.label.moment = Moment
+sponsor.sponsorship.list.label.duration-start = Duration start
+sponsor.sponsorship.list.label.duration-end = Duration end
+sponsor.sponsorship.list.label.amount = Amount
+sponsor.sponsorship.list.label.type = Type
+sponsor.sponsorship.list.label.email-contact = Email contact
+sponsor.sponsorship.list.label.link = Link
+sponsor.sponsorship.list.label.project = Project
+sponsor.sponsorship.list.label.draftMode = Editable
+
+
+sponsor.sponsorship.form.label.code = Code:
+sponsor.sponsorship.form.label.moment = Moment:
+sponsor.sponsorship.form.label.duration-start = Duration start:
+sponsor.sponsorship.form.label.duration-end = Duration end:
+sponsor.sponsorship.form.label.amount = Amount:
+sponsor.sponsorship.form.label.type = Type:
+sponsor.sponsorship.form.label.email-contact = Email contact (optional):
+sponsor.sponsorship.form.label.link = Link (optional):
+sponsor.sponsorship.form.label.project = Project:
+sponsor.sponsorship.form.label.draftMode = Editable:
+
+sponsor.sponsorship.list.button.create-form = Create Sponsorship
+
+sponsor.sponsorship.form.button.create-sponsorship = Create
+sponsor.sponsorship.form.button.update = Update
+sponsor.sponsorship.form.button.delete = Delete
+sponsor.sponsorship.form.button.publish = Publish
+
+
+sponsor.sponsorship.form.button.invoices-list = List invoices
+
+sponsor.sponsorship.form.error.duration-not-valid = Duration must be at least one month long
+sponsor.sponsorship.form.error.amount-must-be-positive = Amount must be positive
+
+

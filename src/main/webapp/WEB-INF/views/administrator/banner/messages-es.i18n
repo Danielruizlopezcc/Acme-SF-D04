@@ -1,0 +1,28 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.banner.list.label.instantiationMoment = Creación
+administrator.banner.list.label.startDisplayPeriod = Inicio del periodo de visualización
+administrator.banner.list.label.endDisplayPeriod = Fin del periodo de visualización
+administrator.banner.list.label.slogan = Eslogan
+administrator.banner.list.label.picture = Enlace de imagen
+administrator.banner.list.label.link = Enlace de documento web
+
+administrator.banner.list.button.create = Crear
+administrator.banner.list.button.banners = Listar
+administrator.banner.list.button.update = Actualizar
+administrator.banner.list.button.delete = Eliminar
+
+administrator.banner.form.error.end-before-start = El fin del periodo de visualización debe ser una fecha posterior al inicio del periodo
+administrator.banner.form.error.small-display-period = El periodo de visualización debe durar mínimo una semana
+administrator.banner.form.error.start-before-instantiation = El inicio del periodo de visualización debe ser posterior al momento de instanciación 
+
+administrator.banner.list.title = Pancartas
+administrator.banner.form.title = Pancartas

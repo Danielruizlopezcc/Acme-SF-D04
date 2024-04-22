@@ -12,3 +12,4 @@
 
 D01	This is the first version of Acme-SF
 D02 This is the second version of Acme-SF with new entities
+D03 This version adds different features
