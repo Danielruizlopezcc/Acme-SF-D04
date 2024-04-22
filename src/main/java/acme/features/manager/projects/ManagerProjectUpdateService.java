@@ -45,7 +45,7 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 	@Override
 	public void bind(final Project object) {
 		assert object != null;
-		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link");
 
 	}
 
@@ -53,9 +53,18 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 	public void validate(final Project object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project existing;
+
+			existing = this.repository.findOneProjectByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "manager.project-module-form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("indication"))
 			super.state(object.isIndication() == false, "indication", "manager.project-module-form.error.existing-fatal-errors");
 
+		if (!super.getBuffer().getErrors().hasErrors("cost"))
+			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
 	}
 
 	@Override

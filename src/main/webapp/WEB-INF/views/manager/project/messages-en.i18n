@@ -10,7 +10,7 @@
 
 #Cabecera de titulos de pantallas
 
-manager.project.list.title = Listing of your projects
+manager.project.list.title = List of your projects
 manager.project.form.title = Project form
 
 #Cabecera de listado de proyectos
@@ -39,8 +39,15 @@ manager.project.form.button.update=Update
 manager.project.form.button.delete=Delete
 manager.project.form.button.publish=Publish
 
+manager.project.form.button.listing-user-stories= Listing user stories
 
-manager.project.form.button.user-stories-list = List user stories
+manager.project.form.button.userstories = List user stories
+manager.project.form.button.add-userstories = Add user story
+manager.project.form.button.remove-userstories = Remove user stories
+
+
+
+
 
 
 

@@ -33,10 +33,12 @@ master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
+
 
 # master.menu.consumer ##########################################################
 
@@ -50,7 +52,9 @@ master.menu.manager.delete = Borrar un proyecto
 # master.menu.manager #########################################################
 
 master.menu.manager = Manager
-master.menu.manager.list-project = Ver mis proyectos
+master.menu.manager.list-project = Lista de mis Proyectos
+
+master.menu.manager.list-user-stories = Lista de las historias de usuario
 
 # master.menu.user-account ####################################################
 

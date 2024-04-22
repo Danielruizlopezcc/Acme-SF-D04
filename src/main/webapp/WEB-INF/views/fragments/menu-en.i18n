@@ -46,12 +46,8 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.manager ##########################################################
 
 master.menu.manager = Manager
-master.menu.manager.list-project = List my projects
-master.menu.manager.show = Show my projects
-master.menu.manager.create = Create a project
-master.menu.manager.update = Update my projects
-master.menu.manager.delete = Delete a projects
-
+master.menu.manager.list-project = List my Projects
+master.menu.manager.list-user-stories = List the User Stories
 
 
 # master.menu.user-account ####################################################
