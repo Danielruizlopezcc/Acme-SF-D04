@@ -1,7 +1,7 @@
 
 package acme.features.manager.projects;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.projectUserStories.ProjectUserStory;
 import acme.entities.userStory.UserStory;
 import acme.roles.Manager;
 
@@ -48,7 +49,7 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	@Override
 	public void bind(final Project object) {
 		assert object != null;
-		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link");
 
 	}
 
@@ -56,22 +57,26 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 	public void validate(final Project object) {
 		assert object != null;
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project existing;
+
+			existing = this.repository.findOneProjectByCode(object.getCode());
+			super.state(existing == null || existing.equals(object), "code", "developer.training-module.form.error.duplicated");
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("indication"))
 			super.state(object.isIndication() == false, "indication", "manager.project-module-form.error.existing-fatal-errors");
 
-		{
-			Collection<UserStory> userStories;
-			int totalUserStories;
+		if (!super.getBuffer().getErrors().hasErrors("cost"))
+			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
 
-			// Hay que revisitar esto, pensamos que user story deberia de tener draftmode por lo que sería AllUserStoriesPublished
-			userStories = this.repository.findAllUserStoriesByProjectId(object.getId());
-			boolean allUserStoriesPublished = userStories.stream().allMatch(us -> us.isDraftMode());
-			totalUserStories = userStories.size();
+		int masterId = super.getRequest().getData("id", int.class);
+		List<UserStory> ls = this.repository.findProjectUserStoriesByProjectId(masterId).stream().map(ProjectUserStory::getUserStory).toList();
+		final boolean draftUserStory = ls.stream().anyMatch(us -> us.isDraftMode());
+		final boolean noUserStories = ls.isEmpty();
+		super.state(!noUserStories, "*", "manager.project.form.error.userStories-empty");
+		super.state(!draftUserStory, "*", "manager.project.form.error.userStories-draft");
 
-			super.state(totalUserStories >= 1, "*", "developer.training-module.form.error.not-enough-user-stories");
-			super.state(allUserStoriesPublished, "*", "developer.training-module.form.error.not-all-user-stories-published-");
-
-		}
 	}
 
 	@Override

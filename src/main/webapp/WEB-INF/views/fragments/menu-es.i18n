@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-﻿# master.menu #################################################################
+# master.menu #################################################################
 
 master.menu.home = Inicio
 master.menu.sign-up = Registrarse
@@ -53,6 +53,7 @@ master.menu.administrator.shut-down = Parar el sistema
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
+
 # master.menu.consumer ##########################################################
 
 master.menu.consumer = Consumidor
@@ -65,7 +66,9 @@ master.menu.manager.delete = Borrar un proyecto
 # master.menu.manager #########################################################
 
 master.menu.manager = Manager
-master.menu.manager.list-project = Ver mis proyectos
+master.menu.manager.list-project = Lista de mis Proyectos
+
+master.menu.manager.list-user-stories = Lista de las historias de usuario
 
 # master.menu.developer ######################################################
 

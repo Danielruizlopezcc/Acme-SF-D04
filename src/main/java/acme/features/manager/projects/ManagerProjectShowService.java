@@ -26,7 +26,7 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		masterId = super.getRequest().getData("id", int.class);
 		pr = this.repository.findOneProjectById(masterId);
 		manager = pr == null ? null : pr.getManager();
-		status = pr != null && pr.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+		status = super.getRequest().getPrincipal().hasRole(manager) || pr != null && pr.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -51,6 +51,7 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
+
 	}
 
 }

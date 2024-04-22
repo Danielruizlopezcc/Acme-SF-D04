@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-manager.project.list.title= Listado de tus proyectos
+manager.project.list.title= Lista de tus proyectos
 manager.project.form.title= Detalles de proyectos
 
 manager.project.list.label.code = Código
@@ -36,5 +36,9 @@ manager.project.form.button.update= Editar
 manager.project.form.button.delete= Borrar
 manager.project.form.button.publish= Publicar
 
+manager.project.form.button.listing-user-stories= Listado de historias de usuario
 
-manager.project.form.button.user-stories-list = Ver historias de usuario
+
+manager.project.form.button.userstories =  Listar historias de usuario
+manager.project.form.button.add-userstories = Añadir historia de usuario
+manager.project.form.button.remove-userstories = Eliminar historias de usuario
