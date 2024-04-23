@@ -55,11 +55,11 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 			Project existing;
 
 			existing = this.repository.findOneProjectByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.duplicated");
+			super.state(existing == null, "code", "manager.project.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("indication"))
-			super.state(object.isIndication() == false, "indication", "manager.project-module-form.error.existing-fatal-errors");
+			super.state(object.isIndication() == false, "indication", "manager.project.form.error.existing-fatal-errors");
 
 		if (!super.getBuffer().getErrors().hasErrors("cost"))
 			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
