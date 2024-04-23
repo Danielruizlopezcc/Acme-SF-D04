@@ -59,6 +59,7 @@
 			<acme:menu-suboption code="master.menu.manager.list-project" action="/manager/project/list"/>
 			<acme:menu-suboption code="master.menu.manager.list-user-story" action="/manager/user-story/list-mine"/>
 			<acme:menu-suboption code="master.menu.manager.list-assigments" action="/manager/project-user-stories/list"/>
+			<acme:menu-suboption code="master.menu.manager.show-manager-dashboard" action="/manager/manager-dashboard/show"/>
 			
 			
 			
