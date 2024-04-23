@@ -1,11 +1,16 @@
 
 package acme.features.manager.dashboard;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.project.Project;
+import acme.entities.userStory.StoryPriority;
+import acme.entities.userStory.UserStory;
 import acme.forms.ManagerDashboard;
 import acme.roles.Manager;
 
@@ -28,50 +33,46 @@ public class ManagerDashboardShowService extends AbstractService<Manager, Manage
 		ManagerDashboard dashboard;
 		int managerId;
 		// the information I want to show in the dashboard
-		int totalUserStoriesWithPriorityMust;
-		int totalUserStoriesWithPriorityShould;
-		int totalUserStoriesWithPriorityCould;
-		int totalUserStoriesWithPriorityWont;
 
-		Double averageUserStoriesEstimatedCost;
-		Double deviationUserStoriesEstimatedCost;
-		double minimumUserStoriesEstimatedCost;
-		double maximumUserStoriesEstimatedCost;
-
-		Double averageProjectCost;
-		Double deviationProjectCost;
-		double minimumProjectCost;
-		double maximumProjectCost;
 		// getting the manager whose data I want to show
 
 		managerId = super.getRequest().getPrincipal().getActiveRoleId();
 		dashboard = new ManagerDashboard();
 
-		totalUserStoriesWithPriorityMust = this.repository.totalUserStoriesWithPriorityMustByManagerId(managerId);
-		totalUserStoriesWithPriorityShould = this.repository.totalUserStoriesWithPriorityShouldByManagerId(managerId);
-		totalUserStoriesWithPriorityCould = this.repository.totalUserStoriesWithPriorityCouldByManagerId(managerId);
-		totalUserStoriesWithPriorityWont = this.repository.totalUserStoriesWithPriorityWontByManagerId(managerId);
-		averageUserStoriesEstimatedCost = this.repository.averageUserStoriesEstimatedCostByManagerId(managerId);
-		deviationUserStoriesEstimatedCost = this.repository.deviationUserStoriesEstimatedCostByManagerId(managerId);
-		minimumUserStoriesEstimatedCost = this.repository.minimumUserStoriesEstimatedCostByManagerId(managerId);
-		maximumUserStoriesEstimatedCost = this.repository.maximumUserStoriesEstimatedCostByManagerId(managerId);
-		averageProjectCost = this.repository.averageProjectCostByManagerId(managerId);
-		deviationProjectCost = this.repository.deviationProjectCostByManagerId(managerId);
-		minimumProjectCost = this.repository.minimumProjectCostByManagerId(managerId);
-		maximumProjectCost = this.repository.maximumProjectCostByManagerId(managerId);
-		// Saving the data
-		dashboard.setTotalUserStoriesWithPriorityMust(totalUserStoriesWithPriorityMust);
-		dashboard.setTotalUserStoriesWithPriorityShould(totalUserStoriesWithPriorityShould);
-		dashboard.setTotalUserStoriesWithPriorityCould(totalUserStoriesWithPriorityCould);
-		dashboard.setTotalUserStoriesWithPriorityWont(totalUserStoriesWithPriorityWont);
-		dashboard.setAverageUserStoriesEstimatedCost(averageUserStoriesEstimatedCost);
-		dashboard.setDeviationUserStoriesEstimatedCost(deviationUserStoriesEstimatedCost);
-		dashboard.setMinimumUserStoriesEstimatedCost(minimumUserStoriesEstimatedCost);
-		dashboard.setMaximumUserStoriesEstimatedCost(maximumUserStoriesEstimatedCost);
-		dashboard.setAverageProjectCost(averageProjectCost);
-		dashboard.setDeviationProjectCost(deviationProjectCost);
-		dashboard.setMinimumProjectCost(minimumProjectCost);
-		dashboard.setMaximumProjectCost(maximumProjectCost);
+		Collection<Project> projects = this.repository.findAllProjectsByManagerId(managerId);
+		Collection<UserStory> userStories = this.repository.findAllUserStoriesByManagerId(managerId);
+
+		dashboard.setTotalUserStoriesWithPriorityMust(0);
+		dashboard.setTotalUserStoriesWithPriorityShould(0);
+		dashboard.setTotalUserStoriesWithPriorityCould(0);
+		dashboard.setTotalUserStoriesWithPriorityWont(0);
+		dashboard.setAverageUserStoriesEstimatedCost(Double.NaN);
+		dashboard.setDeviationUserStoriesEstimatedCost(Double.NaN);
+		dashboard.setMinimumUserStoriesEstimatedCost(Double.NaN);
+		dashboard.setMaximumUserStoriesEstimatedCost(Double.NaN);
+		dashboard.setAverageProjectCost(Double.NaN);
+		dashboard.setDeviationProjectCost(Double.NaN);
+		dashboard.setMinimumProjectCost(Double.NaN);
+		dashboard.setMaximumProjectCost(Double.NaN);
+
+		if (!userStories.isEmpty()) {
+			dashboard.setTotalUserStoriesWithPriorityMust(this.repository.totalUserStoriesByPriorityByManagerId(managerId, StoryPriority.MUST));
+			dashboard.setTotalUserStoriesWithPriorityShould(this.repository.totalUserStoriesByPriorityByManagerId(managerId, StoryPriority.SHOULD));
+			dashboard.setTotalUserStoriesWithPriorityCould(this.repository.totalUserStoriesByPriorityByManagerId(managerId, StoryPriority.COULD));
+			dashboard.setTotalUserStoriesWithPriorityWont(this.repository.totalUserStoriesByPriorityByManagerId(managerId, StoryPriority.WONT));
+			dashboard.setAverageUserStoriesEstimatedCost(this.repository.averageUserStoriesEstimatedCostByManagerId(managerId));
+			dashboard.setDeviationUserStoriesEstimatedCost(this.repository.deviationUserStoriesEstimatedCostByManagerId(managerId));
+			dashboard.setMinimumUserStoriesEstimatedCost(this.repository.minimumUserStoriesEstimatedCostByManagerId(managerId));
+			dashboard.setMaximumUserStoriesEstimatedCost(this.repository.maximumUserStoriesEstimatedCostByManagerId(managerId));
+
+		}
+
+		if (!projects.isEmpty()) {
+			dashboard.setAverageProjectCost(this.repository.averageProjectCostByManagerId(managerId));
+			dashboard.setDeviationProjectCost(this.repository.deviationProjectCostByManagerId(managerId));
+			dashboard.setMinimumProjectCost(this.repository.minimumProjectCostByManagerId(managerId));
+			dashboard.setMaximumProjectCost(this.repository.maximumProjectCostByManagerId(managerId));
+		}
 
 		super.getBuffer().addData(dashboard);
 

@@ -1,11 +1,14 @@
 
 package acme.features.manager.userStories;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.entities.projectUserStories.ProjectUserStory;
 import acme.entities.userStory.UserStory;
 import acme.roles.Manager;
 
@@ -52,14 +55,15 @@ public class ManagerUserStoryDeleteService extends AbstractService<Manager, User
 	@Override
 	public void validate(final UserStory object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("estimatedCost"))
-			super.state(object.getEstimatedCost() > 0, "estimatedCost", "manager.user-story.form.error.negative-cost");
 	}
 
 	@Override
 	public void perform(final UserStory object) {
 		assert object != null;
 
+		Collection<ProjectUserStory> pus = this.repository.findProjectUserStoryByUserStoryById(object.getId());
+
+		this.repository.deleteAll(pus);
 		this.repository.delete(object);
 	}
 

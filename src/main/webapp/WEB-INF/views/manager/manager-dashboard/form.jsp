@@ -38,7 +38,7 @@
 			<acme:message code="manager.dashboard.form.label.total-could-priority-user-stories"/>
 		</th>
 		<td>
-			<acme:print value="${totalUserStoriesWithPriorityShould}"/>
+			<acme:print value="${totalUserStoriesWithPriorityCould}"/>
 		</td>
 	</tr>	
 	<tr>

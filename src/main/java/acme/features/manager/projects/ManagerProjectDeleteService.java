@@ -1,7 +1,7 @@
 
 package acme.features.manager.projects;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -34,15 +34,17 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int projectId;
+		Manager manager;
+		Project project;
 
-		final Principal principal = super.getRequest().getPrincipal();
-		final int userAccountId = principal.getAccountId();
+		projectId = super.getRequest().getData("id", int.class);
+		project = this.repository.findOneProjectById(projectId);
 
-		masterId = super.getRequest().getData("id", int.class);
-		Project project = this.repository.findOneProjectById(masterId);
-		Manager manager = project == null ? null : project.getManager();
-		status = project != null && project.isDraftMode() && principal.hasRole(manager) && project.getManager().getUserAccount().getId() == userAccountId;
+		Principal principal = super.getRequest().getPrincipal();
+		manager = this.repository.findOneManagerById(principal.getActiveRoleId());
+
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -73,55 +75,55 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	@Override
 	public void perform(final Project object) {
 		assert object != null;
-		List<Contract> contracts;
-		List<ProgressLog> progressLogs;
+		Collection<Contract> contracts;
+		Collection<ProgressLog> progressLogs;
 
-		List<Sponsorship> sponsorShips;
-		List<Invoice> invoices;
+		Collection<Sponsorship> sponsorShips;
+		Collection<Invoice> invoices;
 
-		List<CodeAudits> codeAudits;
-		List<AuditRecords> auditRecords;
+		Collection<CodeAudits> codeAudits;
+		Collection<AuditRecords> auditRecords;
 
-		List<TrainingModule> trainingModule;
-		List<TrainingSession> trainingSession;
+		Collection<TrainingModule> trainingModule;
+		Collection<TrainingSession> trainingSession;
 
-		List<ProjectUserStory> projectUserStories;
+		Collection<ProjectUserStory> projectUserStories;
 		int id = object.getId();
 
 		// SponsorShip e invoices
-		sponsorShips = (List<Sponsorship>) this.repository.findManySponsorshipsByProjectId(id);
+		sponsorShips = this.repository.findManySponsorshipsByProjectId(id);
 		if (sponsorShips != null) {
 			Set<Integer> sponsorShipIds = sponsorShips.stream().map(AbstractEntity::getId).collect(Collectors.toSet());
-			invoices = (List<Invoice>) this.repository.findManyInvoicesBySponsorshipIds(sponsorShipIds);
+			invoices = this.repository.findManyInvoicesBySponsorshipIds(sponsorShipIds);
 			this.repository.deleteAll(invoices);
 			this.repository.deleteAll(sponsorShips);
 		}
 
 		// Contracts y progressLogs
-		contracts = (List<Contract>) this.repository.findManyContractsByProjectId(id);
+		contracts = this.repository.findManyContractsByProjectId(id);
 		if (contracts != null) {
 			Set<Integer> contractIds = contracts.stream().map(AbstractEntity::getId).collect(Collectors.toSet());
-			progressLogs = (List<ProgressLog>) this.repository.findManyProgressLogsByContractIds(contractIds);
+			progressLogs = this.repository.findManyProgressLogsByContractIds(contractIds);
 			this.repository.deleteAll(progressLogs);
 			this.repository.deleteAll(contracts);
 		}
 		//ProjectUserStories
-		projectUserStories = (List<ProjectUserStory>) this.repository.findProjectUserStoriesByProjectId(id);
+		projectUserStories = this.repository.findProjectUserStoriesByProjectId(id);
 
 		//CodeAudtis y auditRecords
-		codeAudits = (List<CodeAudits>) this.repository.findManyCodeAuditsByProjectId(id);
+		codeAudits = this.repository.findManyCodeAuditsByProjectId(id);
 		if (codeAudits != null) {
 			Set<Integer> codeAuditsIds = codeAudits.stream().map(AbstractEntity::getId).collect(Collectors.toSet());
-			auditRecords = (List<AuditRecords>) this.repository.findManyAuditsRecordsByCodeAuditsId(codeAuditsIds);
+			auditRecords = this.repository.findManyAuditsRecordsByCodeAuditsId(codeAuditsIds);
 			this.repository.deleteAll(auditRecords);
 			this.repository.deleteAll(codeAudits);
 		}
 
 		//TrainingModule y TrainingSession 
-		trainingModule = (List<TrainingModule>) this.repository.findManyTrainingModuleByProjectId(id);
+		trainingModule = this.repository.findManyTrainingModuleByProjectId(id);
 		if (trainingModule != null) {
 			Set<Integer> trainingModuleIds = trainingModule.stream().map(AbstractEntity::getId).collect(Collectors.toSet());
-			trainingSession = (List<TrainingSession>) this.repository.findManyTrainingSessionByTrainingModuleId(trainingModuleIds);
+			trainingSession = this.repository.findManyTrainingSessionByTrainingModuleId(trainingModuleIds);
 			this.repository.deleteAll(trainingSession);
 			this.repository.deleteAll(trainingModule);
 		}
