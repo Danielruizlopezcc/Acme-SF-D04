@@ -89,6 +89,8 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.developer = Developer data
 master.menu.user-account.become-developer = Become a developer
+master.menu.user-account.manager = Manager data
+master.menu.user-account.become-manager = Become a manager
 
 # master.menu.client #########################################################
 

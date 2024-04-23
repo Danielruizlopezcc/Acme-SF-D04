@@ -95,6 +95,8 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.developer = Datos de desarrollador
 master.menu.user-account.become-developer = Hazte desarrollador
+master.menu.user-account.manager = Datos de manager
+master.menu.user-account.become-manager = Hazte manager
 
 # master.menu.client #########################################################
 
