@@ -35,7 +35,7 @@ public class Manager extends AbstractRole {
 	private String				certifications;
 
 	@URL
-	private String				link;
+	private String				optionalLink;
 
 	// Derived attributes -----------------------------------------------------
 
