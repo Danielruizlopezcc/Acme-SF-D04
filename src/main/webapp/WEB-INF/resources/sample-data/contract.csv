@@ -1,30 +1,30 @@
 key,code,instantiation-moment,provider-name,customer-name,goals,budget,draft-mode,key:project,key:client
-contract-01,CON-001,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-01
-contract-02,CON-002,2022/07/29 00:00,Provider2,Customer2,Project goals 2,"USD 2,500,000.00",false,project-02,client-02
-contract-03,CON-003,2022/07/29 00:00,Pr@v1der!124434,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-01
-contract-04,CON-004,2022/07/29 00:00,P1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-01
-contract-05,CON-005,2022/07/29 00:00,P,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-02
-contract-06,CON-006,2022/07/29 00:00,Próv!d3r12,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-01
-contract-07,CON-007,2022/07/29 00:00,Provider1Provider1Provider1Provider1Provider1Provider1Provider1Provider1Pro,Customer1,Project goals 1,"USD 1,000,000.00",false,project-03,client-01
-contract-08,CON-008,2022/07/29 00:00,貸んい建濯よ芝弾テソ,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-02
-contract-37,CON-037,2022/07/29 00:00,Provider1Provider1Provider1Provider1Provider1Provider1Provider1Provider1Pr,Customer1,Project goals 1,"USD 1,000,000.00",true,project-04,client-01
-contract-09,CON-009,2022/07/29 23:59,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-04,client-02
+contract-01,CON-001,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-01
+contract-02,CON-002,2022/07/03 12:30,Provider2,Customer2,Project goals 2,"USD 2,500,000.00",false,project-02,client-02
+contract-03,CON-003,2022/07/03 12:30,Pr@v1der!124434,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-01
+contract-04,CON-004,2022/07/03 12:30,P1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-01
+contract-05,CON-005,2022/07/03 12:30,P,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-02
+contract-06,CON-006,2022/07/03 12:30,Próv!d3r12,Customer1,Project goals 1,"USD 1,000,000.00",false,project-02,client-01
+contract-07,CON-007,2022/07/03 12:30,Provider1Provider1Provider1Provider1Provider1Provider1Provider1Provider1Pro,Customer1,Project goals 1,"USD 1,000,000.00",false,project-03,client-01
+contract-08,CON-008,2022/07/03 12:30,貸んい建濯よ芝弾テソ,Customer1,Project goals 1,"USD 1,000,000.00",false,project-01,client-02
+contract-37,CON-037,2022/07/03 12:30,Provider1Provider1Provider1Provider1Provider1Provider1Provider1Provider1Pr,Customer1,Project goals 1,"USD 1,000,000.00",true,project-04,client-01
+contract-09,CON-009,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-04,client-02
 contract-10,CON-010,2001/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-05,client-02
 contract-11,CON-011,2010/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-05,client-02
 contract-12,CON-012,2001/07/29 00:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-06,client-01
-contract-13,CON-013,2022/07/29 14:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-06,client-02
-contract-14,ABC-001,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-07,client-01
-contract-15,A-001,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-07,client-01
-contract-16,ZZZ-999,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-08,client-02
-contract-17,ZXY-001,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-09,client-02
-contract-18,HF-001,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-10,client-01
-contract-19,AZ-100,2022/07/29 00:00,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-11,client-01
-contract-20,CON-014,2022/07/29 00:00,Provider1,C!#4STMer1,Project goals 1,"USD 1,000,000.00",true,project-11,client-01
-contract-21,CON-015,2022/07/29 00:00,Provider1,C1,Project goals 1,"USD 1,000,000.00",true,project-12,client-02
-contract-22,CON-016,2022/07/29 00:00,Provider1,C,Project goals 1,"USD 1,000,000.00",true,project-13,client-02
+contract-13,CON-013,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-06,client-02
+contract-14,ABC-001,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",false,project-07,client-01
+contract-15,A-001,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-07,client-01
+contract-16,ZZZ-999,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-08,client-02
+contract-17,ZXY-001,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-09,client-02
+contract-18,HF-001,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-10,client-01
+contract-19,AZ-100,2022/07/03 12:30,Provider1,Customer1,Project goals 1,"USD 1,000,000.00",true,project-11,client-01
+contract-20,CON-014,2022/07/03 12:30,Provider1,C!#4STMer1,Project goals 1,"USD 1,000,000.00",true,project-11,client-01
+contract-21,CON-015,2022/07/03 12:30,Provider1,C1,Project goals 1,"USD 1,000,000.00",true,project-12,client-02
+contract-22,CON-016,2022/07/03 12:30,Provider1,C,Project goals 1,"USD 1,000,000.00",true,project-13,client-02
 contract-23,CON-017,2022/07/29 00:00,Provider1,Customer1Customer1Customer1Customer1Customer1Customer1Customer1Customer1325,Project goals 1,"USD 1,000,000.00",true,project-15,client-02
 contract-24,CON-018,2022/07/29 00:00,Provider1,Λορεμ ιπσθμ δολορ σιτ αμετ,Project goals 1,"USD 1,000,000.00",true,project-01,client-02
-contract-25,CON-019,2022/07/29 00:00,Provider1,Customer1Customer1Customer1Customer1Customer1Customer1Customer1Customer132,Project goals 1,"USD 1,000,000.00",true,project-14,client-02
+contract-25,CON-019,2022/07/03 12:30,Provider1,Customer1Customer1Customer1Customer1Customer1Customer1Customer1Customer132,Project goals 1,"USD 1,000,000.00",true,project-14,client-02
 contract-26,CON-020,2022/07/29 00:00,Provider1,Customer1,P,"USD 1,000,000.00",true,project-16,client-01
 contract-27,CON-021,2022/07/29 00:00,Provider1,Customer1,Pr,"USD 1,000,000.00",true,project-18,client-01
 contract-28,CON-022,2022/07/29 00:00,Provider1,Customer1,Esto es un objetivoEsto es un objetivoEsto es un objetivoEsto es un objetivoEsto es un objetivo!!!!!,"USD 1,000,000.00",true,project-17,client-01

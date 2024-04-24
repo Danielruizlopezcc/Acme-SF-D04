@@ -24,7 +24,7 @@ sponsor.sponsorship.list.label.type = Type
 sponsor.sponsorship.list.label.email-contact = Email contact
 sponsor.sponsorship.list.label.link = Link
 sponsor.sponsorship.list.label.project = Project
-sponsor.sponsorship.list.label.draftMode = Editable
+sponsor.sponsorship.list.label.draft-mode = Editable
 
 
 sponsor.sponsorship.form.label.code = Code:
@@ -36,7 +36,6 @@ sponsor.sponsorship.form.label.type = Type:
 sponsor.sponsorship.form.label.email-contact = Email contact (optional):
 sponsor.sponsorship.form.label.link = Link (optional):
 sponsor.sponsorship.form.label.project = Project:
-sponsor.sponsorship.form.label.draftMode = Editable:
 
 sponsor.sponsorship.list.button.create-form = Create Sponsorship
 
@@ -45,10 +44,10 @@ sponsor.sponsorship.form.button.update = Update
 sponsor.sponsorship.form.button.delete = Delete
 sponsor.sponsorship.form.button.publish = Publish
 
-
 sponsor.sponsorship.form.button.invoices-list = List invoices
 
-sponsor.sponsorship.form.error.duration-not-valid = Duration must be at least one month long
-sponsor.sponsorship.form.error.amount-must-be-positive = Amount must be positive
-
-
+sponsor.sponsorship.form.error.duration-start-date-not-valid = The start date of the duration must be after the present date
+sponsor.sponsorship.form.error.duration-not-valid = The sponsorship duration must be at least one month. The start date must be before the end date
+sponsor.sponsorship.form.error.amount-must-be-positive = The amount of money must be positive
+sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-not-equal = The total amount of sponsorship and the sum of the invoices values ​​must be equal
+sponsor.sponsorship.form.error.currency-not-supported = Selected currency is not supported by the system

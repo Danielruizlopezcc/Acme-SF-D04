@@ -2,6 +2,9 @@
 package acme.features.client.dashboard;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +14,7 @@ import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.contract.Contract;
 import acme.entities.progressLogs.ProgressLog;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.forms.ClientDashboard;
 import acme.roles.clients.Client;
 
@@ -36,23 +40,25 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 
 		ClientDashboard clientDashboard;
 
-		//Double totalNumProgressLogLessThan25;
-		//Double totalNumProgressLogBetween25And50;
-		//Double totalNumProgressLogBetween50And75;
-		//Double totalNumProgressLogAbove75;
-		//Double averageBudget;
-		//Double deviationBudget;
-		//Double minimumBudget;
-		//Double maximumBudget;
-
 		clientDashboard = new ClientDashboard();
 
 		Collection<ProgressLog> progressLogsPublished = this.repository.findAllProgressLogs().stream().filter(x -> !x.isDraftMode()).toList();
 		Collection<Contract> myPublishedContracts = this.repository.findManyContractsByClientId(clientId).stream().filter(x -> !x.isDraftMode()).toList();
 		Collection<Integer> myContractsIds = myPublishedContracts.stream().map(x -> x.getId()).toList();
 		Collection<Money> myBudgets = this.repository.findManyBudgetsByClientId(clientId); //this only considers published contracts.
-		Collection<Double> myBudgetsAmount = myBudgets.stream().map(x -> x.getAmount()).toList();
+		Map<String, List<Money>> budgetsByCurrency = myBudgets.stream().collect(Collectors.groupingBy(Money::getCurrency));
 
+		Map<String, Double> mediaPorCurrency = budgetsByCurrency.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> this.calcularMedia(entry.getValue()).getAmount()));
+
+		Map<String, Double> maximoPorCurrency = budgetsByCurrency.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> this.calcularMaximo(entry.getValue()).getAmount()));
+
+		Map<String, Double> minimoPorCurrency = budgetsByCurrency.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> this.calcularMinimo(entry.getValue()).getAmount()));
+
+		Map<String, Double> desviacionPorCurrency = budgetsByCurrency.entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, entry -> this.calcularDesviacion(entry.getValue()).getAmount()));
+
+		List<SystemConfiguration> systemConfiguration = this.repository.findSystemConfiguration();
+
+		String[] supportedCurrencies = systemConfiguration.get(0).acceptedCurrencies.split(",");
 		//my progress logs less than 25
 		double totalNumProgressLogLessThan25 = progressLogsPublished.stream().filter(x -> myContractsIds.contains(x.getContract().getId())).filter(x -> x.getCompleteness() < 25.0).count();
 		// PL between 25 and 50
@@ -61,23 +67,18 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		double totalNumProgressLogBetween50and75 = progressLogsPublished.stream().filter(x -> myContractsIds.contains(x.getContract().getId())).filter(x -> x.getCompleteness() > 50.0 && x.getCompleteness() <= 75.0).count();
 		// PL above 75
 		double totalNumProgressLogAbove75 = progressLogsPublished.stream().filter(x -> myContractsIds.contains(x.getContract().getId())).filter(x -> x.getCompleteness() > 75.0).count();
-		//average
-		Money averageBudget = this.calcularMedia(myBudgets);
-		//deviation
-		Money deviation = this.calcularDesviacion(myBudgets);
-		//min
-		Money minimunBudget = this.calcularMinimo(myBudgets);
-		//max
-		Money maximumBudget = this.calcularMaximo(myBudgets);
 
 		clientDashboard.setTotalNumProgressLogLessThan25(totalNumProgressLogLessThan25);
 		clientDashboard.setTotalNumProgressLogBetween25And50(totalNumProgressLogBetween25and50);
 		clientDashboard.setTotalNumProgressLogBetween50And75(totalNumProgressLogBetween50and75);
 		clientDashboard.setTotalNumProgressLogAbove75(totalNumProgressLogAbove75);
-		clientDashboard.setAverageBudget(averageBudget.getAmount());
-		clientDashboard.setDeviationBudget(deviation.getAmount());
-		clientDashboard.setMinimumBudget(minimunBudget.getAmount());
-		clientDashboard.setMaximumBudget(maximumBudget.getAmount());
+
+		clientDashboard.setMaximumPerCurrency(maximoPorCurrency);
+		clientDashboard.setMinimumPerCurrency(minimoPorCurrency);
+		clientDashboard.setAveragePerCurrency(mediaPorCurrency);
+		clientDashboard.setDeviationPerCurrency(desviacionPorCurrency);
+
+		clientDashboard.setSupportedCurrencies(supportedCurrencies);
 		super.getBuffer().addData(clientDashboard);
 
 	}
@@ -88,8 +89,8 @@ public class ClientDashboardShowService extends AbstractService<Client, ClientDa
 		Dataset dataset;
 
 		dataset = super.unbind(object, "totalNumProgressLogLessThan25", "totalNumProgressLogBetween25And50", //
-			"totalNumProgressLogBetween50And75", "totalNumProgressLogAbove75", "averageBudget", "deviationBudget", //
-			"minimumBudget", "maximumBudget");
+			"totalNumProgressLogBetween50And75", "totalNumProgressLogAbove75", //
+			"maximumPerCurrency", "minimumPerCurrency", "averagePerCurrency", "deviationPerCurrency", "supportedCurrencies");
 
 		super.getResponse().addData(dataset);
 

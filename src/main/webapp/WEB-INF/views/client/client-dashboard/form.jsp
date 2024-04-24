@@ -52,36 +52,46 @@
 			<acme:print value="${totalNumProgressLogAbove75}"/>
 		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.dashboard.form.label.contract-average"/>
-		</th>
-		<td>
-			<acme:print value="${averageBudget}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.dashboard.form.label.contract-deviation"/>
-		</th>
-		<td>
-			<acme:print value="${deviationBudget}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="client.dashboard.form.label.contract-minimum"/>
-		</th>
-		<td>
-			<acme:print value="${minimumBudget}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="client.dashboard.form.label.contract-maximum"/>
-		</th>
-		<td>
-			<acme:print value="${maximumBudget}"/>
-		</td>
-	</tr>			
-</table>
+	</table>
+
+<jstl:forEach var="currency" items="${supportedCurrencies}">
+    <h2>
+        <acme:message code="client.dashboard.form.label.contract-indicators"/>
+        <acme:message code="${currency}"/>
+    </h2>
+
+    <table class="table table-sm">
+        <tr>
+            <th scope="row">
+                <acme:message code="client.dashboard.form.label.contract-average"/>
+            </th>
+            <td>
+                <acme:print value="${averagePerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="client.dashboard.form.label.contract-deviation"/>
+            </th>
+            <td>
+                <acme:print value="${deviationPerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="client.dashboard.form.label.contract-minimum"/>
+            </th>
+            <td>
+                <acme:print value="${minimumPerCurrency[currency]}"/>
+            </td>
+        </tr>   
+        <tr>
+            <th scope="row">
+                <acme:message code="client.dashboard.form.label.contract-maximum"/>
+            </th>
+            <td>
+                <acme:print value="${maximumPerCurrency[currency]}"/>
+            </td>
+        </tr>
+    </table>
+</jstl:forEach>

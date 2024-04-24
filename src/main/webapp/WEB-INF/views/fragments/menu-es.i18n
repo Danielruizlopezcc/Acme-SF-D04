@@ -25,6 +25,7 @@ master.menu.anonymous.alberto.favourite-link = 29643371M: Carmona Sicre, Alberto
 master.menu.anonymous.marco.favourite-link = 20064731Z: Padilla Gómez, Marco
 master.menu.anonymous.published-modules = Ver todos los módulos de entrenamiento publicados
 master.menu.authenticated.published-projects = Ver todos los proyectos publicados
+master.menu.anonymous.list.claim = Ver todas las reclamaciones
 
 # master.menu.authenticated #######################################################
 
@@ -32,6 +33,7 @@ master.menu.auth = Autenticado
 master.menu.authenticated.published-modules = Ver todos los módulos de entrenamiento publicados
 
 master.menu.anonymous.list-contracts = Ver todos los contratos publicados
+master.menu.authenticated.list.claim = Ver todas las reclamaciones
 
 master.menu.authenticated.published-projects = Ver todos los proyectos publicados
 
@@ -49,7 +51,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.list.banner = Listar los banners
 master.menu.administrator.shut-down = Parar el sistema
 
-
+master.menu.administrator.show.system-configuration = Mostrar la configuración del sistema
 
 # master.menu.provider ########################################################
 
@@ -84,9 +86,6 @@ master.menu.developer.dashboard = Panel del desarrollador
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.list-sponsorship = Listar mis patrocinios
 master.menu.sponsor.show = Mostrar mis patrocinios
-master.menu.sponsor.create = Crear un patrocinio
-master.menu.sponsor.update = Actualizar patrocinio
-master.menu.sponsor.delete = Eliminar patrocinio
 
 # master.menu.user-account ####################################################
 

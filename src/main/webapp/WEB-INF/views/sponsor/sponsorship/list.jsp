@@ -25,7 +25,7 @@
 	<acme:list-column code="sponsor.sponsorship.list.label.email-contact" path="emailContact" width="10%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.link" path="link" width="10%"/>
 	<acme:list-column code="sponsor.sponsorship.list.label.project" path="project" width="10%"/>
-	<acme:list-column code="sponsor.sponsorship.list.label.draftMode" path="draftMode" width="10%"/>
+	<acme:list-column code="sponsor.sponsorship.list.label.draft-mode" path="draftMode" width="10%"/>
 		
 </acme:list>
 

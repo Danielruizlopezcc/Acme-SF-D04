@@ -12,7 +12,8 @@ client.client-dashboard.form.title = Panel de Indicadores de cliente
 
 # Subtítulo
 
-client.dashboard.form.title.general-indicators = Indicadores generales
+client.dashboard.form.title.general-indicators = Indicadores generales para registros de progreso publicados
+client.dashboard.form.label.contract-indicators =Indicadores generales para contratos publicados 
 
 # Valores del formulario
 

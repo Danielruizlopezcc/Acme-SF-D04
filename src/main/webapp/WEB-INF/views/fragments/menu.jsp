@@ -30,15 +30,19 @@
       		<acme:menu-suboption code="master.menu.anonymous.list-contracts" action="/any/contract/list"/>
       		<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.anonymous.published-projects" action="/any/project/list"/>
-      		
+      		<acme:menu-suboption code="master.menu.anonymous.list.claim" action="/any/claim/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code= "master.menu.anonymous.list-contracts" action="/any/contract/list"/>
 			<acme:menu-separator/>
-      <acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
-      <acme:menu-separator/>
+		    <acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
+		    <acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.authenticated.published-projects" action="/any/project/list"/>
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.authenticated.list.claim" action="/any/claim/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -50,6 +54,8 @@
 			<acme:menu-suboption code="master.menu.administrator.list.banner" action="/administrator/banner/list" access="isAuthenticated()"/>			
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/system/shut-down"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.show.system-configuration" action="/administrator/system-configuration/show" access="isAuthenticated()"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
