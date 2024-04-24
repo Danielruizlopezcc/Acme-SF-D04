@@ -23,8 +23,6 @@ public class ManagerUserStoryListByProyectService extends AbstractService<Manage
 	@Autowired
 	protected ManagerUserStoryRepository repository;
 
-	// AbstractService<Authenticated, Consumer> ---------------------------
-
 
 	@Override
 	public void authorise() {

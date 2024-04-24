@@ -1,13 +1,17 @@
 
 package acme.features.manager.projectUserStories;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
+import acme.entities.project.Project;
 import acme.entities.projectUserStories.ProjectUserStory;
+import acme.entities.userStory.UserStory;
 import acme.roles.Manager;
 
 @Service
@@ -19,29 +23,34 @@ public class ManagerProjectUserStoriesDeleteService extends AbstractService<Mana
 
 	@Override
 	public void authorise() {
-		int id = super.getRequest().getData("id", int.class);
-		ProjectUserStory projectUserStory = this.repository.findProjectUserStoryById(id);
+		boolean status;
+		int masterId;
+		ProjectUserStory projectUserStory;
+		Manager manager;
 
-		final Principal principal = super.getRequest().getPrincipal();
-		final int userAccountId = principal.getAccountId();
+		masterId = super.getRequest().getData("id", int.class);
+		projectUserStory = this.repository.findProjectUserStoryById(masterId);
+		manager = projectUserStory == null ? null : this.repository.findOneManagerByProjectUserStoryId(masterId);
+		status = projectUserStory != null && super.getRequest().getPrincipal().hasRole(manager);
 
-		final boolean authorise = projectUserStory != null && projectUserStory.getProject().getManager().getUserAccount().getId() == userAccountId;
-
-		super.getResponse().setAuthorised(authorise);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		int id = super.getRequest().getData("id", int.class);
-		ProjectUserStory projectUserStories = this.repository.findProjectUserStoryById(id);
+		ProjectUserStory object;
+		int id;
 
-		super.getBuffer().addData(projectUserStories);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findProjectUserStoryById(id);
+
+		super.getBuffer().addData(object);
 	}
 
 	@Override
 	public void bind(final ProjectUserStory object) {
 		assert object != null;
-		super.bind(object, "userStory");
+		super.bind(object, "userStory", "project");
 
 	}
 
@@ -60,9 +69,26 @@ public class ManagerProjectUserStoriesDeleteService extends AbstractService<Mana
 	public void unbind(final ProjectUserStory object) {
 		assert object != null;
 
+		Collection<UserStory> userStories;
+		Collection<Project> projects;
+		SelectChoices choicesUserStories;
+		SelectChoices choicesProjects;
 		Dataset dataset;
+		int managerId;
 
-		dataset = super.unbind(object, "userStory");
+		managerId = super.getRequest().getPrincipal().getActiveRoleId();
+
+		userStories = this.repository.findUserStoriesByManagerId(managerId);
+		choicesUserStories = SelectChoices.from(userStories, "title", object.getUserStory());
+
+		projects = this.repository.findProjectsByManagerId(managerId);
+		choicesProjects = SelectChoices.from(projects, "code", object.getProject());
+
+		dataset = super.unbind(object, "userStory", "project");
+		dataset.put("userStory", choicesUserStories.getSelected().getKey());
+		dataset.put("userStories", choicesUserStories);
+		dataset.put("project", choicesProjects.getSelected().getKey());
+		dataset.put("projects", choicesProjects);
 
 		super.getResponse().addData(dataset);
 	}

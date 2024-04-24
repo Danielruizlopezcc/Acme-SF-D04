@@ -59,4 +59,7 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	@Query("select ts from TrainingSession ts where ts.trainingModule.id IN :id")
 	Collection<TrainingSession> findManyTrainingSessionByTrainingModuleId(Set<Integer> id);
 
+	//	@Query("select s from SystemConfiguration s")
+	//	Collection<SystemConfiguration> findSystemConfiguration();
+
 }

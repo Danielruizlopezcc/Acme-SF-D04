@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
@@ -24,15 +23,11 @@ public class ManagerProjectUserStoriesCreateService extends AbstractService<Mana
 
 	@Override
 	public void authorise() {
-		final int projectId = super.getRequest().getData("projectId", int.class);
-		Project project = this.repository.findProjectById(projectId);
+		boolean status;
 
-		final Principal principal = super.getRequest().getPrincipal();
-		final int userAccountId = principal.getAccountId();
+		status = super.getRequest().getPrincipal().hasRole(Manager.class);
 
-		final boolean authorise = project != null && project.isDraftMode() && principal.hasRole(Manager.class) && project.getManager().getUserAccount().getId() == userAccountId;
-
-		super.getResponse().setAuthorised(authorise);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -49,44 +44,65 @@ public class ManagerProjectUserStoriesCreateService extends AbstractService<Mana
 	}
 
 	@Override
-	public void validate(final ProjectUserStory object) {
+	public void perform(final ProjectUserStory object) {
 		assert object != null;
-		final int projectId = super.getRequest().getData("masterId", int.class);
 
-		if (!super.getBuffer().getErrors().hasErrors("userStory")) {
-			final boolean userStoriesDuplicated = this.repository.findProjectUserStoryByProjectId(projectId).stream().anyMatch(a -> a.getUserStory().equals(object.getUserStory()));
-
-			super.state(!userStoriesDuplicated, "userStory", "manager.project.form.error.duplicated-user-story");
-		}
-
+		this.repository.save(object);
 	}
 
 	@Override
-	public void perform(final ProjectUserStory object) {
+	public void validate(final ProjectUserStory object) {
 		assert object != null;
-		this.repository.save(object);
+		Project project;
+		UserStory userStory;
+
+		project = object.getProject();
+		userStory = object.getUserStory();
+
+		if (!super.getBuffer().getErrors().hasErrors("project")) {
+			ProjectUserStory existing;
+
+			existing = this.repository.findOneProjectUserStoryByProjectIdAndUserStoryId(project.getId(), userStory.getId());
+			super.state(existing == null, "project", "manager.project-user-story.form.error.existing-project-assignation");
+
+			super.state(project.isDraftMode() || !userStory.isDraftMode(), "project", "manager.project-user-story.form.error.published-project");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("userStory")) {
+			ProjectUserStory existing;
+
+			existing = this.repository.findOneProjectUserStoryByProjectIdAndUserStoryId(project.getId(), userStory.getId());
+			super.state(existing == null, "userStory", "manager.project-user-story.form.error.existing-project-assignation");
+
+			super.state(project.isDraftMode() || !userStory.isDraftMode(), "userStory", "manager.project-user-story.form.error.published-project");
+		}
+
 	}
 
 	@Override
 	public void unbind(final ProjectUserStory object) {
 		assert object != null;
 
+		Collection<UserStory> userStories;
+		Collection<Project> projects;
+		SelectChoices choicesUserStories;
+		SelectChoices choicesProjects;
 		Dataset dataset;
+		int managerId;
 
-		int id = super.getRequest().getPrincipal().getActiveRoleId();
-		SelectChoices projectChoices;
-		SelectChoices userStoriesChoices;
+		managerId = super.getRequest().getPrincipal().getActiveRoleId();
 
-		Collection<Project> projects = this.repository.findProjectsByManagerId(id);
-		Collection<UserStory> userStories = this.repository.findUserStoriesByManagerId(id);
+		userStories = this.repository.findUserStoriesByManagerId(managerId);
+		choicesUserStories = SelectChoices.from(userStories, "title", object.getUserStory());
 
-		projectChoices = SelectChoices.from(projects, "code", object.getProject());
-		userStoriesChoices = SelectChoices.from(userStories, "title", object.getUserStory());
+		projects = this.repository.findProjectsByManagerId(managerId);
+		choicesProjects = SelectChoices.from(projects, "code", object.getProject());
 
-		dataset = super.unbind(object, "project", "userStory");
-
-		dataset.put("projects", projectChoices);
-		dataset.put("userStories", userStoriesChoices);
+		dataset = super.unbind(object, "userStory", "project");
+		dataset.put("userStory", choicesUserStories.getSelected().getKey());
+		dataset.put("userStories", choicesUserStories);
+		dataset.put("project", choicesProjects.getSelected().getKey());
+		dataset.put("projects", choicesProjects);
 
 		super.getResponse().addData(dataset);
 	}

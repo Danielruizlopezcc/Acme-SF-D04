@@ -48,8 +48,8 @@ public class ManagerUserStoryCreateService extends AbstractService<Manager, User
 	@Override
 	public void validate(final UserStory object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("estimated-cost"))
-			super.state(object.getEstimatedCost() > 0, "estimated-cost", "manager.user-story.form.error.negative-cost");
+		if (!super.getBuffer().getErrors().hasErrors("estimateCost"))
+			super.state(object.getEstimatedCost() > 0, "estimateCost", "manager.user-story.form.error.negative-cost");
 	}
 
 	@Override
