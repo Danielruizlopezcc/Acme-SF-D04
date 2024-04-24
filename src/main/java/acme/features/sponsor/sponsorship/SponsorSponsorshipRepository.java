@@ -37,4 +37,7 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select p from Project p")
 	Collection<Project> findAllProjects();
 
+	@Query("select s from SystemConfiguration s")
+	List<SystemConfiguration> findSystemConfiguration();
+
 }

@@ -21,10 +21,10 @@ sponsor.sponsorship.list.label.duration-start = Inicio de la duración
 sponsor.sponsorship.list.label.duration-end = Fin de la duración
 sponsor.sponsorship.list.label.amount = Cantidad
 sponsor.sponsorship.list.label.type = Tipo
-sponsor.sponsorship.list.label.email-contact = Correo de contacto (opcional)
-sponsor.sponsorship.list.label.link = Enlace (opcional)
+sponsor.sponsorship.list.label.email-contact = Correo de contacto
+sponsor.sponsorship.list.label.link = Enlace
 sponsor.sponsorship.list.label.project = Proyecto
-sponsor.sponsorship.list.label.draftMode = Editable
+sponsor.sponsorship.list.label.draft-mode = Editable
 
 
 sponsor.sponsorship.form.label.code = Código:
@@ -36,7 +36,6 @@ sponsor.sponsorship.form.label.type = Tipo:
 sponsor.sponsorship.form.label.email-contact = Correo de contacto (opcional):
 sponsor.sponsorship.form.label.link = Enlace (opcional):
 sponsor.sponsorship.form.label.project = Proyecto:
-sponsor.sponsorship.form.label.draftMode = Editable:
 
 sponsor.sponsorship.list.button.create-form = Crear patrocinio
 
@@ -46,7 +45,10 @@ sponsor.sponsorship.form.button.delete = Eliminar
 sponsor.sponsorship.form.button.publish = Publicar
 
 
-sponsor.sponsorship.form.button.invoices-list = Listar facturas
+sponsor.sponsorship.form.button.invoices = Listar facturas
 
-sponsor.sponsorship.form.error.duration-not-valid = La duración del patrocinio debe ser de al menos un mes
-sponsor.sponsorship.form.error.amount-must-be-positive = La cantidad de dinero no puede ser nula
+sponsor.sponsorship.form.error.duration-start-date-not-valid = El inicio de la fecha de duración debe ser posterior a la de momento
+sponsor.sponsorship.form.error.duration-not-valid = La duración del patrocinio debe ser de al menos un mes. La fecha de inicio debe ser anterior a la final
+sponsor.sponsorship.form.error.amount-must-be-positive = La cantidad de dinero debe ser positiva
+sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-not-equal = La cantidad total del patrocinio y la suma del valor de las facturas deben ser iguales
+sponsor.sponsorship.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema

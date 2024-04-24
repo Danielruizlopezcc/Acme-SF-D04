@@ -1,0 +1,45 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+sponsor.invoice.list.title = Listado de tus facturas
+sponsor.invoice.form.title = Formulario
+
+#Cabecera de listado de facturas
+
+sponsor.invoice.list.label.code = Código
+sponsor.invoice.list.label.registration-time = Momento de registro
+sponsor.invoice.list.label.due-date = Fecha de vencimiento
+sponsor.invoice.list.label.quantity = Cantidad
+sponsor.invoice.list.label.tax = Impuesto
+sponsor.invoice.list.label.link = Enlace
+sponsor.invoice.list.label.draftMode = Editable
+sponsor.invoice.list.label.total-amount = Cantidad total (con impuesto aplicado)
+
+#Cabecera de formulario de facturas
+
+sponsor.invoice.form.label.code = Código:
+sponsor.invoice.form.label.registration-time = Momento de registro:
+sponsor.invoice.form.label.due-date = Fecha de vencimiento:
+sponsor.invoice.form.label.quantity = Cantidad:
+sponsor.invoice.form.label.tax = Impuesto:
+sponsor.invoice.form.label.link = Enlace (opcional):
+
+sponsor.invoice.list.button.create-form = Crear factura
+
+sponsor.invoice.form.button.create-invoice = Crear
+sponsor.invoice.form.button.update = Actualizar
+sponsor.invoice.form.button.delete = Eliminar
+sponsor.invoice.form.button.publish = Publicar
+
+sponsor.invoice.form.error.due-date-not-valid = La fecha de vencimiento debe ser posterior a la de registro. La duración debe ser de al menos un mes
+sponsor.invoice.form.error.quantity-must-be-positive = La cantidad de dinero debe ser positiva
+sponsor.invoice.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema
