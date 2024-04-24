@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.invoice.Invoice;
 import acme.entities.sponsorship.Sponsorship;
+import acme.entities.systemconf.SystemConfiguration;
 
 @Repository
 public interface SponsorInvoiceRepository extends AbstractRepository {

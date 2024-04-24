@@ -11,6 +11,7 @@ import acme.client.repositories.AbstractRepository;
 import acme.entities.invoice.Invoice;
 import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.roles.Sponsor;
 
 @Repository

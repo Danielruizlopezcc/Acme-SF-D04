@@ -18,6 +18,7 @@ import acme.entities.invoice.Invoice;
 import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.entities.sponsorship.SponsorshipType;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.roles.Sponsor;
 
 @Service
