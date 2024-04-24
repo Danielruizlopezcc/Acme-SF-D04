@@ -41,7 +41,8 @@ client.contract.form.code.placeholder = [A-Z]{1,3}-[0-9]{3}
 #errores en el formulario
 client.contract.form.error.duplicated = This code is already in use
 client.contract.form.error.excededBudget = The budget you entered exceeds the total cost of the project. Please enter a budget that is within the project's budget constraints
-client.contract.form.error.negative-amount: Negative amounts are not allowed
+client.contract.form.error.negative-amount = Negative amounts are not allowed
+client.contract.form.error.currency-not-suported = Currency not supported. Supported currencies are EUR, USD, and GBP
 
 #submits
 
