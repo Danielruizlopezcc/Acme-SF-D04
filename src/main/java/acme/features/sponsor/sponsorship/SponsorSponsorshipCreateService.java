@@ -90,7 +90,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("amount"))
-			super.state(object.getAmount().getAmount() >= 0, "amount", "sponsor.sponsorship.form.error.amount-must-be-positive");
+			super.state(object.getAmount().getAmount() > 0, "amount", "sponsor.sponsorship.form.error.amount-must-be-positive");
 	}
 
 	@Override

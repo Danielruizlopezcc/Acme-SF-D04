@@ -45,8 +45,6 @@ public class SponsorInvoiceShowService extends AbstractService<Sponsor, Invoice>
 	public void unbind(final Invoice object) {
 		assert object != null;
 
-		assert object != null;
-
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "registrationTime", "dueDate", "quantity", "tax", "link", "draftMode");

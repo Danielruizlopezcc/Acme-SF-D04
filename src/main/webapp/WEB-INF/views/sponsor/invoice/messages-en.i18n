@@ -20,8 +20,9 @@ sponsor.invoice.list.label.registration-time = Registration time
 sponsor.invoice.list.label.due-date = Due date
 sponsor.invoice.list.label.quantity = Quantity
 sponsor.invoice.list.label.tax = Tax
-sponsor.invoice.list.label.link = Link (optional)
+sponsor.invoice.list.label.link = Link
 sponsor.invoice.list.label.draftMode = Editable
+sposnor.invoice.list.label.total-amount =Total amount (including tax)
 
 #Cabecera de formulario de facturas
 
@@ -31,7 +32,6 @@ sponsor.invoice.form.label.due-date = Due date:
 sponsor.invoice.form.label.quantity = Quantity:
 sponsor.invoice.form.label.tax = Tax:
 sponsor.invoice.form.label.link = Link (optional):
-sponsor.invoice.form.label.draftMode = Editable:
 
 sponsor.invoice.list.button.create-form = Create invoice
 

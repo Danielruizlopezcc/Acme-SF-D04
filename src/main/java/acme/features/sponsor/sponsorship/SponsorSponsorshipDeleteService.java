@@ -24,7 +24,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void authorise() {
-		Boolean status;
+		boolean status;
 		int masterId;
 		Sponsorship sponsorship;
 		Sponsor sponsor;

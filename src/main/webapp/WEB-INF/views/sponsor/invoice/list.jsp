@@ -27,6 +27,6 @@
 		
 </acme:list>
 
-<jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="sponsor.invoice.list.button.create-form" action="/sponsor/invoice/create"/>
+<jstl:if test="${_command == 'list'}">
+	<acme:button code="sponsor.invoice.list.button.create-form" action="/sponsor/invoice/create?masterId=${masterId}"/>
 </jstl:if>

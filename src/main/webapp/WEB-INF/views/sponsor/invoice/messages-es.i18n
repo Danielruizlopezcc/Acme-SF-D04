@@ -20,8 +20,9 @@ sponsor.invoice.list.label.registration-time = Momento de registro
 sponsor.invoice.list.label.due-date = Fecha de vencimiento
 sponsor.invoice.list.label.quantity = Cantidad
 sponsor.invoice.list.label.tax = Impuesto
-sponsor.invoice.list.label.link = Enlace (opcional)
+sponsor.invoice.list.label.link = Enlace
 sponsor.invoice.list.label.draftMode = Editable
+sponsor.invoice.list.label.total-amount = Cantidad total (con impuesto aplicado)
 
 #Cabecera de formulario de facturas
 
@@ -31,7 +32,6 @@ sponsor.invoice.form.label.due-date = Fecha de vencimiento:
 sponsor.invoice.form.label.quantity = Cantidad:
 sponsor.invoice.form.label.tax = Impuesto:
 sponsor.invoice.form.label.link = Enlace (opcional):
-sponsor.invoice.form.label.draftMode = Editable:
 
 sponsor.invoice.list.button.create-form = Crear factura
 

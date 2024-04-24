@@ -79,9 +79,6 @@ master.menu.developer.dashboard = Developer Dashboard
 master.menu.sponsor = Sponsor
 master.menu.sponsor.list-sponsorship = List my sponsorships
 master.menu.sponsor.show = Show my sponsorships
-master.menu.sponsor.create = Create a sponsorship
-master.menu.sponsor.update = Update a sponsorship
-master.menu.sponsor.delete = Delete a sponsorship
 
 # master.menu.user-account ####################################################
 

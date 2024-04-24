@@ -2,10 +2,12 @@
 package acme.features.sponsor.invoice;
 
 import java.util.Collection;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.invoice.Invoice;
@@ -38,7 +40,7 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 		int masterId;
 
 		masterId = super.getRequest().getData("masterId", int.class);
-		invoices = this.repository.findAllInvoicesBySponsorshipId(masterId);
+		invoices = this.repository.findAllInvoicesByMasterId(masterId);
 
 		super.getBuffer().addData(invoices);
 	}
@@ -46,11 +48,27 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 	@Override
 	public void unbind(final Invoice object) {
 		assert object != null;
-
+		Money totalAmount = new Money();
+		Invoice invoice;
 		Dataset dataset;
+		double amount;
+		String currency;
 
-		dataset = super.unbind(object, "code", "registrationTime", "dueDate", "quantity", "tax", "link", "totalAmount", "draftMode");
+		invoice = this.repository.findOneInvoiceByCode(object.getCode());
+		currency = invoice.getQuantity().getCurrency();
+		amount = invoice.totalAmount();
 
+		totalAmount.setAmount(amount);
+		totalAmount.setCurrency(currency);
+		dataset = super.unbind(object, "code", "registrationTime", "dueDate", "quantity", "tax", "link", "draftMode");
+
+		if (object.isDraftMode()) {
+			final Locale local = super.getRequest().getLocale();
+			dataset.put("draftMode", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("draftMode", "No");
+
+		dataset.put("totalAmount", totalAmount);
 		super.getResponse().addData(dataset);
 	}
 
