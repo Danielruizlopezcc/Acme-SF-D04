@@ -56,7 +56,8 @@
 
 <jstl:forEach var="currency" items="${supportedCurrencies}">
     <h2>
-        General indicators for published contracts with currency ${currency}
+        <acme:message code="client.dashboard.form.label.contract-indicators"/>
+        <acme:message code="${currency}"/>
     </h2>
 
     <table class="table table-sm">

@@ -69,6 +69,7 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
 			super.state(existing == null || existing.equals(object), "recordId", "client.progressLog.form.error.duplicated");
 		}
+
 	}
 
 	@Override

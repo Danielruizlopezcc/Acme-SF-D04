@@ -43,6 +43,8 @@ client.progress-log.form.button.create = Create
 #errores
 
 client.progress-log.form.error.duplicated = This id is already in use
+client.progress-log.form.error.completeness-too-low = The latest completeness that was assigned to this contract was higher or equal than this value. Please ensure that the completeness value is higher than the previous value
+client.progress-log.form.error.registration-moment-must-be-later = The registration moment of the progress log must be later than the instantiation moment of the contract
 
 #placeholders
 
