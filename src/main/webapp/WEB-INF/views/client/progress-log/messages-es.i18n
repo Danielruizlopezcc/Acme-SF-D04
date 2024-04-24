@@ -40,6 +40,9 @@ client.progress-log.form.button.create = Crear
 
 client.progress-log.form.error.duplicated = Este identificador ya está en uso
 
+client.progress-log.form.error.completeness-too-low = El último valor de completitud que se asignó a este contrato fue mayor o igual que este valor. Asegúrese de que el valor de completitud sea mayor que el valor anterior
+client.progress-log.form.error.registration-moment-must-be-later = El momento de registro de los informes de progreso debe después del momento de instanciación del contrato
+
 client.progress-log.form.recordId.placeholder = PG-[A-Z]{1,2}-[0-9]{4}
 client.progress-log.form.completeness.placeholder = 0 - 100,00
 client.progress-log.form.comment.placeholder = Haz un comentario

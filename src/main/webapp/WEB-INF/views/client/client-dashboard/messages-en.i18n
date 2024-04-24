@@ -15,6 +15,7 @@ client.client-dashboard.form.title = Client Dashboard
 #subtitulo
 
 client.dashboard.form.title.general-indicators = General indicators for published progress logs
+client.dashboard.form.label.contract-indicators = General indicators for published contracts with currency 
 
 
 
