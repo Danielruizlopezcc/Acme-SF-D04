@@ -14,7 +14,9 @@ client.client-dashboard.form.title = Client Dashboard
 
 #subtitulo
 
-client.dashboard.form.title.general-indicators = General indicators
+client.dashboard.form.title.general-indicators = General indicators for published progress logs
+
+
 
 #valores del form
 
@@ -22,7 +24,9 @@ client.dashboard.form.label.progress-log-less-than-25 = Number of published prog
 client.dashboard.form.label.progress-log-between-25-50 = Number of published progress Log with completeness between 25%-50%
 client.dashboard.form.label.progress-log-between-50-75 = Number of published progress Log with completeness between 50%-75%
 client.dashboard.form.label.progress-log-above-75 = Number of published progress Log with completeness above 75%
-client.dashboard.form.label.contract-average = Average budget of published contracts
-client.dashboard.form.label.contract-deviation = Deviation of published contracts
-client.dashboard.form.label.contract-minimum = Minimum budget of every published contract
-client.dashboard.form.label.contract-maximum = Maximum budget of every published contract
+
+
+client.dashboard.form.label.contract-average = Average budget of contracts
+client.dashboard.form.label.contract-deviation = Deviation of contracts
+client.dashboard.form.label.contract-minimum = Minimum budget of every contract
+client.dashboard.form.label.contract-maximum = Maximum budget of every contract
