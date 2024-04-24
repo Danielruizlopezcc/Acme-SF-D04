@@ -85,6 +85,9 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 			sessions = this.repository.findAllTSByTMId(object.getId());
 			totalSessions = sessions.size();
 			super.state(totalSessions >= 1, "*", "developer.training-module.form.error.not-enough-training-sessions");
+			boolean published = sessions.stream().allMatch(c -> c.isDraftMode() == false);
+			if (!published)
+				super.state(published, "*", "developer.training-module.form.error.all-training-sessions-must-be-published");
 		}
 	}
 

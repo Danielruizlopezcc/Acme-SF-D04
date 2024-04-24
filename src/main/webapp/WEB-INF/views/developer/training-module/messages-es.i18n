@@ -48,3 +48,4 @@ developer.training-module.form.button.sessions = Listar sesiones de entrenamient
 developer.training-module.form.error.duplicated = Ya existe un módulo de entrenamiento con ese código
 developer.training-module.form.error.update-date-not-valid = Debe ser posterior al momento de creación
 developer.training-module.form.error.not-enough-training-sessions = Un módulo de entrenamiento debe tener al menos una sesión de entrenamiento
+developer.training-module.form.error.all-training-sessions-must-be-published = Un módulo de entrenamiento debe tener al menos una sesión de entrenamiento publicada
