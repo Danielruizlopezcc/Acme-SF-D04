@@ -86,6 +86,7 @@ master.menu.developer.dashboard = Panel del desarrollador
 master.menu.sponsor = Patrocinador
 master.menu.sponsor.list-sponsorship = Listar mis patrocinios
 master.menu.sponsor.show = Mostrar mis patrocinios
+master.menu.sponsor.dashboard = Panel de indicadores de patrocinador
 
 # master.menu.user-account ####################################################
 
