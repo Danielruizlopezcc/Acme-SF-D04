@@ -51,3 +51,4 @@ sponsor.sponsorship.form.error.duration-not-valid = The sponsorship duration mus
 sponsor.sponsorship.form.error.amount-must-be-positive = The amount of money must be positive
 sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-not-equal = The total amount of sponsorship and the sum of the invoices values ​​must be equal
 sponsor.sponsorship.form.error.currency-not-supported = Selected currency is not supported by the system
+sponsor.sponsorship.form.error.sponsorship-invoices-not-published = All associated invoices must be published
