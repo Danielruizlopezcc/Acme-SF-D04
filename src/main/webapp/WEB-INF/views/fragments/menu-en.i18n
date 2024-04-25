@@ -92,6 +92,8 @@ master.menu.user-account.developer = Developer data
 master.menu.user-account.become-developer = Become a developer
 master.menu.user-account.manager = Manager data
 master.menu.user-account.become-manager = Become a manager
+master.menu.user-account.sponsor = Sponsor data
+master.menu.user-account.become-sponsor = Become a sponsor
 
 # master.menu.client #########################################################
 

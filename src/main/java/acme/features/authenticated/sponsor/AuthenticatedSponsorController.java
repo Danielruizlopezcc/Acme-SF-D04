@@ -14,12 +14,16 @@ import acme.roles.Sponsor;
 public class AuthenticatedSponsorController extends AbstractController<Authenticated, Sponsor> {
 
 	@Autowired
-	private AuthenticatedSponsorCreateService createService;
+	private AuthenticatedSponsorCreateService	createService;
+
+	@Autowired
+	private AuthenticatedSponsorUpdateService	updateService;
 
 
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 	}
 
 }

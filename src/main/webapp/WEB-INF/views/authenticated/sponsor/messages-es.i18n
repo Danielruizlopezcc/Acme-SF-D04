@@ -17,3 +17,4 @@ authenticated.sponsor.form.label.email-contact = Correo de contacto (opcional):
 
 
 authenticated.sponsor.form.button.create = Registrarse
+authenticated.sponsor.form.button.update = Actualizar
