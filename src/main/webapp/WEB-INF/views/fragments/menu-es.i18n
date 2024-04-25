@@ -100,6 +100,8 @@ master.menu.user-account.developer = Datos de desarrollador
 master.menu.user-account.become-developer = Hazte desarrollador
 master.menu.user-account.manager = Datos de manager
 master.menu.user-account.become-manager = Hazte manager
+master.menu.user-account.sponsor = Datos de patrocinador
+master.menu.user-account.become-sponsor = Hazte patrocinador
 
 # master.menu.client #########################################################
 
