@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
@@ -27,12 +26,6 @@ public class SponsorDashboardShowService extends AbstractService<Sponsor, Sponso
 
 	@Override
 	public void authorise() {
-		boolean status;
-
-		Principal principal = super.getRequest().getPrincipal();
-		int id = principal.getAccountId();
-		Sponsor sponsor = this.repository.findSponsorById(id);
-		status = sponsor != null && principal.hasRole(Sponsor.class);
 
 		super.getResponse().setAuthorised(true);
 	}
