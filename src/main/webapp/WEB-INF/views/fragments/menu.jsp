@@ -38,11 +38,9 @@
 			<acme:menu-separator/>
 		    <acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
 		    <acme:menu-separator/>
-      		<acme:menu-suboption code="master.menu.authenticated.published-projects" action="/any/project/list"/>
+      		<acme:menu-suboption code= "master.menu.authenticated.published-projects" action="/any/project/list"/>
       		<acme:menu-separator/>
-      		<acme:menu-suboption code= "master.menu.authenticated.published-modules" action="/any/training-module/list"/>
-      		<acme:menu-separator/>
-      		<acme:menu-suboption code="master.menu.authenticated.list.claim" action="/any/claim/list"/>
+      		<acme:menu-suboption code= "master.menu.authenticated.list.claim" action="/any/claim/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -89,6 +87,7 @@
 		
 		<acme:menu-option code="master.menu.sponsor" access="hasRole('Sponsor')">
 			<acme:menu-suboption code="master.menu.sponsor.list-sponsorship" action="/sponsor/sponsorship/list-mine"/>
+			<acme:menu-suboption code="master.menu.sponsor.dashboard" action="/sponsor/sponsor-dashboard/show"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

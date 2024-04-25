@@ -116,17 +116,17 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 
-		SelectChoices types;
+		SelectChoices choices;
 		SelectChoices projectsChoices;
 		Collection<Project> projects;
 
 		Dataset dataset;
-		types = SelectChoices.from(SponsorshipType.class, object.getType());
+		choices = SelectChoices.from(SponsorshipType.class, object.getType());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
 		dataset = super.unbind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "draftMode", "project");
 
-		dataset.put("type", types);
+		dataset.put("sponsorshipType", choices);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);
