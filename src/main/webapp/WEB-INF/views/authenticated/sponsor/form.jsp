@@ -22,5 +22,5 @@
 	<acme:input-email code="authenticated.sponsor.form.label.email-contact" path="emailContact"/>
 
 	<acme:submit test="${_command == 'create'}" code="authenticated.sponsor.form.button.create" action="/authenticated/sponsor/create"/>
-
+	<acme:submit test="${_command == 'update'}" code="authenticated.sponsor.form.button.update" action="/authenticated/sponsor/update"/>
 </acme:form>
