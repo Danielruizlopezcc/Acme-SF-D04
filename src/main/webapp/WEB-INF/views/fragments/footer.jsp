@@ -16,6 +16,14 @@
 <%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
+<jstl:if test="${banner != null}">
+	<div class="panel-body" style="margin: 1em 0em 1em 0em; text-align: center;">	
+		<a href="${banner.link}" target="_blank">
+			<img src="${banner.picture}" alt="${banner.slogan}" class="img-fluid rounded" style="border-style: solid;"/>
+		</a>
+	</div>
+</jstl:if>
+
 <acme:footer-panel>
 	<acme:footer-subpanel code="master.footer.title.about">
 		<acme:footer-option icon="fa fa-building" code="master.footer.label.company" action="/any/system/company"/>
