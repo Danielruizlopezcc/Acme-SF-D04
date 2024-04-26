@@ -25,6 +25,9 @@ public interface AuditorCodeAuditsRepository extends AbstractRepository {
 	@Query("select a.mark from AuditRecords a where a.codeAudits.id = :codeAuditsId")
 	Collection<Mark> findMarksByCodeAuditsId(int codeAuditsId);
 
+	@Query("Select c.code from CodeAudits c")
+	Collection<String> findAllCodeAudits();
+
 	@Query("select a from AuditRecords a where a.codeAudits.id = :codeAuditsId")
 	Collection<AuditRecords> findAllAuditRecordsByCodeAuditsId(int codeAuditsId);
 
