@@ -85,6 +85,9 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 			sessions = this.repository.findAllTSByTMId(object.getId());
 			totalSessions = sessions.size();
 			super.state(totalSessions >= 1, "*", "developer.training-module.form.error.not-enough-training-sessions");
+			boolean published = sessions.stream().allMatch(c -> c.isDraftMode() == false);
+			if (!published)
+				super.state(published, "*", "developer.training-module.form.error.all-training-sessions-must-be-published");
 		}
 	}
 
@@ -107,7 +110,7 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 		choices = SelectChoices.from(Difficulty.class, object.getDifficultyLevel());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "project");
+		dataset = super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "estimatedTotalTime", "draftMode", "project");
 		dataset.put("difficulty", choices);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);

@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
@@ -21,18 +20,22 @@ public class ManagerProjectListMineService extends AbstractService<Manager, Proj
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Manager.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
 	public void load() {
-		Collection<Project> projects;
-		Principal principal;
+		Collection<Project> objects;
+		int managerId;
 
-		principal = super.getRequest().getPrincipal();
-		projects = this.repository.findAllProjectsByManagerId(principal.getActiveRoleId());
+		managerId = super.getRequest().getPrincipal().getActiveRoleId();
+		objects = this.repository.findAllProjectsByManagerId(managerId);
 
-		super.getBuffer().addData(projects);
+		super.getBuffer().addData(objects);
 	}
 
 	@Override

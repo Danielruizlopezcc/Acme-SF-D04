@@ -19,9 +19,11 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 
 	@Override
 	public void authorise() {
+		boolean status;
 
-		// no sabemos si hay que comprobar que el draftmode esté en false
-		super.getResponse().setAuthorised(true);
+		status = super.getRequest().getPrincipal().hasRole(Manager.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -41,7 +43,7 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 	@Override
 	public void bind(final Project object) {
 		assert object != null;
-		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+		super.bind(object, "code", "title", "abstractProject", "indication", "cost", "link");
 
 	}
 
@@ -53,11 +55,20 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 			Project existing;
 
 			existing = this.repository.findOneProjectByCode(object.getCode());
-			super.state(existing == null, "code", "developer.training-module.form.error.duplicated");
+			super.state(existing == null, "code", "manager.project.form.error.duplicated");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("indication"))
-			super.state(object.isIndication() == false, "indication", "manager.project-module-form.error.existing-fatal-errors");
 
+		if (!super.getBuffer().getErrors().hasErrors("indication"))
+			super.state(object.isIndication() == false, "indication", "manager.project.form.error.existing-fatal-errors");
+
+		if (!super.getBuffer().getErrors().hasErrors("cost")) {
+			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
+
+			//			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
+			//			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
+
+//			super.state(foundCurrency, "totalCost", "manager.project.form.error.currency-not-supported");
+		}
 	}
 
 	@Override

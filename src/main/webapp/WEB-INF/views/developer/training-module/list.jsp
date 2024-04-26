@@ -23,7 +23,7 @@
 	<acme:list-column code="developer.training-module.list.label.update-moment" path="updateMoment" width="10%"/>	
 	<acme:list-column code="developer.training-module.list.label.link" path="link" width="10%"/>
 	<acme:list-column code="developer.training-module.list.label.estimated-total-time" path="estimatedTotalTime" width="10%"/>
-	<acme:list-column code="developer.training-module.form.label.project" path="project" width="10%"/>
+	<acme:list-column code="developer.training-module.list.label.project" path="project" width="10%"/>
 	<acme:list-column code="developer.training-module.list.label.draftMode" path="draftMode" width="10%"/>
 
 </acme:list>

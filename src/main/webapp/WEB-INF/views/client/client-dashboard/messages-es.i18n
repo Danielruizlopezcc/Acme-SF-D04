@@ -1,0 +1,27 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+client.client-dashboard.form.title = Panel de Indicadores de cliente
+
+# Subtítulo
+
+client.dashboard.form.title.general-indicators = Indicadores generales para registros de progreso publicados
+client.dashboard.form.label.contract-indicators =Indicadores generales para contratos publicados 
+
+# Valores del formulario
+
+client.dashboard.form.label.progress-log-less-than-25 = Número de registros de progreso publicados con completitud por debajo del 25%
+client.dashboard.form.label.progress-log-between-25-50 = Número de registros de progreso publicados con completitud entre el 25% y el 50%
+client.dashboard.form.label.progress-log-between-50-75 = Número de registros de progreso publicados con completitud entre el 50% y el 75%
+client.dashboard.form.label.progress-log-above-75 = Número de registros de progreso publicados con completitud por encima del 75%
+client.dashboard.form.label.contract-average = Presupuesto promedio de contratos publicados
+client.dashboard.form.label.contract-deviation = Desviación de los contratos publicados
+client.dashboard.form.label.contract-minimum = Presupuesto mínimo de cada contrato publicado
+client.dashboard.form.label.contract-maximum = Presupuesto máximo de cada contrato publicado

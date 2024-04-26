@@ -1,0 +1,35 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#titulo grande
+
+sponsor.sponsor-dashboard.form.title = Sponsor Dashboard
+
+#subtitulo
+
+sponsor.dashboard.form.title.general-indicators = General indicators for published sponsorships and invoices
+
+#valores del form
+
+sponsor.dashboard.form.label.invoices-with-tax-less-or-equal-to-21 = Number of published invoices with tax less or equal to 21%
+sponsor.dashboard.form.label.invoices-with-link = Number of published invoices with link
+
+sponsor.dashboard.form.label.sponsorship-amount-average = Average amount of contracts
+sponsor.dashboard.form.label.sponsorship-amount-deviation = Deviation of sponsorships
+sponsor.dashboard.form.label.sponsorship-amount-minimum = Minimum amount of every sponsorship
+sponsor.dashboard.form.label.sponsorship-amount-maximum = Maximum amount of every sponsorship
+
+sponsor.dashboard.form.label.invoice-quantity-average = Average quantity of invoices
+sponsor.dashboard.form.label.invoice-quantity-deviation = Deviation quantity of invoices
+sponsor.dashboard.form.label.invoice-quantity-minimum = Minimum quantity of every invoice
+sponsor.dashboard.form.label.invoice-quantity-maximum = Maximum quantity of every invoice
+
+sponsor.dashboard.form.label.sponsorship-general-indicators = General indicators for published sponsorships with currency
+sponsor.dashboard.form.label.invoice-general-indicators = General indicators for published invoices with currency

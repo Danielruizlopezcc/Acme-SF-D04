@@ -50,7 +50,7 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 	public void bind(final TrainingSession object) {
 		assert object != null;
 
-		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link", "draftMode");
+		super.bind(object, "code", "sessionStart", "sessionEnd", "location", "instructor", "contactEmail", "link");
 	}
 
 	@Override
@@ -65,19 +65,19 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
-			Date minimumStart;
+			TrainingModule module;
+			int id;
 
-			minimumStart = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumStart), "sessionStart", "developer.training-session.form.error.too-short");
+			id = super.getRequest().getData("id", int.class);
+			module = this.repository.findOneTMByTSId(id);
+			super.state(MomentHelper.isAfter(object.getSessionStart(), module.getCreationMoment()), "sessionStart", "developer.training-session.form.error.creation-moment-invalid");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
-			TrainingModule module;
-			int sessionId;
+			Date minimumEnd;
 
-			sessionId = super.getRequest().getData("id", int.class);
-			module = this.repository.findOneTMByTSId(sessionId);
-			super.state(MomentHelper.isAfter(module.getCreationMoment(), object.getSessionEnd()), "sessionEnd", "developer.training-session.form.error.too-close");
+			minimumEnd = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfter(object.getSessionEnd(), minimumEnd), "sessionEnd", "developer.training-session.form.error.too-close");
 		}
 
 	}

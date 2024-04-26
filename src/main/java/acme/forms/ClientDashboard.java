@@ -1,6 +1,8 @@
 
 package acme.forms;
 
+import java.util.Map;
+
 import acme.client.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,12 +31,14 @@ public class ClientDashboard extends AbstractForm {
 
 	// average, deviation, minimum, and maximum budget of the contracts
 
-	double						averageBudget;
+	Map<String, Double>			averagePerCurrency;
 
-	double						deviationBudget;
+	Map<String, Double>			deviationPerCurrency;
 
-	double						minimumBudget;
+	Map<String, Double>			maximumPerCurrency;
 
-	double						maximumBudget;
+	Map<String, Double>			minimumPerCurrency;
+
+	String[]					supportedCurrencies;
 
 }

@@ -2,6 +2,8 @@
 package acme.features.client.contracts;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.contract.Contract;
 import acme.entities.project.Project;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.roles.clients.Client;
 
 @Service
@@ -67,6 +70,16 @@ public class ClientContractCreateService extends AbstractService<Client, Contrac
 
 			existing = this.clientContractRepository.findOneContractByCode(object.getCode());
 			super.state(existing == null, "code", "client.contract.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("budget")) {
+			super.state(object.getBudget().getAmount() > 0, "budget", "client.contract.form.error.negative-amount");
+
+			List<SystemConfiguration> sc = this.clientContractRepository.findSystemConfiguration();
+			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getBudget().getCurrency()));
+
+			super.state(foundCurrency, "budget", "client.contract.form.error.currency-not-suported");
+
 		}
 
 	}
