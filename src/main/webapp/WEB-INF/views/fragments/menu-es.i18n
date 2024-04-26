@@ -90,6 +90,16 @@ master.menu.sponsor.list-sponsorship = Listar mis patrocinios
 master.menu.sponsor.show = Mostrar mis patrocinios
 master.menu.sponsor.dashboard = Panel de indicadores de patrocinador
 
+# master.menu.auditor ######################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-code-audits = Listar mis auditorías de codigo
+master.menu.auditor.show = Mostrar mis auditorías de codigo
+master.menu.auditor.create = Crear una auditoría de codigo
+master.menu.auditor.update = Actualizar una auditoría de codigo
+master.menu.auditor.delete = Eliminar una auditoría de codigo
+master.menu.auditor.list-audit-records = Listar mis registros de auditorías
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

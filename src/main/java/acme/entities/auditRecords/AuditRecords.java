@@ -52,6 +52,8 @@ public class AuditRecords extends AbstractEntity {
 	@URL
 	private String				link;
 
+	private Boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
@@ -59,6 +61,6 @@ public class AuditRecords extends AbstractEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private CodeAudits			codeAudit;
+	private CodeAudits			codeAudits;
 
 }
