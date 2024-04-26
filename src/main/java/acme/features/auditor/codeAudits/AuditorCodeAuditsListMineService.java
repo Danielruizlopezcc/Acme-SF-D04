@@ -11,6 +11,7 @@ import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
+import acme.entities.auditRecords.Mark;
 import acme.entities.codeAudits.CodeAudits;
 import acme.entities.codeAudits.CodeAuditsType;
 import acme.entities.project.Project;
@@ -43,14 +44,16 @@ public class AuditorCodeAuditsListMineService extends AbstractService<Auditor, C
 	public void unbind(final CodeAudits object) {
 		assert object != null;
 		SelectChoices choices;
+		SelectChoices marks;
 		SelectChoices projectsChoices;
 		Collection<Project> projects;
 
 		Dataset dataset;
 		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
+		marks = SelectChoices.from(Mark.class, object.getMark());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project", "auditor");
+		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project");
 
 		if (object.isDraftMode()) {
 			final Locale local = super.getRequest().getLocale();
@@ -59,7 +62,8 @@ public class AuditorCodeAuditsListMineService extends AbstractService<Auditor, C
 		} else
 			dataset.put("draftMode", "No");
 
-		dataset.put("codeAuditType", choices);
+		dataset.put("codeAuditsType", choices);
+		dataset.put("mark", marks);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);

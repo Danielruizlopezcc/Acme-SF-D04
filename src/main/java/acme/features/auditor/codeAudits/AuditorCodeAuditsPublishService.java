@@ -10,6 +10,7 @@ import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.auditRecords.AuditRecords;
+import acme.entities.auditRecords.Mark;
 import acme.entities.codeAudits.CodeAudits;
 import acme.entities.codeAudits.CodeAuditsType;
 import acme.entities.project.Project;
@@ -58,7 +59,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project", "auditor");
+		super.bind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project");
 		object.setProject(project);
 
 	}
@@ -67,21 +68,23 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 	public void validate(final CodeAudits object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			CodeAudits existing;
+		String mark;
 
-			existing = this.repository.findOneCodeAuditsByCode(object.getCode());
-			super.state(existing == null || existing.equals(object), "code", "auditor.code-audits.form.error.duplicated");
-		}
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditsId(object.getId());
+		mark = MarkMode.calculate(marks);
 
-		{
-			Collection<AuditRecords> auditRecords;
-			int totalAuditRecords;
+		if (!super.getBuffer().getErrors().hasErrors("mark"))
+			if (mark != null) {
+				boolean isMarkAtLeastC = mark.equals("C") || mark.equals("B") || mark.equals("A") || mark.equals("A_PLUS");
+				super.state(isMarkAtLeastC, "mark", "validation.codeaudit.mode.less-than-c");
+			} else
+				super.state(false, "mark", "validation.codeaudit.mode.less-than-c");
 
-			auditRecords = this.repository.findAllAuditRecordsByCodeAuditsId(object.getId());
-			totalAuditRecords = auditRecords.size();
-			super.state(totalAuditRecords >= 1, "*", "auditor.code-audits.form.error.not-enough-audit-records");
-		}
+		Collection<AuditRecords> auditRecords;
+
+		auditRecords = this.repository.findAllAuditRecordsByCodeAuditsId(object.getId());
+
+		super.state(auditRecords.stream().noneMatch(AuditRecords::getDraftMode), "*", "validation.codeaudit.publish.unpublished-audit-records");
 	}
 
 	@Override
@@ -96,15 +99,18 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 	public void unbind(final CodeAudits object) {
 		assert object != null;
 		SelectChoices choices;
+		SelectChoices marks;
 		SelectChoices projectsChoices;
 		Collection<Project> projects;
 
 		Dataset dataset;
 		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
+		marks = SelectChoices.from(Mark.class, object.getMark());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project", "auditor");
-		dataset.put("type", choices);
+		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project");
+		dataset.put("codeAuditsType", choices);
+		dataset.put("mark", marks);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);

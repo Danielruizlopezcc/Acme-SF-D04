@@ -4,11 +4,13 @@ package acme.features.auditor.codeAudits;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import acme.client.controllers.AbstractController;
 import acme.entities.codeAudits.CodeAudits;
 import acme.roles.Auditor;
 
+@Controller
 public class AuditorCodeAuditsController extends AbstractController<Auditor, CodeAudits> {
 
 	@Autowired

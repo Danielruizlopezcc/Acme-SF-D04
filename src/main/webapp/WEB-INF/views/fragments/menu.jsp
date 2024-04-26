@@ -52,7 +52,9 @@
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
 			<acme:menu-suboption code="master.menu.developer.list-training-module" action="/developer/training-module/list-mine"/>
-
+		</acme:menu-option>
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.list-code-audits" action="/auditor/code-audits/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

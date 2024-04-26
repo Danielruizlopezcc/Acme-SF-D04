@@ -63,6 +63,16 @@ master.menu.developer.update = Update a Training modules
 master.menu.developer.delete = Delete a Training modules
 master.menu.developer.list-training-session = List my Training sessions
 
+# master.menu.auditor ######################################################
+
+master.menu.auditor = Auditor
+master.menu.auditor.list-code-audits = List my code audits
+master.menu.auditor.show = Show my code audits
+master.menu.auditor.create = Create a code audits
+master.menu.auditor.update = Update a code audits
+master.menu.auditor.delete = Delete a code audits
+master.menu.auditor.list-audit-records = List my audit records
+
 
 # master.menu.user-account ####################################################
 
