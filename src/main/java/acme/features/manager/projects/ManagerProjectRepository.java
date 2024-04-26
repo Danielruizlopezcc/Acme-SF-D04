@@ -51,7 +51,7 @@ public interface ManagerProjectRepository extends AbstractRepository {
 
 	@Query("select ca from CodeAudits ca where ca.project.id = :id")
 	Collection<CodeAudits> findManyCodeAuditsByProjectId(int id);
-	@Query("select ar from AuditRecords ar where ar.codeAudit.id IN :id")
+	@Query("select ar from AuditRecords ar where ar.codeAudits.id IN :id")
 	Collection<AuditRecords> findManyAuditsRecordsByCodeAuditsId(Set<Integer> id);
 
 	@Query("select tm from TrainingModule tm where tm.project.id = :id")
