@@ -1,0 +1,37 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#Cabecera de titulos de pantallas
+
+sponsor.sponsorship.list.title = Listing of your sponsorships
+sponsor.sponsorship.form.title = Sponsorship form
+
+#Cabecera de listado de patrocinios
+
+any.sponsorship.list.label.code = Code
+any.sponsorship.list.label.moment = Moment
+any.sponsorship.list.label.duration-start = Duration start
+any.sponsorship.list.label.duration-end = Duration end
+any.sponsorship.list.label.amount = Amount
+any.sponsorship.list.label.type = Type
+any.sponsorship.list.label.email-contact = Email contact
+any.sponsorship.list.label.link = Link
+any.sponsorship.list.label.project = Project
+
+
+any.sponsorship.form.label.code = Code:
+any.sponsorship.form.label.moment = Moment:
+any.sponsorship.form.label.duration-start = Duration start:
+any.sponsorship.form.label.duration-end = Duration end:
+any.sponsorship.form.label.amount = Amount:
+any.sponsorship.form.label.type = Type:
+any.sponsorship.form.label.email-contact = Email contact:
+any.sponsorship.form.label.link = Link:
+any.sponsorship.form.label.project = Project:

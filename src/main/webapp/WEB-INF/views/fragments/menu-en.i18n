@@ -25,6 +25,7 @@ master.menu.anonymous.alberto.favourite-link = 29643371M: Carmona Sicre, Alberto
 master.menu.anonymous.marco.favourite-link = 20064731Z: Padilla Gómez, Marco
 master.menu.anonymous.published-modules = List all Training Modules published
 master.menu.anonymous.published-projects = List all published projects
+master.menu.anonymous.published-sponsorships = List all published sponsorships
 master.menu.anonymous.list.claim = List all claims
 
 # master.menu.authenticated #######################################################
@@ -33,6 +34,7 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.published-modules = List all Training Modules published
 master.menu.anonymous.list-contracts = List published contracts
 master.menu.authenticated.published-projects = List all published projects
+master.menu.authenticated.published-sponsorships = List all published sponsorships
 master.menu.authenticated.list.claim = List all claims
 
 # master.menu.authenticated #######################################################

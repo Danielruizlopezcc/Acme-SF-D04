@@ -109,12 +109,17 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			Collection<Invoice> invoices;
 			double sponsorshipAmount;
 			double invoicesTotalAmount;
+			boolean allInvoicesPublished;
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
+			if (!allInvoicesPublished)
+				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published");
+
 			sponsorshipAmount = object.getAmount().getAmount();
 			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount()).sum();
 
-			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-not-equal");
+			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal");
 		}
 	}
 

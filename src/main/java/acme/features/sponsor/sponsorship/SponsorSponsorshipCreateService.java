@@ -106,6 +106,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 	public void perform(final Sponsorship object) {
 		assert object != null;
 
+		object.setDraftMode(true);
 		this.repository.save(object);
 	}
 

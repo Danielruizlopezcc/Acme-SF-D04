@@ -30,6 +30,8 @@
       		<acme:menu-suboption code="master.menu.anonymous.list-contracts" action="/any/contract/list"/>
       		<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.anonymous.published-projects" action="/any/project/list"/>
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.anonymous.published-sponsorships" action="/any/sponsorship/list"/>
       		<acme:menu-suboption code="master.menu.anonymous.list.claim" action="/any/claim/list"/>
 		</acme:menu-option>
 
@@ -41,6 +43,8 @@
       		<acme:menu-suboption code= "master.menu.authenticated.published-projects" action="/any/project/list"/>
       		<acme:menu-separator/>
       		<acme:menu-suboption code= "master.menu.authenticated.list.claim" action="/any/claim/list"/>
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.authenticated.published-sponsorships" action="/any/sponsorship/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
