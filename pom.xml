@@ -21,18 +21,18 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Acme-SF-D03</name>
-	<description>This is the third Deliverable</description>
+	<name>Acme-SF-D04</name>
+	<description>This is the fourth Deliverable</description>
 	
 	<artifactId>Acme-SF</artifactId>
-	<version>D03</version>
+	<version>D04</version>
 	<packaging>war</packaging>
 	
 	<parent>
 		<groupId>Acme</groupId>
 		<artifactId>Parent-Pom</artifactId>
-		<version>24.1.0</version>
-		<relativePath>../../pom-24.1.0.xml</relativePath>
+		<version>24.4.0</version>
+		<relativePath>../../pom-24.4.0.xml</relativePath>
 	</parent>
 
 	
