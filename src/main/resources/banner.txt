@@ -13,6 +13,6 @@
                     
 
 Application:          ${acme.application.versioned-name}
-Application endpoint: http://localhost:${server.port}${server.servlet.contextPath}
+Application endpoint: http://localhost:${server.port}${server.servlet.context-path}${server.servlet.initial-query}
 Database endpoint:    ${spring.datasource.url}
 Powered by:           Spring Boot ${spring-boot.version}, ${acme.framework.display-name} ${acme.framework.version}
