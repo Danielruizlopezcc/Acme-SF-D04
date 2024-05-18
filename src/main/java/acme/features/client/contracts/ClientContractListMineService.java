@@ -38,7 +38,6 @@ public class ClientContractListMineService extends AbstractService<Client, Contr
 
 	@Override
 	public void unbind(final Contract object) {
-		assert object != null;
 
 		Dataset dataset;
 

@@ -67,7 +67,7 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
+		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
 			ProgressLog existing;
 
 			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
@@ -76,7 +76,7 @@ public class ClientProgressLogCreateService extends AbstractService<Client, Prog
 
 		if (!super.getBuffer().getErrors().hasErrors("completeness")) {
 			Double existing;
-			existing = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId());
+			existing = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId()).orElse(0.);
 			super.state(object.getCompleteness() > existing, "completeness", "client.progress-log.form.error.completeness-too-low");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))

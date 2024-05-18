@@ -2,6 +2,7 @@
 package acme.features.client.progressLogs;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -32,6 +33,6 @@ public interface ClientProgressLogRepository extends AbstractRepository {
 	@Query("select cl from Client cl where cl.id = :clientId")
 	Client findOneClientById(int clientId);
 
-	@Query("select max(pl.completeness) from ProgressLog pl where pl.contract.id = :contractId")
-	Double findPublishedProgressLogWithMaxCompletenessPublished(int contractId);
+	@Query("select max(pl.completeness) from ProgressLog pl where pl.contract.id = :contractId and pl.draftMode = false")
+	Optional<Double> findPublishedProgressLogWithMaxCompletenessPublished(int contractId);
 }
