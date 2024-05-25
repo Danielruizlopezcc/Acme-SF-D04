@@ -117,7 +117,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published");
 
 			sponsorshipAmount = object.getAmount().getAmount();
-			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount()).sum();
+			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
 
 			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal");
 		}
