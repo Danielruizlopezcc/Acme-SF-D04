@@ -44,7 +44,7 @@ public class ManagerUserStoryListMineService extends AbstractService<Manager, Us
 	public void unbind(final UserStory object) {
 		assert object != null;
 
-		final Dataset dataset = super.unbind(object, "title", "description", "estimatedCost", "acceptanceCriteria", "priority", "link");
+		final Dataset dataset = super.unbind(object, "title", "description", "estimatedCost", "acceptanceCriteria", "priority", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}

@@ -2,6 +2,7 @@
 package acme.features.manager.projects;
 
 import java.util.Collection;
+import java.util.Locale;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -139,7 +140,12 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+		if (object.isIndication()) {
+			final Locale local = super.getRequest().getLocale();
 
+			dataset.put("indication", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("indication", "No");
 		super.getResponse().addData(dataset);
 	}
 

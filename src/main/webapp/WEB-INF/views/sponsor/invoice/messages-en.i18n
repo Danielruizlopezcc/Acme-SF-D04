@@ -10,8 +10,8 @@
 
 #Cabecera de titulos de pantallas
 
-sponsor.invoice.list.title = Listado de tus facturas
-sponsor.invoice.form.title = Formulario
+sponsor.invoice.list.title = List of your invoices
+sponsor.invoice.form.title = Invoice form
 
 #Cabecera de listado de facturas
 
@@ -22,7 +22,7 @@ sponsor.invoice.list.label.quantity = Quantity
 sponsor.invoice.list.label.tax = Tax
 sponsor.invoice.list.label.link = Link
 sponsor.invoice.list.label.draftMode = Editable
-sposnor.invoice.list.label.total-amount =Total amount (including tax)
+sponsor.invoice.list.label.total-amount = Total amount (including tax)
 
 #Cabecera de formulario de facturas
 
@@ -32,6 +32,7 @@ sponsor.invoice.form.label.due-date = Due date:
 sponsor.invoice.form.label.quantity = Quantity:
 sponsor.invoice.form.label.tax = Tax:
 sponsor.invoice.form.label.link = Link (optional):
+sponsor.invoice.form.code.placeholder = IN-[0-9]{4}-[0-9]{4}
 
 sponsor.invoice.list.button.create-form = Create invoice
 

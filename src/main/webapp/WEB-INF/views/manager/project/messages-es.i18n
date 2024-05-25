@@ -24,21 +24,28 @@ manager.project.list.label.draftMode = DraftMode
 manager.project.form.label.code = Código:
 manager.project.form.label.title = Título:
 manager.project.form.label.abstractProject = Resumen de proyecto:
-manager.project.label.indication = Indicación (errores críticos)
+manager.project.form.label.indication = Indicación (errores críticos)
 manager.project.form.label.cost = Coste:
 manager.project.form.label.link = Enlace:
 manager.project.form.label.draftMode = DraftMode:
 
-manager.project.list.button.create-form= Crear Proyecto
+manager.project.list.button.create= Crear Proyecto
 
 manager.project.form.button.create-project= Crear
 manager.project.form.button.update= Editar
 manager.project.form.button.delete= Borrar
 manager.project.form.button.publish= Publicar
 
-manager.project.form.button.listing-user-stories= Listado de historias de usuario
+manager.project.form.button.list-user-stories = Historias de usuario
 
 
 manager.project.form.button.userstories =  Listar historias de usuario
 manager.project.form.button.add-userstories = Añadir historia de usuario
 manager.project.form.button.remove-userstories = Eliminar historias de usuario
+
+manager.project-module.form.error.duplicated = Ya existe un Proyecto con ese código
+manager.project-module.form.error.existing-fatal-errors = El proyecto no puede tener errores fatales
+manager.project-module.form.error.negative-cost = El coste debe ser positivo
+manager.project-module.form.error.userStories-empty = El proyecto debe tener al menos una historia de usuario asignada
+manager.project-module.form.error.userStories-draft = Las historias de usuario deben estar publicadas
+manager.project-module.form.error.currency-not-supported = Esta divisa no se admite
