@@ -32,18 +32,27 @@ manager.project.form.label.cost = Cost:
 manager.project.form.label.link = Link:
 manager.project.form.label.draftMode = DraftMode:
 
-manager.project.list.button.create-form=Create Project
+manager.project.list.button.create=Create Project
 
 manager.project.form.button.create-project= Create
 manager.project.form.button.update=Update
 manager.project.form.button.delete=Delete
 manager.project.form.button.publish=Publish
 
-manager.project.form.button.listing-user-stories= Listing user stories
+manager.project.form.button.list-user-stories= User Stories
+
 
 manager.project.form.button.userstories = List user stories
 manager.project.form.button.add-userstories = Add user story
 manager.project.form.button.remove-userstories = Remove user stories
+
+manager.project-module.form.error.duplicated = There is already a Project with that code 
+manager.project-module.form.error.existing-fatal-errors = The Project can't have fatal errors
+manager.project-module.form.error.negative-cost = The cost must be positive
+manager.project-module.form.error.userStories-empty = The Project needs at least 1 User Story
+manager.project-module.form.error.userStories-draft = The User Stories needs to be published
+manager.project-module.form.error.currency-not-supported = That Currency is not supported
+
 
 
 

@@ -28,12 +28,16 @@ manager.user-story.form.label.priority = Prioridad:
 manager.user-story.form.label.link = Link:
 manager.user-story.form.label.draftMode = DraftMode:
 
-manager.project.list.button.create-form= Crear Historia de usuario
 
-manager.project.form.button.create-project= Crear
-manager.project.form.button.update= Editar
-manager.project.form.button.delete= Borrar
-manager.project.form.button.publish= Publicar
+manager.user-story.list.button.create.user-stories=Crear
+
+manager.user-story.list.button.user-stories-by-project-form = Listar historias de usuario
+
+manager.user-story.form.button.create-user-story= Crear	
+manager.user-story.form.button.update= Actualizar	
+manager.user-story.form.button.delete= Borrar 
+manager.user-story.form.button.publish= Publicar
+
 
 
 

@@ -16,6 +16,11 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 
+
+<h2>
+	<acme:message code="client.dashboard.form.title.general-indicators"/>
+</h2>
+
 <table class="table table-sm">
 	<tr>
 		<th scope="row">
@@ -40,7 +45,7 @@
 		<td>
 			<acme:print value="${totalUserStoriesWithPriorityCould}"/>
 		</td>
-	</tr>	
+	</tr>
 	<tr>
 		<th scope="row">
 			<acme:message code="manager.dashboard.form.label.total-wont-priority-user-stories"/>
@@ -48,71 +53,47 @@
 		<td>
 			<acme:print value="${totalUserStoriesWithPriorityWont}"/>
 		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.minimum-user-story-cost"/>
-		</th>
-		<td>
-			<acme:print value="${minimumUserStoriesEstimatedCost}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.maximum-user-story-cost"/>
-		</th>
-		<td>
-			<acme:print value="${maximumUserStoriesEstimatedCost}"/>
-		</td>
 	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.average-user-story-cost"/>
-		</th>
-		<td>
-			<acme:print value="${averageUserStoriesEstimatedCost}"/>
-		</td>
-	</tr>	
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.deviation-user-story-cost"/>
-		</th>
-		<td>
-			<acme:print value="${deviationUserStoriesEstimatedCost}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.minimum-project-cost"/>
-		</th>
-		<td>
-			<acme:print value="${minimumProjectCost}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.maximum-project-cost"/>
-		</th>
-		<td>
-			<acme:print value="${maximumProjectCost}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.average-project-cost"/>
-		</th>
-		<td>
-			<acme:print value="${averageProjectCost}"/>
-		</td>
-	</tr>
-	<tr>
-		<th scope="row">
-			<acme:message code="manager.dashboard.form.label.deviation-project-cost"/>
-		</th>
-		<td>
-			<acme:print value="${deviationProjectCost}"/>
-		</td>
-	</tr>
-	
-</table>
-<acme:return/>
+	</table>
+
+<jstl:forEach var="currency" items="${supportedCurrencies}">
+    <h2>
+        <acme:message code="manager.dashboard.form.label.project-indicators"/>
+        <acme:message code="${currency}"/>
+    </h2>
+
+    <table class="table table-sm">
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-average"/>
+            </th>
+            <td>
+                <acme:print value="${averageProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-deviation"/>
+            </th>
+            <td>
+                <acme:print value="${deviationProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-minimum"/>
+            </th>
+            <td>
+                <acme:print value="${minimumProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>   
+        <tr>
+            <th scope="row">
+                <acme:message code="manager.dashboard.form.label.project-maximum"/>
+            </th>
+            <td>
+                <acme:print value="${maximumProjectCostPerCurrency[currency]}"/>
+            </td>
+        </tr>
+    </table>
+</jstl:forEach>
