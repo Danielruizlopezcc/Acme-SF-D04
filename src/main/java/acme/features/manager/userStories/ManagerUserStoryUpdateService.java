@@ -56,6 +56,7 @@ public class ManagerUserStoryUpdateService extends AbstractService<Manager, User
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("estimatedCost"))
 			super.state(object.getEstimatedCost() > 0, "estimatedCost", "manager.user-story.form.error.negative-cost");
+
 	}
 
 	@Override

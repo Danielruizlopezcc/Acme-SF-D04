@@ -1,6 +1,8 @@
 
 package acme.features.manager.projects;
 
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +28,7 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		masterId = super.getRequest().getData("id", int.class);
 		pr = this.repository.findOneProjectById(masterId);
 		manager = pr == null ? null : pr.getManager();
-		status = super.getRequest().getPrincipal().hasRole(manager) || pr != null && pr.isDraftMode();
-
+		status = pr != null && super.getRequest().getPrincipal().hasRole(manager);
 		super.getResponse().setAuthorised(status);
 	}
 
@@ -49,6 +50,13 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+
+		if (object.isIndication()) {
+			final Locale local = super.getRequest().getLocale();
+
+			dataset.put("indication", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("indication", "No");
 
 		super.getResponse().addData(dataset);
 

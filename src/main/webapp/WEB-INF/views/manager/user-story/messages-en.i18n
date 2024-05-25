@@ -32,13 +32,18 @@ manager.user-story.form.label.priority = Priority:
 manager.user-story.form.label.link = Link:
 manager.user-story.form.label.draftMode = DraftMode:
 
-manager.user-story.list.button.create-form=Create User Story
+
+manager.user-story.list.button.create.user-stories=Create
+
+
+manager.user-story.list.button.user-stories-by-project-form = User Story List
 
 manager.user-story.form.button.create-user-story=Create
 manager.user-story.form.button.update=Update
 manager.user-story.form.button.delete=Delete
 manager.user-story.form.button.publish=Publish
 
+manager.user-story.form.error.negative-cost = Estimated Cost must be greater than or equal to 1
 
 
 

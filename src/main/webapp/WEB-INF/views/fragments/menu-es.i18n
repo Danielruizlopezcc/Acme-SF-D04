@@ -24,7 +24,8 @@ master.menu.anonymous.rafael.favourite-link = 29516380C: Pulido Cifuentes, Rafae
 master.menu.anonymous.alberto.favourite-link = 29643371M: Carmona Sicre, Alberto
 master.menu.anonymous.marco.favourite-link = 20064731Z: Padilla Gómez, Marco
 master.menu.anonymous.published-modules = Ver todos los módulos de entrenamiento publicados
-master.menu.authenticated.published-projects = Ver todos los proyectos publicados
+master.menu.anonymous.list-contracts = Ver todos los contratos publicados
+master.menu.anonymous.published-projects = Ver todos los proyectos publicados
 master.menu.anonymous.published-sponsorships = Ver todos los patrocinios publicados
 master.menu.anonymous.list.claim = Ver todas las reclamaciones
 
@@ -33,7 +34,9 @@ master.menu.anonymous.list.claim = Ver todas las reclamaciones
 master.menu.auth = Autenticado
 master.menu.authenticated.published-modules = Ver todos los módulos de entrenamiento publicados
 
-master.menu.anonymous.list-contracts = Ver todos los contratos publicados
+master.menu.authenticated.list-contracts = Ver todos los contratos publicados
+master.menu.authenticated.published-projects = Ver todos los proyectos publicados
+
 master.menu.authenticated.published-sponsorships = Ver todos los patrocinios publicados
 master.menu.authenticated.list.claim = Ver todas las reclamaciones
 
@@ -73,9 +76,10 @@ master.menu.manager.delete = Borrar un proyecto
 # master.menu.manager #########################################################
 
 master.menu.manager = Manager
-master.menu.manager.list-project = Lista de mis Proyectos
-
-master.menu.manager.list-user-stories = Lista de las historias de usuario
+master.menu.manager.list-project = Listado de mis proyectos
+master.menu.manager.list-user-story = Listado de mis historias de usuario
+master.menu.manager.list-assigments = Listado de mis relaciones
+master.menu.manager.show-manager-dashboard = Mostrar mi dashboard
 
 # master.menu.developer ######################################################
 

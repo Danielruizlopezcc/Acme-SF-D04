@@ -1,6 +1,10 @@
 
 package acme.features.manager.projects;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.stream.Stream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +12,7 @@ import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.roles.Manager;
 
 @Service
@@ -64,10 +69,9 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 		if (!super.getBuffer().getErrors().hasErrors("cost")) {
 			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
 
-			//			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
-			//			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
-
-//			super.state(foundCurrency, "totalCost", "manager.project.form.error.currency-not-supported");
+			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
+			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
+			super.state(foundCurrency, "totalCost", "manager.project.form.error.currency-not-supported");
 		}
 	}
 
@@ -84,6 +88,14 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstractProject", "indication", "cost", "link", "draftMode");
+
+		if (object.isIndication()) {
+			final Locale local = super.getRequest().getLocale();
+
+			dataset.put("indication", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
+		} else
+			dataset.put("indication", "No");
+
 		super.getResponse().addData(dataset);
 
 	}
