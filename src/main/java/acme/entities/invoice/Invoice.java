@@ -64,8 +64,11 @@ public class Invoice extends AbstractEntity {
 
 
 	@Transient
-	public double totalAmount() {
-		return this.quantity.getAmount() + this.quantity.getAmount() * (this.tax / 100);
+	public Money totalAmount() {
+		Money money = new Money();
+		money.setAmount(this.quantity.getAmount() + this.quantity.getAmount() * (this.tax / 100));
+		money.setCurrency(this.quantity.getCurrency());
+		return money;
 	}
 
 	// Relationships ----------------------------------------------------------
