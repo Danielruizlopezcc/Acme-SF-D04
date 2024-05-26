@@ -103,6 +103,7 @@ master.menu.auditor.create = Crear una auditoría de codigo
 master.menu.auditor.update = Actualizar una auditoría de codigo
 master.menu.auditor.delete = Eliminar una auditoría de codigo
 master.menu.auditor.list-audit-records = Listar mis registros de auditorías
+master.menu.auditor.dashboard = Panel del Auditor
 
 # master.menu.user-account ####################################################
 
