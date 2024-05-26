@@ -1,6 +1,11 @@
 
 package acme.features.administrator.systemConfiguration;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Stream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -43,10 +48,42 @@ public class AdministratorSystemConfigurationUpdateService extends AbstractServi
 	public void validate(final SystemConfiguration object) {
 		assert object != null;
 
-		//		if (!super.getBuffer().getErrors().hasErrors(PERIOD_START) && !super.getBuffer().getErrors().hasErrors(PERIOD_END)) {
-		//			final boolean startBeforeEnd = MomentHelper.isAfter(object.getEndDisplayPeriod(), object.getStartDisplayPeriod());
-		//			super.state(startBeforeEnd, PERIOD_END, "administrator.banner.form.error.end-before-start");
-		//		}
+		List<SystemConfiguration> sc = this.repository.findAllSystemConfigurations();
+		final List<String> currencies = Stream.of(sc.get(0).acceptedCurrencies.split(",")).toList();
+
+		if (!super.getBuffer().getErrors().hasErrors("systemCurrency"))
+			super.state(currencies.contains(object.getSystemCurrency()), "systemCurrency", "system.form.error.currency-not-suported");
+		super.state(this.checkUniqueElements(object.systemCurrency), "systemCurrency", "system.form.error.duplicated-currency");
+
+		if (!super.getBuffer().getErrors().hasErrors("acceptedCurrencies")) {
+
+			Set<String> inputedCurrencies = this.convertToList(object.getAcceptedCurrencies());
+
+			super.state(inputedCurrencies.containsAll(currencies), "acceptedCurrencies", "system.form.error.can-not-delete-currencies");
+			super.state(this.checkUniqueElements(object.acceptedCurrencies), "acceptedCurrencies", "system.form.error.duplicated-currency");
+		}
+
+	}
+
+	private Set<String> convertToList(final String acceptedCurrencies) {
+		String[] newCurrenciesArray = acceptedCurrencies.split(",");
+		Set<String> newCurrencySet = new HashSet<>();
+		for (String currency : newCurrenciesArray)
+			newCurrencySet.add(currency.trim());
+
+		return newCurrencySet;
+	}
+
+	private boolean checkUniqueElements(final String string) {
+		String[] elements = string.split(",");
+		Set<String> uniqueElements = new HashSet<>();
+
+		for (String e : elements)
+			if (!uniqueElements.add(e.trim()))
+				return false;
+
+		return true;
+
 	}
 
 	@Override

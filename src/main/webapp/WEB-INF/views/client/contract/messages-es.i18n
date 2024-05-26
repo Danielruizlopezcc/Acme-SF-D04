@@ -34,7 +34,7 @@ client.contract.form.error.duplicated = Este código ya está en uso
 client.contract.form.error.excededBudget = El presupuesto que ingresaste excede el costo total del proyecto. Por favor, introduce un presupuesto que esté dentro de las restricciones de presupuesto del proyecto.
 client.contract.form.error.negative-amount =  No se permiten cantidades negativas
 client.contract.form.error.currency-not-suported = Moneda no compatible. Las monedas admitidas son EUR, USD y GBP
-
+client.contract.form.error.different-currency = La divisa seleccionada no coincide con la del proyecto. Por favor, verifica la divisa del proyecto
 #placeholders del formulario
 client.contract.form.provider.placeholder = Proveedor
 client.contract.form.customer.placeholder = Cliente

@@ -77,6 +77,8 @@ public class ClientContractPublishService extends AbstractService<Client, Contra
 			super.state(existing == null || existing.equals(object), "code", "client.contract.form.error.duplicated");
 
 			if (!super.getBuffer().getErrors().hasErrors("budget")) {
+				if (object.getProject() != null)
+					super.state(object.getBudget().getCurrency().equals(object.getProject().getCost().getCurrency()), "budget", "client.contract.form.error.different-currency");
 				super.state(this.checkContractsAmountsLessThanProjectCost(object), "budget", "client.contract.form.error.excededBudget");
 				super.state(object.getBudget().getAmount() > 0, "budget", "client.contract.form.error.negative-amount");
 
