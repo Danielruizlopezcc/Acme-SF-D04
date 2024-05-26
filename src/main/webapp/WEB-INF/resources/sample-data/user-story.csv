@@ -19,15 +19,15 @@ user-story-17,Login,Historia de usuario para hacer login,1,成功済み,MUST,htt
 user-story-18,Login,Historia de usuario para hacer login,1,Пользователь успешно вошел в систему,MUST,https://www.user/login,true,manager-02
 user-story-19,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή,MUST,https://www.user/login,true,manager-01
 user-story-20,Login,Historia de usuario para hacer login,1,ผู้ใช้สามารถทำการซื้อผ่านแอปพลิเคชันได้อย่างราบรื่นไม่มีข้อผิดพลาด,MUST,https://www.user/login,true,manager-02
-user-story-21,Разработка мобильных приложений Разработка мобильных приложений РРазработкk,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-22,Разработка мобильных приложений Разработка мобильных приложений РРазработк,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-23,L,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-24,Ei,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-25,Login,Разработка и исследование новых методов для улучшения процессов для улучшения процессов для улучшени,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-26,Login,Разработка и исследование новых методов для улучшения процессов для улучшения процессов для улучшен,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-27,Login,Р,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-28,Login,Ра,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-29,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρ,MUST,https://www.user/login,true,manager-01
-user-story-30,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χ,MUST,https://www.user/login,true,manager-02
-user-story-31,Login,Historia de usuario para hacer login,1,D,MUST,https://www.user/login,true,manager-01
-user-story-32,Login,Historia de usuario para hacer login,1,De,MUST,https://www.user/login,true,manager-02
+user-story-21,Login,Historia de usuario para hacer login,1,يجب أن يتمكن المستخدم من استعادة كلمة المرور بنجاح عبر البريد الإلكتروني دون مشاكل,MUST,https://www.user/login,true,manager-01
+user-story-22,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
+user-story-23,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,SHOULD,https://www.user/login,true,manager-01
+user-story-24,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,COULD,https://www.user/login,true,manager-02
+user-story-25,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,WONT,https://www.user/login,true,manager-01
+user-story-26,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-27,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://portal.acceso-usuario.com/autenticacion/ingreso,true,manager-02
+user-story-28,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://seguridad.cuenta-online.net/acceso/verificacion/usuario,true,manager-01
+user-story-29,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://plataforma.servicio-global.usuarios/conectar/sesion-iniciar/validacion,true,manager-02
+user-story-30,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://acceso.directo.portal-web.servicios-integrados.com/identificacion/usuario/login/confirmacion,true,manager-01
+user-story-31,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
+user-story-32,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
