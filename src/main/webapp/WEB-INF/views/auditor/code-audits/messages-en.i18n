@@ -16,7 +16,7 @@ auditor.code-audits.list.label.corrective-actions = Corrective actions
 auditor.code-audits.list.label.link = Link
 auditor.code-audits.list.label.project = Project
 auditor.code-audits.list.label.draft-mode = Draft mode
-auditor.code-audits.list.label.markMode = Mark
+auditor.code-audits.list.label.mark = Mark
 
 
 auditor.code-audits.form.label.code = Code
@@ -26,7 +26,7 @@ auditor.code-audits.form.label.corrective-actions = Corrective actions
 auditor.code-audits.form.label.link = Link
 auditor.code-audits.form.label.project = Project
 auditor.code-audits.form.label.draft-mode = Draft mode
-auditor.code-audits.form.label.markMode = Mark
+auditor.code-audits.form.label.mark = Mark
 
 
 auditor.code-audits.list.button.create-code-audits = Create

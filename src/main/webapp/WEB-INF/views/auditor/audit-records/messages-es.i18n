@@ -1,0 +1,35 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+auditor.audit-records.list.title = Mis registros de auditoría
+auditor.audit-records.list.label.code = Código
+auditor.audit-records.list.label.startPeriod = Inicio del periodo
+auditor.audit-records.list.label.link = Link
+auditor.audit-records.list.button.create = Crear
+
+auditor.audit-records.form.title = Detalles del registro de auditoría
+auditor.audit-records.list.code = Código
+auditor.audit-records.list.startPeriod = Inicio del periode
+auditor.audit-records.list.endPeriod = Fin del periodo
+auditor.audit-records.list.mark = Nota
+auditor.audit-records.list.link = Link
+auditor.audit-records.list.draftMode = Modo borrador
+auditor.audit-records.list.codeAuditsCode = Código de auditoría
+auditor.audit-records.form.button.create = Crear
+auditor.audit-records.form.button.update = Actualizar
+auditor.audit-records.form.button.delete = Borrar
+auditor.audit-records.form.button.publish = Publicar
+
+validation.audit-records.code.duplicate = Este código no está disponible. Por favor, pruebe con otro código
+validation.audit-records.moment.initial-after-final = La fecha de inicio debe ser anterior a la fecha de finalización
+validation.audit-records.moment.minimum-one-hour = El tiempo entre la fecha de inicio y la fecha de finalización debe ser de al menos una hora
+validation.audit-records.published = No puedes borrar ni modificar una auditoría de código publicada
+validation.audit-records.published.audit-is-published = Esta auditoría de código ya ha sido publicada
+validation.audit-records.moment.minimun = El tiempo entre el inicio y el final debe ser como minimo de 1 hora.
