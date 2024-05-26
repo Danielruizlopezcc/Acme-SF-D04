@@ -66,7 +66,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 			super.state(existing == null || existing.equals(object), "code", "developer.training-session.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("sessionStart")) {
+		if (object.getSessionStart() != null && object.getSessionEnd() != null && !super.getBuffer().getErrors().hasErrors("sessionStart")) {
 			TrainingModule module;
 			int id;
 
@@ -75,7 +75,7 @@ public class DeveloperTrainingSessionUpdateService extends AbstractService<Devel
 			super.state(MomentHelper.isAfter(object.getSessionStart(), module.getCreationMoment()), "sessionStart", "developer.training-session.form.error.creation-moment-invalid");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("sessionEnd")) {
+		if (object.getSessionEnd() != null && object.getSessionStart() != null && !super.getBuffer().getErrors().hasErrors("sessionEnd")) {
 			Date minimumEnd;
 
 			minimumEnd = MomentHelper.deltaFromMoment(object.getSessionStart(), 7, ChronoUnit.DAYS);
