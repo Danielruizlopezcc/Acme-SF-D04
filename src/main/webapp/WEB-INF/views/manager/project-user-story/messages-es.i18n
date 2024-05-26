@@ -9,3 +9,20 @@
 # they accept any liabilities with respect to them.
 
 
+manager.project-user-story.list.title = Relaciones
+
+manager.project-user-story.list.label.project = Código del Proyecto
+manager.project-user-story.list.label.user-story = Título de la historia de usuario
+
+manager.project-user-story.list.button.create = Crear
+
+manager.project-user-story.form.title = Detalles de la relación
+
+manager.project-user-story.form.label.project = Código del Proyecto
+manager.project-user-story.form.label.user-story = Título de la historia de usuario
+
+manager.project-user-story.form.button.create = Crear
+
+manager.project-user-story.form.button.delete = Borrar
+
+manager.project-user-story.form.error.delete-published-project = No se puede borrar una relación si contiene un proyecto publicado

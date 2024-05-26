@@ -32,6 +32,7 @@ sponsor.invoice.form.label.due-date = Fecha de vencimiento:
 sponsor.invoice.form.label.quantity = Cantidad:
 sponsor.invoice.form.label.tax = Impuesto:
 sponsor.invoice.form.label.link = Enlace (opcional):
+sponsor.invoice.form.code.placeholder = IN-[0-9]{4}-[0-9]{4}
 
 sponsor.invoice.list.button.create-form = Crear factura
 

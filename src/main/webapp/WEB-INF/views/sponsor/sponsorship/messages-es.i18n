@@ -36,6 +36,7 @@ sponsor.sponsorship.form.label.type = Tipo:
 sponsor.sponsorship.form.label.email-contact = Correo de contacto (opcional):
 sponsor.sponsorship.form.label.link = Enlace (opcional):
 sponsor.sponsorship.form.label.project = Proyecto:
+sponsor.sponsorship.form.code.placeholder = [A-Z]{1,3}-[0-9]{3}
 
 sponsor.sponsorship.list.button.create-form = Crear patrocinio
 

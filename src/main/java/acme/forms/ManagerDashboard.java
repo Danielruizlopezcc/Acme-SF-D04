@@ -1,6 +1,8 @@
 
 package acme.forms;
 
+import java.util.Map;
+
 import acme.client.data.AbstractForm;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,10 +25,12 @@ public class ManagerDashboard extends AbstractForm {
 	double						deviationUserStoriesEstimatedCost;
 	double						minimumUserStoriesEstimatedCost;
 	double						maximumUserStoriesEstimatedCost;
-	double						averageProjectCost;
-	double						deviationProjectCost;
-	double						minimumProjectCost;
-	double						maximumProjectCost;
+
+	Map<String, Double>			averageProjectCostPerCurrency;
+	Map<String, Double>			deviationProjectCostPerCurrency;
+	Map<String, Double>			minimumProjectCostPerCurrency;
+	Map<String, Double>			maximumProjectCostPerCurrency;
+	String[]					supportedCurrencies;
 
 	// Derived attributes -----------------------------------------------------
 

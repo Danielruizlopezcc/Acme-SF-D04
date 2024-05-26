@@ -57,6 +57,11 @@ public class ManagerProjectUserStoriesDeleteService extends AbstractService<Mana
 	@Override
 	public void validate(final ProjectUserStory object) {
 		assert object != null;
+
+		Project project = object.getProject();
+
+		if (!super.getBuffer().getErrors().hasErrors("project"))
+			super.state(project.isDraftMode(), "project", "manager.project-user-story.form.error.delete-published-project");
 	}
 
 	@Override

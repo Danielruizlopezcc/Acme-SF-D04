@@ -24,13 +24,11 @@
 	<acme:list-column code="manager.user-story.list.label.link" path="link" width="10%"/>
 
 		
-</acme:list>
+</acme:list>	
 
-<jstl:if test="${_command == 'list-by-projects' }">
-	<acme:button code="manager.user-story.list.button.create-user-stories-by-project-form" action="/manager/user-story/create-in-projects?masterId=${masterId}"/>
-</jstl:if>
+<jstl:if test="${_command == 'list-by-projects' }"/>
 <jstl:if test="${_command == 'list-mine'}">
-	<acme:button code="manager.user-story.list.button.create-form" action="/manager/user-story/create"/>
+	<acme:button code="manager.user-story.list.button.create.user-stories" action="/manager/user-story/create"/>
 </jstl:if>
 
 
