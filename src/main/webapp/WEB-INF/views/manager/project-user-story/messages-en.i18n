@@ -8,3 +8,21 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+manager.project-user-story.list.title = Assigments
+
+manager.project-user-story.list.label.project = Project Code
+manager.project-user-story.list.label.user-story = User Story Title
+
+manager.project-user-story.list.button.create = Create
+
+manager.project-user-story.form.title = Assigment Form
+
+manager.project-user-story.form.label.project = Project Code
+manager.project-user-story.form.label.user-story = User Story Title
+
+manager.project-user-story.form.button.create = Create
+
+manager.project-user-story.form.button.delete = Delete
+
+manager.project-user-story.form.error.delete-published-project = You can't delete an Assigment with a published project
+

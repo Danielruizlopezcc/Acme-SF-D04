@@ -55,6 +55,8 @@ public class ManagerUserStoryDeleteService extends AbstractService<Manager, User
 	@Override
 	public void validate(final UserStory object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "manager.user-story.form.error.draft-mode");
 	}
 
 	@Override

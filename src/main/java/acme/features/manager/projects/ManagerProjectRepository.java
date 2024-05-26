@@ -17,6 +17,7 @@ import acme.entities.progressLogs.ProgressLog;
 import acme.entities.project.Project;
 import acme.entities.projectUserStories.ProjectUserStory;
 import acme.entities.sponsorship.Sponsorship;
+import acme.entities.systemconf.SystemConfiguration;
 import acme.entities.trainingModule.TrainingModule;
 import acme.entities.trainingSession.TrainingSession;
 import acme.roles.Manager;
@@ -59,7 +60,7 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	@Query("select ts from TrainingSession ts where ts.trainingModule.id IN :id")
 	Collection<TrainingSession> findManyTrainingSessionByTrainingModuleId(Set<Integer> id);
 
-	//	@Query("select s from SystemConfiguration s")
-	//	Collection<SystemConfiguration> findSystemConfiguration();
+	@Query("select s from SystemConfiguration s")
+	List<SystemConfiguration> findSystemConfiguration();
 
 }

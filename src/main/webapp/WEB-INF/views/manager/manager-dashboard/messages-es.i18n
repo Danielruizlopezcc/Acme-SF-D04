@@ -1,0 +1,32 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+#titulo grande
+
+manager.manager-dashboard.form.title = Manager Dashboard
+
+#subtitulo
+
+manager.dashboard.form.title.general-indicators = Indicadores generales para las historias de ususario
+manager.dashboard.form.label.project-indicators = Indicadores generales para los proyectos publicados con divisa
+
+
+
+#valores del form
+
+manager.dashboard.form.label.total-must-priority-user-stories = Número de historias de usuario publicadas con prioridad MUST
+manager.dashboard.form.label.total-should-priority-user-stories = Número de historias de usuario publicadas con prioridad SHOULD
+manager.dashboard.form.label.total-could-priority-user-stories = Número de historias de usuario publicadas con prioridad COULD
+manager.dashboard.form.label.total-wont-priority-user-stories = Número de historias de usuario publicadas con prioridad WONT
+
+manager.dashboard.form.label.project-average = Coste promedio de los proyectos
+manager.dashboard.form.label.project-deviation = Desviación de los proyectos
+manager.dashboard.form.label.project-minimum = Coste mínimo de cada proyecto
+manager.dashboard.form.label.project-maximum = Coste máximo de cada proyecto
