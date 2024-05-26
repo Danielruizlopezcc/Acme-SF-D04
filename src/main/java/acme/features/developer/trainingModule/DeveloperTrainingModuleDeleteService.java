@@ -66,6 +66,14 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
+		Collection<TrainingSession> sessions;
+		boolean canBeDeleted;
+
+		sessions = this.repository.findAllTSByTMId(object.getId());
+		canBeDeleted = sessions.stream().anyMatch(ts -> ts.isDraftMode() == true);
+		if (!canBeDeleted && sessions.size() > 0)
+			super.state(canBeDeleted, "*", "developer.training-module.form.error.can't-delete-published-training-session");
 	}
 
 	@Override

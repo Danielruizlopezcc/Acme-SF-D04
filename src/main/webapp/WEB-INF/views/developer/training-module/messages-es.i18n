@@ -49,3 +49,4 @@ developer.training-module.form.error.duplicated = Ya existe un módulo de entren
 developer.training-module.form.error.update-date-not-valid = Debe ser posterior al momento de creación
 developer.training-module.form.error.not-enough-training-sessions = Un módulo de entrenamiento debe tener al menos una sesión de entrenamiento
 developer.training-module.form.error.all-training-sessions-must-be-published = Un módulo de entrenamiento debe tener al menos una sesión de entrenamiento publicada
+developer.training-module.form.error.can't-delete-published-training-session = No se puede eliminar un modulo de entrenamiento si se ha publicado alguna de sus sesiones
