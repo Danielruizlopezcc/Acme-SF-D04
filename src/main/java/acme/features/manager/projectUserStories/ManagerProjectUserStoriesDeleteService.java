@@ -24,14 +24,14 @@ public class ManagerProjectUserStoriesDeleteService extends AbstractService<Mana
 	@Override
 	public void authorise() {
 		boolean status;
-		int masterId;
+		int projectUserStoryId;
 		ProjectUserStory projectUserStory;
 		Manager manager;
 
-		masterId = super.getRequest().getData("id", int.class);
-		projectUserStory = this.repository.findProjectUserStoryById(masterId);
-		manager = projectUserStory == null ? null : this.repository.findOneManagerByProjectUserStoryId(masterId);
-		status = projectUserStory != null && super.getRequest().getPrincipal().hasRole(manager);
+		projectUserStoryId = super.getRequest().getData("id", int.class);
+		projectUserStory = this.repository.findProjectUserStoryById(projectUserStoryId);
+		manager = projectUserStory == null ? null : projectUserStory.getProject().getManager();
+		status = projectUserStory != null && super.getRequest().getPrincipal().hasRole(manager) && projectUserStory.getProject().isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
