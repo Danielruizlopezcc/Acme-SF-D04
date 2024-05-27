@@ -67,11 +67,11 @@ public class ManagerProjectCreateService extends AbstractService<Manager, Projec
 			super.state(object.isIndication() == false, "indication", "manager.project.form.error.existing-fatal-errors");
 
 		if (!super.getBuffer().getErrors().hasErrors("cost")) {
-			super.state(object.getCost().getAmount() > 0, "cost", "manager.project.form.error.negative-cost");
+			super.state(object.getCost().getAmount() >= 0, "cost", "manager.project.form.error.negative-cost");
 
 			List<SystemConfiguration> sc = this.repository.findSystemConfiguration();
 			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getCost().getCurrency()));
-			super.state(foundCurrency, "totalCost", "manager.project.form.error.currency-not-supported");
+			super.state(foundCurrency, "cost", "manager.project.form.error.currency-not-supported");
 		}
 	}
 
