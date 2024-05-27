@@ -50,12 +50,13 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 
 		final String PERIOD_START = "startDisplayPeriod";
 		final String PERIOD_END = "endDisplayPeriod";
-		if (!super.getBuffer().getErrors().hasErrors(PERIOD_START) && !super.getBuffer().getErrors().hasErrors("instantiationMoment")) {
+		final String INSTANTIATION = "instatiationMoment";
+		if (object.getInstantiationMoment() != null && object.getStartDisplayPeriod() != null && object.getEndDisplayPeriod() != null && !super.getBuffer().getErrors().hasErrors(PERIOD_START) && !super.getBuffer().getErrors().hasErrors(INSTANTIATION)) {
 			final boolean startAfterInstantiation = MomentHelper.isAfter(object.getStartDisplayPeriod(), object.getInstantiationMoment());
 			super.state(startAfterInstantiation, PERIOD_START, "administrator.banner.form.error.start-before-instantiation");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors(PERIOD_END) && !super.getBuffer().getErrors().hasErrors("instantiationMoment")) {
+		if (object.getInstantiationMoment() != null && object.getStartDisplayPeriod() != null && object.getEndDisplayPeriod() != null && !super.getBuffer().getErrors().hasErrors(PERIOD_END) && !super.getBuffer().getErrors().hasErrors(INSTANTIATION)) {
 			final boolean startBeforeEnd = MomentHelper.isAfter(object.getEndDisplayPeriod(), object.getStartDisplayPeriod());
 			super.state(startBeforeEnd, PERIOD_END, "administrator.banner.form.error.end-before-start");
 
