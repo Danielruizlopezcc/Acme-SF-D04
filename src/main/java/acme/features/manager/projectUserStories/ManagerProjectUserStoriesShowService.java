@@ -70,6 +70,7 @@ public class ManagerProjectUserStoriesShowService extends AbstractService<Manage
 		dataset.put("userStories", choicesUserStories);
 		dataset.put("project", choicesProjects.getSelected().getKey());
 		dataset.put("projects", choicesProjects);
+		dataset.put("draftMode", object.getProject().isDraftMode());
 
 		super.getResponse().addData(dataset);
 	}
