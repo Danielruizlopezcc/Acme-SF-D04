@@ -25,4 +25,4 @@ manager.project-user-story.form.button.create = Create
 manager.project-user-story.form.button.delete = Delete
 
 manager.project-user-story.form.error.delete-published-project = You can't delete an Assigment with a published project
-
+manager.link.form.error.existing-project-assignment = This relation already exists

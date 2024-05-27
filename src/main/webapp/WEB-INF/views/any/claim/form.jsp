@@ -19,8 +19,8 @@
 	<acme:input-textbox code="any.claim.form.label.code" path="code"/>
 	<acme:input-moment code="any.claim.form.label.instantiation-moment" path="instantiationMoment"/>
 	<acme:input-textbox code="any.claim.form.label.heading" path="heading"/>
-	<acme:input-textbox code="any.claim.form.label.description" path="description"/>
-	<acme:input-textbox code="any.claim.form.label.department" path="department"/>
+	<acme:input-textarea code="any.claim.form.label.description" path="description"/>
+	<acme:input-textarea code="any.claim.form.label.department" path="department"/>
 	<acme:input-url code="any.claim.form.label.link" path="link"/>
 	<acme:input-email code="any.claim.form.label.email-address" path="emailAddress"/>	
 

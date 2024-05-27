@@ -9,7 +9,7 @@
 # they accept any liabilities with respect to them.
 
 
-authenticated.manager.form.title = Developer form
+authenticated.manager.form.title = Formulario de manager
 
 authenticated.manager.form.label.degree = Titulacion: 
 authenticated.manager.form.label.overview = Vista General:
