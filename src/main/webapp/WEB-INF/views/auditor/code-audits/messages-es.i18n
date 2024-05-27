@@ -39,10 +39,7 @@ auditor.code-audits.form.button.delete = Borrar
 auditor.code-audits.form.button.publish = Publicar
 auditor.code-audits.form.button.audit-records = Registros de auditoría
 
-validation.code-audits.code.duplicate = Este código no está disponible. Por favor, pruebe con otro código
-validation.code-audits.draftMode = No puedes borrar ni modificar una auditoría de código publicada
-validation.code-audits.auditrecord.zero-audit-records = No se puede publicar una auditoría de código sin registros de auditoría
-validation.code-audits.mode.empty = Esta auditoría de código no tiene registros de auditoría.
-validation.code-audits.publish.unpublished-audit-records = No se puede publicar una auditoría de código con registros de auditoría no publicados
-validation.code-audits.mode.less-than-c = La nota debe ser al menos una C para ser publicada
-validation.code-audits.auditRecordDraftMode = No se puede eliminar una auditoría de código con registros publicados
+auditor.code-audits.form.error.duplicated = Este código no está disponible. Por favor, pruebe con otro código
+auditor.code-audits.error.draftMode = No se puede publicar una auditoría de código con registros de auditoría no publicados
+validation.codeAudit.mark.minimun = La nota debe ser al menos una C para ser publicada
+auditor.code-audits.form.error.execution-date-not-valid = La fecha no es valida.

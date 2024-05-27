@@ -87,7 +87,7 @@ master.menu.auditor.create = Create a code audits
 master.menu.auditor.update = Update a code audits
 master.menu.auditor.delete = Delete a code audits
 master.menu.auditor.list-audit-records = List my audit records
-
+master.menu.auditor.dashboard = Auditor Dashboard
 
 # master.menu.sponsor ######################################################
 
