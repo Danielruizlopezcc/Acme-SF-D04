@@ -47,6 +47,7 @@ sponsor.sponsorship.form.button.publish = Publish
 
 sponsor.sponsorship.form.button.invoices = List invoices
 
+sponsor.sponsorship.form.error.duplicated = There is already an existing sponsorship with this code
 sponsor.sponsorship.form.error.duration-start-date-not-valid = The start date of the duration must be after the present date
 sponsor.sponsorship.form.error.duration-not-valid = The sponsorship duration must be at least one month. The start date must be before the end date
 sponsor.sponsorship.form.error.amount-must-be-positive = The amount of money must be positive
