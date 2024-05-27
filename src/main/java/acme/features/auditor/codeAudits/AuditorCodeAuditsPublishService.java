@@ -75,11 +75,11 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 		Collection<AuditRecords> auditRecords = this.repository.findAllAuditRecordsByCodeAuditsId(object.getId());
 
 		for (AuditRecords ar : auditRecords)
-			super.state(!ar.getDraftMode(), "code", "auditor.codeaudit.error.draftMode");
+			super.state(!ar.getDraftMode(), "code", "auditor.code-audits.error.draftMode");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			isCodeChanged = !object.getCode().equals(codeAudit.getCode());
-			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "auditor.codeaudit.error.duplicated-code");
+			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "auditor.code-audits.error.duplicated-code");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("mark")) {
 			Mark mark = object.getMark();
