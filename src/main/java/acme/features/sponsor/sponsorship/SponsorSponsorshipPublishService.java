@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -77,8 +78,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			Sponsorship existing;
 
 			existing = this.repository.findOneSponsorshipByCode(object.getCode());
-			if (!object.getCode().equals(existing.getCode()))
-				super.state(existing == null, "code", "sponsor.sponsorship.form.error.duplicated");
+			super.state(existing == null || existing.equals(object), "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
@@ -107,19 +107,24 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		}
 		{
 			Collection<Invoice> invoices;
-			double sponsorshipAmount;
+			Money sponsorshipAmount;
+			double sponsorshipAmountAmount;
 			double invoicesTotalAmount;
 			boolean allInvoicesPublished;
+			Money money = new Money();
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
 			if (!allInvoicesPublished)
 				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published");
 
-			sponsorshipAmount = object.getAmount().getAmount();
+			money.setAmount(0.);
+			money.setCurrency("EUR");
+			sponsorshipAmount = object.getAmount() == null ? money : object.getAmount();
+			sponsorshipAmountAmount = sponsorshipAmount.getAmount();
 			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
 
-			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal");
+			super.state(sponsorshipAmountAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal");
 		}
 	}
 
