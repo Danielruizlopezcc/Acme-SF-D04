@@ -26,7 +26,12 @@ public class ClientProgressLogPublishService extends AbstractService<Client, Pro
 		progressLogId = super.getRequest().getData("id", int.class);
 		contract = this.repository.findOneContractByProgressLogId(progressLogId);
 		ProgressLog pl = this.repository.findOneProgressLogById(progressLogId);
-		status = pl.isDraftMode() && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
+
+		int activeClientId = super.getRequest().getPrincipal().getActiveRoleId();
+		Client activeClient = this.repository.findOneClientById(activeClientId);
+		boolean clientOwnsPl = pl.getContract().getClient() == activeClient;
+
+		status = pl.isDraftMode() && clientOwnsPl && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().setAuthorised(status);
 
@@ -67,18 +72,17 @@ public class ClientProgressLogPublishService extends AbstractService<Client, Pro
 			ProgressLog existing;
 
 			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
-			super.state(existing == null || existing.equals(object), "recordId", "client.progressLog.form.error.duplicated");
-		}
+			super.state(existing == null || existing.equals(object), "recordId", "client.progress-log.form.error.duplicated");
 
-		if (!super.getBuffer().getErrors().hasErrors("completeness")) {
-			Double existing;
-			existing = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId());
-			System.out.println(existing);
-			super.state(object.getCompleteness() > existing, "completeness", "client.progress-log.form.error.completeness-too-low");
-		}
-		if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))
-			super.state(object.getRegistrationMoment().after(object.getContract().getInstantiationMoment()), "registrationMoment", "client.progress-log.form.error.registration-moment-must-be-later");
+			if (!super.getBuffer().getErrors().hasErrors("completeness")) {
+				Double existing2;
+				existing2 = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId()).orElse(0.);
+				super.state(object.getCompleteness() > existing2, "completeness", "client.progress-log.form.error.completeness-too-low");
+			}
+			if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))
+				super.state(object.getRegistrationMoment().after(object.getContract().getInstantiationMoment()), "registrationMoment", "client.progress-log.form.error.registration-moment-must-be-later");
 
+		}
 	}
 
 	@Override

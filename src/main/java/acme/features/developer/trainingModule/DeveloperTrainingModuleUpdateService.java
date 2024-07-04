@@ -74,7 +74,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 			super.state(existing == null || existing.equals(object), "code", "developer.training-module.form.error.duplicated");
 		}
 
-		if (object.getUpdateMoment() != null && !super.getBuffer().getErrors().hasErrors("updateMoment"))
+		if (object.getUpdateMoment() != null && object.getCreationMoment() != null && !super.getBuffer().getErrors().hasErrors("updateMoment"))
 			super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.update-date-not-valid");
 	}
 

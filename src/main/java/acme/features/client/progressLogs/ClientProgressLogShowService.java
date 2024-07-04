@@ -23,10 +23,15 @@ public class ClientProgressLogShowService extends AbstractService<Client, Progre
 		boolean status;
 		int progressLogId;
 		Contract contract;
+		ProgressLog pl;
 
 		progressLogId = super.getRequest().getData("id", int.class);
+		pl = this.repository.findOneProgressLogById(progressLogId);
 		contract = this.repository.findOneContractByProgressLogId(progressLogId);
-		status = contract != null && (!contract.isDraftMode() || super.getRequest().getPrincipal().hasRole(contract.getClient()));
+		int activeClientId = super.getRequest().getPrincipal().getActiveRoleId();
+		Client activeClient = this.repository.findOneClientById(activeClientId);
+		boolean clientOwnsPl = pl.getContract().getClient() == activeClient;
+		status = contract != null && clientOwnsPl && (!contract.isDraftMode() || super.getRequest().getPrincipal().hasRole(contract.getClient()));
 
 		super.getResponse().setAuthorised(status);
 	}

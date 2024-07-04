@@ -41,6 +41,7 @@ sponsor.invoice.form.button.update = Update
 sponsor.invoice.form.button.delete = Delete
 sponsor.invoice.form.button.publish = Publish
 
+sponsor.invoice.form.error.duplicated = There is already an existing invoice with that code
 sponsor.invoice.form.error.due-date-not-valid = Due date must be ahead registration time. It must be at least one month long
 sponsor.invoice.form.error.quantity-must-be-positive = Quantity must be positive
 sponsor.invoice.form.error.currency-not-supported = Selected currency is not supported by the system

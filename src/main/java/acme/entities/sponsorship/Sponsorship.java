@@ -5,7 +5,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -15,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -27,6 +30,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "sponsor_id"), @Index(columnList = "project_id"), @Index(columnList = "code")
+})
 public class Sponsorship extends AbstractEntity {
 	// Serialisation identifier -----------------------------------------------
 
@@ -58,9 +64,11 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipType		type;
 
 	@Email
+	@Length(max = 254)
 	private String				emailContact;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 	private boolean				draftMode;

@@ -26,7 +26,12 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 		progressLogId = super.getRequest().getData("id", int.class);
 		contract = this.repository.findOneContractByProgressLogId(progressLogId);
 		ProgressLog pl = this.repository.findOneProgressLogById(progressLogId);
-		status = pl.isDraftMode() && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
+
+		int activeClientId = super.getRequest().getPrincipal().getActiveRoleId();
+		Client activeClient = this.repository.findOneClientById(activeClientId);
+		boolean clientOwnsPl = pl.getContract().getClient() == activeClient;
+
+		status = pl.isDraftMode() && clientOwnsPl && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().setAuthorised(status);
 
@@ -72,7 +77,7 @@ public class ClientProgressLogUpdateService extends AbstractService<Client, Prog
 
 		if (!super.getBuffer().getErrors().hasErrors("completeness")) {
 			Double existing;
-			existing = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId());
+			existing = this.repository.findPublishedProgressLogWithMaxCompletenessPublished(object.getContract().getId()).orElse(0.);
 			super.state(object.getCompleteness() > existing, "completeness", "client.progress-log.form.error.completeness-too-low");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("registrationMoment"))

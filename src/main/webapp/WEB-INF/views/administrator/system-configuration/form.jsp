@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:form>
-	<acme:input-textbox code="administrator.banner.form.label.systemCurrency" path="systemCurrency"/>
-	<acme:input-textbox code="administrator.banner.form.label.acceptedCurrencies" path="acceptedCurrencies"/>
+	<acme:input-textbox code="administrator.banner.form.label.systemCurrency" path="systemCurrency" placeholder="system.placeholder.single-currency"/>
+	<acme:input-textbox code="administrator.banner.form.label.acceptedCurrencies" path="acceptedCurrencies" placeholder="system.placeholder-currencies"/>
 	
 	<acme:submit code="administrator.banner.form.button.update" action="/administrator/system-configuration/update"/>
 </acme:form>

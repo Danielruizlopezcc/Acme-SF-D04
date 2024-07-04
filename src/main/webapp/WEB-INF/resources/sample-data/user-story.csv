@@ -30,16 +30,4 @@ user-story-28,Login,Historia de usuario para hacer login,1,Debes estar registrad
 user-story-29,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://plataforma.servicio-global.usuarios/conectar/sesion-iniciar/validacion,true,manager-02
 user-story-30,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://acceso.directo.portal-web.servicios-integrados.com/identificacion/usuario/login/confirmacion,true,manager-01
 user-story-31,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-32,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-33,Разработка мобильных приложений Разработка мобильных приложений РРазработкk,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-34,Разработка мобильных приложений Разработка мобильных приложений РРазработк,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-35,L,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-36,Ei,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-37,Login,Разработка и исследование новых методов для улучшения процессов для улучшения процессов для улучшени,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-38,Login,Разработка и исследование новых методов для улучшения процессов для улучшения процессов для улучшен,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-39,Login,Р,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01
-user-story-40,Login,Ра,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-02
-user-story-41,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρ,MUST,https://www.user/login,true,manager-01
-user-story-42,Login,Historia de usuario para hacer login,1,χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χρήστης μπορεί να πλοηγηθεί εύκολα στην εφαρμογή χ,MUST,https://www.user/login,true,manager-02
-user-story-43,Login,Historia de usuario para hacer login,1,D,MUST,https://www.user/login,true,manager-01
-user-story-44,Login,Historia de usuario para hacer login,1,De,MUST,https://www.user/login,true,manager-02
+user-story-32,Login,Historia de usuario para hacer login,1,Debes estar registrado para hacer login,MUST,https://www.user/login,true,manager-01

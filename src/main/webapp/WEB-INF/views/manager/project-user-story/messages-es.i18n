@@ -26,3 +26,4 @@ manager.project-user-story.form.button.create = Crear
 manager.project-user-story.form.button.delete = Borrar
 
 manager.project-user-story.form.error.delete-published-project = No se puede borrar una relación si contiene un proyecto publicado
+manager.link.form.error.existing-project-assignment = Esta relación ya existe

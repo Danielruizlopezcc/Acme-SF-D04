@@ -48,6 +48,7 @@ sponsor.sponsorship.form.button.publish = Publicar
 
 sponsor.sponsorship.form.button.invoices = Listar facturas
 
+sponsor.sponsorship.form.error.duplicated = Ya existe un patrocinio con este código
 sponsor.sponsorship.form.error.duration-start-date-not-valid = El inicio de la fecha de duración debe ser posterior a la de momento
 sponsor.sponsorship.form.error.duration-not-valid = La duración del patrocinio debe ser de al menos un mes. La fecha de inicio debe ser anterior a la final
 sponsor.sponsorship.form.error.amount-must-be-positive = La cantidad de dinero debe ser positiva

@@ -26,7 +26,12 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 		progressLogId = super.getRequest().getData("id", int.class);
 		contract = this.repository.findOneContractByProgressLogId(progressLogId);
 		ProgressLog pl = this.repository.findOneProgressLogById(progressLogId);
-		status = pl.isDraftMode() && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
+
+		int activeClientId = super.getRequest().getPrincipal().getActiveRoleId();
+		Client activeClient = this.repository.findOneClientById(activeClientId);
+		boolean clientOwnsPl = pl.getContract().getClient() == activeClient;
+
+		status = pl.isDraftMode() && clientOwnsPl && contract != null && !contract.isDraftMode() && super.getRequest().getPrincipal().hasRole(contract.getClient());
 
 		super.getResponse().setAuthorised(status);
 
@@ -62,13 +67,6 @@ public class ClientProgressLogDeleteService extends AbstractService<Client, Prog
 	@Override
 	public void validate(final ProgressLog object) {
 		assert object != null;
-
-		if (!super.getBuffer().getErrors().hasErrors("recordId")) {
-			ProgressLog existing;
-
-			existing = this.repository.findOneProgressLogByRecordId(object.getRecordId());
-			super.state(existing == null || existing.equals(object), "recordId", "client.progressLog.form.error.duplicated");
-		}
 
 	}
 

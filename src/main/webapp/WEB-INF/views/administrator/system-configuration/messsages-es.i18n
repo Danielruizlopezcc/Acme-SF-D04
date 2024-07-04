@@ -14,3 +14,11 @@ administrator.banner.form.label.systemCurrency = Divisa del sistema
 administrator.banner.form.label.acceptedCurrencies = Divisas aceptadas
   
 administrator.system-configuration.form.title = Configuración del sistema
+
+system.placeholder.single-currency = Por favor, introduce una única moneda
+system.placeholder-currencies = Por favor, introduce las monedas separadas por comas
+
+
+system.form.error.currency-not-suported = Has ingresado una moneda que el sistema no admite. Por favor, verifica las monedas admitidas
+system.form.error.duplicated-currency = Has ingresado la misma moneda dos veces
+system.form.error.can-not-delete-currencies = El sistema no permite eliminar las monedas admitidas anteriormente

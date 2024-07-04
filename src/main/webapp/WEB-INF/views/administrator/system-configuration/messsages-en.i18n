@@ -14,3 +14,10 @@ administrator.banner.form.label.systemCurrency = System currency
 administrator.banner.form.label.acceptedCurrencies = Accepted currencies
   
 administrator.system-configuration.form.title = System Configuration
+
+system.placeholder.single-currency = Please enter a single currency
+system.placeholder-currencies = Please enter currencies separated by commas
+
+system.form.error.currency-not-suported = You entered a currency which the system has no support for. Please check the supported currencies
+system.form.error.duplicated-currency = You entered the same currency twice.
+system.form.error.can-not-delete-currencies = The system does not allow to delete previous supported currencies

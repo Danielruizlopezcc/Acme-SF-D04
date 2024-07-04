@@ -58,23 +58,18 @@ public class ManagerProjectUserStoriesCreateService extends AbstractService<Mana
 
 		project = object.getProject();
 		userStory = object.getUserStory();
+		int managerId = super.getRequest().getPrincipal().getActiveRoleId();
+		Manager manager = this.repository.findManagerById(managerId);
 
-		if (!super.getBuffer().getErrors().hasErrors("project")) {
+		super.state(object.getProject() != null, "*", "manager.project-user-story.create.error.null-project");
+		super.state(object.getUserStory() != null, "*", "manager.project-user-story.create.error.null-user-story");
+
+		if (!super.getBuffer().getErrors().hasErrors("project") && !super.getBuffer().getErrors().hasErrors("userStory")) {
 			ProjectUserStory existing;
-
 			existing = this.repository.findOneProjectUserStoryByProjectIdAndUserStoryId(project.getId(), userStory.getId());
-			super.state(existing == null, "project", "manager.project-user-story.form.error.existing-project-assignation");
-
-			super.state(project.isDraftMode() || !userStory.isDraftMode(), "project", "manager.project-user-story.form.error.published-project");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("userStory")) {
-			ProjectUserStory existing;
-
-			existing = this.repository.findOneProjectUserStoryByProjectIdAndUserStoryId(project.getId(), userStory.getId());
-			super.state(existing == null, "userStory", "manager.project-user-story.form.error.existing-project-assignation");
-
-			super.state(project.isDraftMode() || !userStory.isDraftMode(), "userStory", "manager.project-user-story.form.error.published-project");
+			super.state(project.getManager().equals(manager) && userStory.getManager().equals(manager), "*", "manager.link.form.error.wrong-manager");
+			super.state(existing == null, "*", "manager.link.form.error.existing-project-assignment");
+			super.state(project.isDraftMode() || !userStory.isDraftMode(), "project", "manager.link.form.error.published-project");
 		}
 
 	}
@@ -92,10 +87,10 @@ public class ManagerProjectUserStoriesCreateService extends AbstractService<Mana
 
 		managerId = super.getRequest().getPrincipal().getActiveRoleId();
 
-		userStories = this.repository.findUserStoriesByManagerId(managerId);
+		userStories = this.repository.findPublishedUserStoriesByManagerId(managerId, false);
 		choicesUserStories = SelectChoices.from(userStories, "title", object.getUserStory());
 
-		projects = this.repository.findProjectsByManagerId(managerId);
+		projects = this.repository.findNotPublishedProjectsByManagerId(managerId, true);
 		choicesProjects = SelectChoices.from(projects, "code", object.getProject());
 
 		dataset = super.unbind(object, "userStory", "project");
@@ -106,4 +101,5 @@ public class ManagerProjectUserStoriesCreateService extends AbstractService<Mana
 
 		super.getResponse().addData(dataset);
 	}
+
 }

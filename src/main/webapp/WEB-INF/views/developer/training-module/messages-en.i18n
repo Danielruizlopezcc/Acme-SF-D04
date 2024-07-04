@@ -50,4 +50,4 @@ developer.training-module.form.error.duplicated = There is already a Training Mo
 developer.training-module.form.error.update-date-not-valid = Has to be after the creation moment
 developer.training-module.form.error.not-enough-training-sessions = A Training Module has to have at least one Training Session
 developer.training-module.form.error.all-training-sessions-must-be-published = A Training Module must have at least one published Training Session
-
+developer.training-module.form.error.can't-delete-published-training-session = Can't delete a Training Module if any of its Training Sessions have been published

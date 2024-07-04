@@ -41,6 +41,7 @@ sponsor.invoice.form.button.update = Actualizar
 sponsor.invoice.form.button.delete = Eliminar
 sponsor.invoice.form.button.publish = Publicar
 
+sponsor.invoice.form.error.duplicated = Ya existe una factura con este código
 sponsor.invoice.form.error.due-date-not-valid = La fecha de vencimiento debe ser posterior a la de registro. La duración debe ser de al menos un mes
 sponsor.invoice.form.error.quantity-must-be-positive = La cantidad de dinero debe ser positiva
 sponsor.invoice.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema

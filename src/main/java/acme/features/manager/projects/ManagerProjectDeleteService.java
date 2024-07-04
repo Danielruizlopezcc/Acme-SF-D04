@@ -36,16 +36,18 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 	public void authorise() {
 		boolean status;
 		int projectId;
-		Manager manager;
+		Manager manager1;
+		Manager manager2;
 		Project project;
 
 		projectId = super.getRequest().getData("id", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
 		Principal principal = super.getRequest().getPrincipal();
-		manager = this.repository.findOneManagerById(principal.getActiveRoleId());
+		manager1 = this.repository.findOneManagerById(principal.getActiveRoleId());
+		manager2 = project == null ? null : project.getManager();
 
-		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+		status = project != null && project.isDraftMode() && manager1.equals(manager2);
 
 		super.getResponse().setAuthorised(status);
 	}
