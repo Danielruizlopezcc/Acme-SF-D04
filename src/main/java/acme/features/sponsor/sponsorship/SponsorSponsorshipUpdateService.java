@@ -80,7 +80,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
-			super.state(MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
+			super.state(object.getMoment() != null && MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
 
 		if (!super.getBuffer().getErrors().hasErrors("durationEnd")) {
 			Date durationStart;
@@ -90,10 +90,10 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 			durationStart = object.getDurationStart();
 			durationEnd = object.getDurationEnd();
-			isMinimumDuration = MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
-			durationEndIsAfterStart = MomentHelper.isAfter(durationEnd, durationStart);
+			isMinimumDuration = durationStart == null ? false : MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
+			durationEndIsAfterStart = durationStart == null ? false : MomentHelper.isAfter(durationEnd, durationStart);
 
-			super.state(isMinimumDuration && durationEndIsAfterStart, "durationStart", "sponsor.sponsorship.form.error.duration-not-valid");
+			super.state(isMinimumDuration && durationEndIsAfterStart, "durationEnd", "sponsor.sponsorship.form.error.duration-not-valid");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {

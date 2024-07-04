@@ -53,5 +53,6 @@ sponsor.sponsorship.form.error.duration-start-date-not-valid = El inicio de la f
 sponsor.sponsorship.form.error.duration-not-valid = La duración del patrocinio debe ser de al menos un mes. La fecha de inicio debe ser anterior a la final
 sponsor.sponsorship.form.error.amount-must-be-positive = La cantidad de dinero debe ser positiva
 sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal = La cantidad total del patrocinio y la suma del valor de las facturas deben ser iguales
-sponsor.sponsorship.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema
+sponsor.sponsorship.form.error.currency-not-supported = La divisa elegida no es soportada por el sistema. Divisas disponibles: EUR, USD, GBP
 sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published = Todas las facturas asociadas deben estar publicadas
+sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship = El cambio de divisa no está aun implementado. Por favor, asegúrese de que todas las facturas asociadas tengan la misma divisa que el patrocinio

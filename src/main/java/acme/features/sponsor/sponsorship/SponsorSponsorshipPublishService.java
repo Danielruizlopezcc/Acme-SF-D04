@@ -82,7 +82,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
-			super.state(MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
+			super.state(object.getMoment() != null && MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
 
 		if (!super.getBuffer().getErrors().hasErrors("durationEnd")) {
 			Date durationStart;
@@ -92,10 +92,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 			durationStart = object.getDurationStart();
 			durationEnd = object.getDurationEnd();
-			isMinimumDuration = MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
-			durationEndIsAfterStart = MomentHelper.isAfter(durationEnd, durationStart);
+			isMinimumDuration = durationStart == null ? false : MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
+			durationEndIsAfterStart = durationStart == null ? false : MomentHelper.isAfter(durationEnd, durationStart);
 
-			super.state(isMinimumDuration && durationEndIsAfterStart, "durationStart", "sponsor.sponsorship.form.error.duration-not-valid");
+			super.state(isMinimumDuration && durationEndIsAfterStart, "durationEnd", "sponsor.sponsorship.form.error.duration-not-valid");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {
@@ -112,11 +112,17 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			double invoicesTotalAmount;
 			boolean allInvoicesPublished;
 			Money money = new Money();
+			String currency;
+			boolean allInvoicesSameCurrency;
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
 			if (!allInvoicesPublished)
 				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published");
+
+			currency = object.getAmount().getCurrency();
+			allInvoicesSameCurrency = invoices.stream().allMatch(x -> x.getQuantity().getCurrency().equals(currency));
+			super.state(allInvoicesSameCurrency, "*", "sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship");
 
 			money.setAmount(0.);
 			money.setCurrency("EUR");
@@ -125,6 +131,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
 
 			super.state(sponsorshipAmountAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must-be-equal");
+
 		}
 	}
 
