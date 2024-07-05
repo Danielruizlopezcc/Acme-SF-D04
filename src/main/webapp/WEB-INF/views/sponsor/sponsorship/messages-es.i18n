@@ -56,3 +56,4 @@ sponsor.sponsorship.form.error.sponsorship-amount-and-invoices-total-amount-must
 sponsor.sponsorship.form.error.currency-not-supported = La divisa elegida no es soportada por el sistema. Divisas disponibles: EUR, USD, GBP
 sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published = Todas las facturas asociadas deben estar publicadas
 sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship = El cambio de divisa no está aun implementado. Por favor, asegúrese de que todas las facturas asociadas tengan la misma divisa que el patrocinio
+sponsor.sponsorship.form.error.invoice-already-published = No es posible actualizar la divida ya que hay una factura publicada y el cambio de divisa no está implementado todavía
