@@ -14,6 +14,7 @@ import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
+import acme.entities.invoice.Invoice;
 import acme.entities.project.Project;
 import acme.entities.sponsorship.Sponsorship;
 import acme.entities.sponsorship.SponsorshipType;
@@ -80,7 +81,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
-			super.state(MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
+			super.state(object.getMoment() != null && MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
 
 		if (!super.getBuffer().getErrors().hasErrors("durationEnd")) {
 			Date durationStart;
@@ -90,10 +91,10 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 			durationStart = object.getDurationStart();
 			durationEnd = object.getDurationEnd();
-			isMinimumDuration = MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
-			durationEndIsAfterStart = MomentHelper.isAfter(durationEnd, durationStart);
+			isMinimumDuration = durationStart == null ? false : MomentHelper.isLongEnough(durationStart, durationEnd, 1, ChronoUnit.MONTHS);
+			durationEndIsAfterStart = durationStart == null ? false : MomentHelper.isAfter(durationEnd, durationStart);
 
-			super.state(isMinimumDuration && durationEndIsAfterStart, "durationStart", "sponsor.sponsorship.form.error.duration-not-valid");
+			super.state(isMinimumDuration && durationEndIsAfterStart, "durationEnd", "sponsor.sponsorship.form.error.duration-not-valid");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {
@@ -102,7 +103,16 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getAmount().getCurrency()));
 
 			super.state(foundCurrency, "amount", "sponsor.sponsorship.form.error.currency-not-supported");
+
+			Collection<Invoice> invoices;
+			boolean anyInvoicePublished;
+
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			anyInvoicePublished = invoices.stream().anyMatch(i -> i.isDraftMode() == false);
+
+			super.state(!anyInvoicePublished, "amount", "sponsor.sponsorship.form.error.invoice-already-published");
 		}
+
 	}
 
 	@Override
