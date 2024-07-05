@@ -42,6 +42,8 @@ sponsor.invoice.form.button.delete = Eliminar
 sponsor.invoice.form.button.publish = Publicar
 
 sponsor.invoice.form.error.duplicated = Ya existe una factura con este código
-sponsor.invoice.form.error.due-date-not-valid = La fecha de vencimiento debe ser posterior a la de registro. La duración debe ser de al menos un mes
+sponsor.invoice.form.error.due-date-not-valid = La fecha de vencimiento debe ser posterior a la de registro. Debe haber al menos un mes de diferencia
 sponsor.invoice.form.error.quantity-must-be-positive = La cantidad de dinero debe ser positiva
 sponsor.invoice.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema
+sponsor.invoice.form.error.registration-time-not-valid = La fecha de registro debe ser posterior al momento de creación del patrocinio
+sponsor.invoice.form.error.currency-not-valid = La divisa del patrocinio y de las facturas deben ser la misma
