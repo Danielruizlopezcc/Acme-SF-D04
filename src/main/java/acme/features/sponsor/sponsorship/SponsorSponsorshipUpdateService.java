@@ -109,10 +109,14 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 			anyInvoicePublished = invoices.stream().anyMatch(i -> i.isDraftMode() == false);
-
-			super.state(!anyInvoicePublished, "amount", "sponsor.sponsorship.form.error.invoice-already-published");
+			if (anyInvoicePublished) {
+				Invoice publishedInvoice;
+				boolean isSameCurrencyThanPublished;
+				publishedInvoice = invoices.stream().filter(i -> !i.isDraftMode()).findFirst().orElse(null);
+				isSameCurrencyThanPublished = object.getAmount().getCurrency().equals(publishedInvoice.getQuantity().getCurrency());
+				super.state(isSameCurrencyThanPublished, "amount", "sponsor.sponsorship.form.error.invoice-already-published");
+			}
 		}
-
 	}
 
 	@Override

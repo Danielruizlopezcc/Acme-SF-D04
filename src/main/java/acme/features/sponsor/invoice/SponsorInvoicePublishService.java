@@ -67,6 +67,20 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 			super.state(existing == null || existing.equals(object), "code", "sponsor.invoice.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("registrationTime")) {
+			Date moment;
+			Sponsorship sponsorship;
+			boolean momentBeforeRegistrationTime;
+			Date registrationTime;
+
+			sponsorship = object.getSponsorship();
+			moment = sponsorship.getMoment();
+			registrationTime = object.getRegistrationTime();
+			momentBeforeRegistrationTime = MomentHelper.isAfter(registrationTime, moment);
+			super.state(momentBeforeRegistrationTime, "registrationTime", "sponsor.invoice.form.error.registration-time-not-valid");
+
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("dueDate")) {
 			Date registrationTime;
 			Date dueDate;
@@ -75,8 +89,8 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 
 			registrationTime = object.getRegistrationTime();
 			dueDate = object.getDueDate();
-			isMinimumDuration = MomentHelper.isLongEnough(registrationTime, dueDate, 1, ChronoUnit.MONTHS);
-			dueDateIsAfterRegistrationTime = MomentHelper.isAfter(dueDate, registrationTime);
+			isMinimumDuration = registrationTime == null ? false : MomentHelper.isLongEnough(registrationTime, dueDate, 1, ChronoUnit.MONTHS);
+			dueDateIsAfterRegistrationTime = registrationTime == null ? false : MomentHelper.isAfter(dueDate, registrationTime);
 
 			super.state(isMinimumDuration && dueDateIsAfterRegistrationTime, "dueDate", "sponsor.invoice.form.error.due-date-not-valid");
 		}
@@ -87,6 +101,10 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getQuantity().getCurrency()));
 
 			super.state(foundCurrency, "quantity", "sponsor.invoice.form.error.currency-not-supported");
+
+			boolean isSameCurrency;
+			isSameCurrency = object.getQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency());
+			super.state(isSameCurrency, "quantity", "sponsor.invoice.form.error.currency-not-valid");
 		}
 	}
 
