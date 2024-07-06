@@ -80,6 +80,22 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			super.state(existing == null || existing.equals(object), "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("moment")) {
+			Collection<Invoice> invoices;
+			Date moment;
+			boolean isRegistrationTimeBefore;
+
+			isRegistrationTimeBefore = false;
+			moment = object.getMoment();
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			if (invoices.size() > 0) {
+				for (Invoice i : invoices)
+					if (MomentHelper.isAfter(moment, i.getRegistrationTime()))
+						isRegistrationTimeBefore = true;
+				super.state(!isRegistrationTimeBefore, "moment", "sponsor.sponsorship.form.error.creation-moment-before-registration-time");
+			}
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
 			super.state(object.getMoment() != null && MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
 
