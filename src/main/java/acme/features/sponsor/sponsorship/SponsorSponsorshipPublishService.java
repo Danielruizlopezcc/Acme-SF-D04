@@ -81,6 +81,22 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			super.state(existing == null || existing.equals(object), "code", "sponsor.sponsorship.form.error.duplicated");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("moment")) {
+			Collection<Invoice> invoices;
+			Date moment;
+			boolean isRegistrationTimeBefore;
+
+			isRegistrationTimeBefore = false;
+			moment = object.getMoment();
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			if (invoices.size() > 0) {
+				for (Invoice i : invoices)
+					if (MomentHelper.isAfter(moment, i.getRegistrationTime()))
+						isRegistrationTimeBefore = true;
+				super.state(!isRegistrationTimeBefore, "moment", "sponsor.sponsorship.form.error.creation-moment-before-registration-time");
+			}
+		}
+
 		if (!super.getBuffer().getErrors().hasErrors("durationStart"))
 			super.state(object.getMoment() != null && MomentHelper.isAfter(object.getDurationStart(), object.getMoment()), "durationStart", "sponsor.sponsorship.form.error.duration-start-date-not-valid");
 
@@ -104,6 +120,15 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			final boolean foundCurrency = Stream.of(sc.get(0).acceptedCurrencies.split(",")).anyMatch(c -> c.equals(object.getAmount().getCurrency()));
 
 			super.state(foundCurrency, "amount", "sponsor.sponsorship.form.error.currency-not-supported");
+
+			String currency;
+			boolean allInvoicesSameCurrency;
+			Collection<Invoice> invoices;
+
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			currency = object.getAmount().getCurrency();
+			allInvoicesSameCurrency = invoices.stream().allMatch(x -> x.getQuantity().getCurrency().equals(currency));
+			super.state(allInvoicesSameCurrency, "amount", "sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship");
 		}
 		{
 			Collection<Invoice> invoices;
@@ -112,17 +137,11 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 			double invoicesTotalAmount;
 			boolean allInvoicesPublished;
 			Money money = new Money();
-			String currency;
-			boolean allInvoicesSameCurrency;
 
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
 			if (!allInvoicesPublished)
 				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published");
-
-			currency = object.getAmount().getCurrency();
-			allInvoicesSameCurrency = invoices.stream().allMatch(x -> x.getQuantity().getCurrency().equals(currency));
-			super.state(allInvoicesSameCurrency, "*", "sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship");
 
 			money.setAmount(0.);
 			money.setCurrency("EUR");
