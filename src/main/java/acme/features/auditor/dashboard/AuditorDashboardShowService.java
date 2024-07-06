@@ -50,16 +50,16 @@ public class AuditorDashboardShowService extends AbstractService<Auditor, Audito
 		double minAuditRecordsPeriodLength;
 		double maxAuditRecordsPeriodLength;
 
-		totalNumCodeAuditsStatic = this.dashboardRepository.totalAuditRecordsStatic(auditorId);
-		totalNumCodeAuditsDynamic = this.dashboardRepository.totalAuditRecordsDynamic(auditorId);
-		averageNumAuditRecords = this.dashboardRepository.averageAuditingRecords(auditorId);
+		totalNumCodeAuditsStatic = this.dashboardRepository.totalAuditRecordsStatic(auditorId) != null ? this.dashboardRepository.totalAuditRecordsStatic(auditorId) : 0.0;
+		totalNumCodeAuditsDynamic = this.dashboardRepository.totalAuditRecordsDynamic(auditorId) != null ? this.dashboardRepository.totalAuditRecordsDynamic(auditorId) : 0.0;
+		averageNumAuditRecords = this.dashboardRepository.averageAuditingRecords(auditorId) != null ? this.dashboardRepository.averageAuditingRecords(auditorId) : 0.0;
 		deviationNumAuditRecords = this.calDeviation(auditingRecordsPerAudit);
-		minNumAuditRecords = this.dashboardRepository.minAuditingRecords(auditorId);
-		maxNumAuditRecords = this.dashboardRepository.maxAuditingRecords(auditorId);
-		averageAuditRecordsPeriodLength = this.dashboardRepository.averageRecordPeriod(auditorId);
-		deviationAuditRecordsPeriodLength = this.dashboardRepository.deviationRecordPeriod(auditorId);
-		minAuditRecordsPeriodLength = this.dashboardRepository.minimumRecordPeriod(auditorId);
-		maxAuditRecordsPeriodLength = this.dashboardRepository.maximumRecordPeriod(auditorId);
+		minNumAuditRecords = this.dashboardRepository.minAuditingRecords(auditorId) != null ? this.dashboardRepository.minAuditingRecords(auditorId) : 0;
+		maxNumAuditRecords = this.dashboardRepository.maxAuditingRecords(auditorId) != null ? this.dashboardRepository.maxAuditingRecords(auditorId) : 0;
+		averageAuditRecordsPeriodLength = this.dashboardRepository.averageRecordPeriod(auditorId) != null ? this.dashboardRepository.averageRecordPeriod(auditorId) : 0.0;
+		deviationAuditRecordsPeriodLength = this.dashboardRepository.deviationRecordPeriod(auditorId) != null ? this.dashboardRepository.deviationRecordPeriod(auditorId) : 0.0;
+		minAuditRecordsPeriodLength = this.dashboardRepository.minimumRecordPeriod(auditorId) != null ? this.dashboardRepository.minimumRecordPeriod(auditorId) : 0.0;
+		maxAuditRecordsPeriodLength = this.dashboardRepository.maximumRecordPeriod(auditorId) != null ? this.dashboardRepository.maximumRecordPeriod(auditorId) : 0.0;
 
 		dashboard = new AuditorDashboard();
 		dashboard.setTotalCodeAuditsStatic(totalNumCodeAuditsStatic);

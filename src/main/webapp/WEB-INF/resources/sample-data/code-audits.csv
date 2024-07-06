@@ -1,21 +1,21 @@
-key,code,executionDate,type,correctiveActions,mark,link,draft-mode,key:project,key:auditor
-code-audit-01,ABC-123,2006/12/14 18:00,STATIC,Acción correctiva 1,A_PLUS,http://example.com,true,project-04,auditor-1
-code-audit-02,BCD-456,2010/07/22 17:00,STATIC,Acción correctiva 2,A,http://example2.com,true,project-03,auditor-1
-code-audit-03,CDE-789,2008/05/03 19:00,STATIC,L,B,http://example3.com,true,project-02,auditor-2
-code-audit-04,DEF-012,2014/11/30 12:00,STATIC,Lo,C,http://example4.com,true,project-01,auditor-2
-code-audit-05,EFG-345,2009/02/17 13:00,STATIC,Lorem ipsum dolor sit amet; consectetur adipiscing elit; sed do eiusmod tempor incididunt ut labore,F,http://example5.com,true,project-04,auditor-1
-code-audit-06,FGH-678,2012/08/09 14:00,STATIC,Lorem ipsum dolor sit amet; consectetur adipiscing elit; sed do eiusmod tempor incididunt ut labore*,F_MINUS,http://example6.com,true,project-05,auditor-2
-code-audit-07,GHI-901,2004/04/26 11:00,DYNAMIC,국민경제의 발전을,A_PLUS,http://example7.com,true,project-01,auditor-1
-code-audit-08,HIJ-234,2018/09/15 09:00,DYNAMIC,العظمى واعتلاء,A,http://example8.com,true,project-01,auditor-2
-code-audit-09,IJK-567,2007/01/20 06:00,DYNAMIC,Acción correctiva 9,B,http://example9.com,true,project-02,auditor-1
-code-audit-10,JKL-890,2016/06/12 20:00,DYNAMIC,Acción correctiva 10,C,http://example10.com,true,project-03,auditor-2
-code-audit-11,KLM-123,2020/02/15 18:00,DYNAMIC,Acción correctiva 11,F,http://example11.com,true,project-07,auditor-1
-code-audit-12,LMN-456,2020/02/24 18:00,DYNAMIC,Acción correctiva 12,F_MINUS,http://example12.com,true,project-04,auditor-1
-code-audit-13,MNO-789,2020/02/23 18:00,STATIC,Accion correctiva este es un string de prueba que tiene exactamente cien caracteres ni mas ni menos.,A_PLUS,http://example13.com,true,project-06,auditor-1
-code-audit-14,NOP-012,2020/02/22 18:00,STATIC,A,A,http://example14.com,true,project-07,auditor-1
-code-audit-15,OPQ-345,2020/02/21 18:00,STATIC,Accion correctiva este es un string de prueba que tiene exactamente cien caracteres ni mas ni menos,B,http://example15.com,true,project-08,auditor-1
-code-audit-16,PQR-678,2020/02/20 18:00,STATIC,通过先进技术提高生产效率和资源利用率,C,http://example16.com,true,project-09,auditor-2
-code-audit-17,QRS-901,2020/02/19 18:00,DYNAMIC,Ստեղծելու նորարարական լուծումներ էկոլոգիական համակարգերի համար որոնք կբարելավեն էֆֆեկտիվությունւն,F,http://example17.com,true,project-10,auditor-1
-code-audit-18,RST-234,2020/02/18 18:00,DYNAMIC,Acción correctiva 18,F_MINUS,ftp://a,true,project-11,auditor-1
-code-audit-19,STU-567,2020/02/17 18:00,DYNAMIC,Acción correctiva 19,A_PLUS,https://www.this-is-an-extremely-long-url-example-for-demonstration-purposes-only-and-it-is-meant-to-show-how-a-255-character-url-might-look-like-when-you-are-trying-to-push-the-limits-of-url-length-and-i-need-a-few-characters-more-to-complete-the-255.com,true,project-12,auditor-2
-code-audit-20,TUV-890,2020/02/16 18:00,DYNAMIC,Acción correctiva 20,A,http://example20.com,true,project-13,auditor-2
+key,code,executionDate,type,correctiveActions,link,draft-mode,key:project,key:auditor
+code-audit-01,ABC-123,2006/12/14 18:00,STATIC,Acción correctiva 1,http://example.com,true,project-04,auditor-1
+code-audit-02,BCD-456,2010/07/22 17:00,STATIC,Acción correctiva 2,http://example2.com,true,project-03,auditor-1
+code-audit-03,CDE-789,2008/05/03 19:00,STATIC,L,http://example3.com,true,project-02,auditor-2
+code-audit-04,DEF-012,2014/11/30 12:00,STATIC,Lo,http://example4.com,true,project-01,auditor-2
+code-audit-05,EFG-345,2009/02/17 13:00,STATIC,Lorem ipsum dolor sit amet; consectetur adipiscing elit; sed do eiusmod tempor incididunt ut labore,http://example5.com,true,project-04,auditor-1
+code-audit-06,FGH-678,2012/08/09 14:00,STATIC,Lorem ipsum dolor sit amet; consectetur adipiscing elit; sed do eiusmod tempor incididunt ut labore*,http://example6.com,true,project-05,auditor-2
+code-audit-07,GHI-901,2004/04/26 11:00,DYNAMIC,국민경제의 발전을,http://example7.com,true,project-01,auditor-1
+code-audit-08,HIJ-234,2018/09/15 09:00,DYNAMIC,العظمى واعتلاء,http://example8.com,true,project-01,auditor-2
+code-audit-09,IJK-567,2007/01/20 06:00,DYNAMIC,Acción correctiva 9,http://example9.com,true,project-02,auditor-1
+code-audit-10,JKL-890,2016/06/12 20:00,DYNAMIC,Acción correctiva 10,http://example10.com,true,project-03,auditor-2
+code-audit-11,KLM-123,2020/02/15 18:00,DYNAMIC,Acción correctiva 11,http://example11.com,true,project-07,auditor-1
+code-audit-12,LMN-456,2020/02/24 18:00,DYNAMIC,Acción correctiva 12,http://example12.com,true,project-04,auditor-1
+code-audit-13,MNO-789,2020/02/23 18:00,STATIC,Accion correctiva este es un string de prueba que tiene exactamente cien caracteres ni mas ni menos.,http://example13.com,true,project-06,auditor-1
+code-audit-14,NOP-012,2020/02/22 18:00,STATIC,A,http://example14.com,true,project-07,auditor-1
+code-audit-15,OPQ-345,2020/02/21 18:00,STATIC,Accion correctiva este es un string de prueba que tiene exactamente cien caracteres ni mas ni menos,http://example15.com,true,project-08,auditor-1
+code-audit-16,PQR-678,2020/02/20 18:00,STATIC,通过先进技术提高生产效率和资源利用率,http://example16.com,true,project-09,auditor-2
+code-audit-17,QRS-901,2020/02/19 18:00,DYNAMIC,Ստեղծելու նորարարական լուծումներ էկոլոգիական համակարգերի համար որոնք կբարելավեն էֆֆեկտիվությունւն,http://example17.com,true,project-10,auditor-1
+code-audit-18,RST-234,2020/02/18 18:00,DYNAMIC,Acción correctiva 18,ftp://a,true,project-11,auditor-1
+code-audit-19,STU-567,2020/02/17 18:00,DYNAMIC,Acción correctiva 19,https://www.this-is-an-extremely-long-url-example-for-demonstration-purposes-only-and-it-is-meant-to-show-how-a-255-character-url-might-look-like-when-you-are-trying-to-push-the-limits-of-url-length-and-i-need-a-few-characters-more-to-complete-the-255.com,true,project-12,auditor-2
+code-audit-20,TUV-890,2020/02/16 18:00,DYNAMIC,Acción correctiva 20,http://example20.com,true,project-13,auditor-2

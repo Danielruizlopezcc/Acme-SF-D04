@@ -15,7 +15,7 @@ auditor.code-audits.list.label.type = Tipo
 auditor.code-audits.list.label.corrective-actions = Acciones correctivas
 auditor.code-audits.list.label.link = Enlace
 auditor.code-audits.list.label.project = Proyecto
-auditor.code-audits.list.label.mark = Nota
+auditor.code-audits.list.label.markMode = Nota
 auditor.code-audits.list.label.draft-mode = En Borrador
 
 
@@ -25,7 +25,7 @@ auditor.code-audits.form.label.type = Tipo
 auditor.code-audits.form.label.corrective-actions = Acciones correctivas
 auditor.code-audits.form.label.link = Enlace
 auditor.code-audits.form.label.project = Proyecto
-auditor.code-audits.form.label.mark = Nota
+auditor.code-audits.form.label.markMode = Nota
 auditor.code-audits.form.label.draft-mode = En Borrador
 
 
@@ -41,5 +41,6 @@ auditor.code-audits.form.button.audit-records = Registros de auditoría
 
 auditor.code-audits.form.error.duplicated = Este código no está disponible. Por favor, pruebe con otro código
 auditor.code-audits.error.draftMode = No se puede publicar una auditoría de código con registros de auditoría no publicados
-validation.codeAudit.mark.minimun = La nota debe ser al menos una C para ser publicada
+validation.code-audits.mark.minimun = La nota debe ser al menos una C para ser publicada
 auditor.code-audits.form.error.execution-date-not-valid = La fecha no es valida.
+validation.code-audits.mode.	empty = No hay registros de auditoría asociados.

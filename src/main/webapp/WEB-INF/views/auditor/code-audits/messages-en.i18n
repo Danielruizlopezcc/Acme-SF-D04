@@ -16,7 +16,7 @@ auditor.code-audits.list.label.corrective-actions = Corrective actions
 auditor.code-audits.list.label.link = Link
 auditor.code-audits.list.label.project = Project
 auditor.code-audits.list.label.draft-mode = Draft mode
-auditor.code-audits.list.label.mark = Mark
+auditor.code-audits.list.label.markMode = Mark
 
 
 auditor.code-audits.form.label.code = Code
@@ -26,7 +26,7 @@ auditor.code-audits.form.label.corrective-actions = Corrective actions
 auditor.code-audits.form.label.link = Link
 auditor.code-audits.form.label.project = Project
 auditor.code-audits.form.label.draft-mode = Draft mode
-auditor.code-audits.form.label.mark = Mark
+auditor.code-audits.form.label.markMode = Mark
 
 
 auditor.code-audits.list.button.create-code-audits = Create
@@ -41,5 +41,6 @@ auditor.code-audits.form.button.audit-records = Audit records
 
 auditor.code-audits.form.error.duplicated = This code is taken. Please, try with another code
 auditor.code-audits.form.error.execution-date-not-valid = The date is not valid.
-validation.codeAudit.mark.minimun = The mark must be at least a C to be published
+validation.code-audits.mark.minimun = The mark must be at least a C to be published
 auditor.code-audits.error.draftMode = You cannot publish a code audit with unpublished audit records
+validation.code-audits.mode.empty = There isn't audit records asociated
