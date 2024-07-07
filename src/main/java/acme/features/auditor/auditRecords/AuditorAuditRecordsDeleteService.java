@@ -59,9 +59,6 @@ public class AuditorAuditRecordsDeleteService extends AbstractService<Auditor, A
 	public void validate(final AuditRecords object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("codeAudit"))
-			super.state(object.getCodeAudits().isDraftMode(), "codeAudit", "validation.audit-records.published.audit-is-published");
-
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.getDraftMode(), "draftMode", "validation.audit-records.draftMode");
 	}

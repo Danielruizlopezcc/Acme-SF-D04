@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.codeAudits.CodeAudits;
@@ -73,9 +72,6 @@ public class AuditorCodeAuditsUpdateService extends AbstractService<Auditor, Cod
 			existing = this.repository.findOneCodeAuditsByCode(object.getCode());
 			super.state(existing == null || existing.equals(object), "code", "auditor.code-audits.form.error.duplicated");
 		}
-
-		if (!super.getBuffer().getErrors().hasErrors("excutionDate"))
-			super.state(MomentHelper.isPast(object.getExecutionDate()), "executionDate", "auditor.code-audits.form.error.execution-date-not-valid");
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode(), "draftMode", "validation.code-audits.published");
