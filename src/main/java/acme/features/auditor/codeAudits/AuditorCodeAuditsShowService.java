@@ -52,18 +52,20 @@ public class AuditorCodeAuditsShowService extends AbstractService<Auditor, CodeA
 	public void unbind(final CodeAudits object) {
 		assert object != null;
 		SelectChoices choices;
-		SelectChoices marks;
+		String markMode;
 		SelectChoices projectsChoices;
 		Collection<Project> projects;
 
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditsId(object.getId());
+		markMode = MarkMode.calculate(marks);
+
 		Dataset dataset;
 		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
-		marks = SelectChoices.from(Mark.class, object.getMark());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project");
+		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "link", "draftMode", "project");
 		dataset.put("codeAuditsType", choices);
-		dataset.put("mark", marks);
+		dataset.put("markMode", markMode);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);

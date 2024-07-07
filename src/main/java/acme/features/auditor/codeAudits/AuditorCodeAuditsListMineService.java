@@ -10,11 +10,8 @@ import org.springframework.stereotype.Service;
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.client.views.SelectChoices;
 import acme.entities.auditRecords.Mark;
 import acme.entities.codeAudits.CodeAudits;
-import acme.entities.codeAudits.CodeAuditsType;
-import acme.entities.project.Project;
 import acme.roles.Auditor;
 
 @Service
@@ -43,29 +40,20 @@ public class AuditorCodeAuditsListMineService extends AbstractService<Auditor, C
 	@Override
 	public void unbind(final CodeAudits object) {
 		assert object != null;
-		SelectChoices choices;
-		SelectChoices marks;
-		SelectChoices projectsChoices;
-		Collection<Project> projects;
 
 		Dataset dataset;
-		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
-		marks = SelectChoices.from(Mark.class, object.getMark());
-		projects = this.repository.findAllProjects();
-		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "draftMode", "project");
+		String markMode;
 
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditsId(object.getId());
+		markMode = MarkMode.calculate(marks);
+		dataset = super.unbind(object, "code", "executionDate", "type");
+		dataset.put("markMode", markMode);
 		if (object.isDraftMode()) {
 			final Locale local = super.getRequest().getLocale();
-
 			dataset.put("draftMode", local.equals(Locale.ENGLISH) ? "Yes" : "Sí");
 		} else
 			dataset.put("draftMode", "No");
 
-		dataset.put("codeAuditsType", choices);
-		dataset.put("mark", marks);
-		dataset.put("project", projectsChoices.getSelected().getKey());
-		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);
 	}
 

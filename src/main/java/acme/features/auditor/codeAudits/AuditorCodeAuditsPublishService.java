@@ -59,7 +59,7 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 		projectId = super.getRequest().getData("project", int.class);
 		project = this.repository.findOneProjectById(projectId);
 
-		super.bind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "project");
+		super.bind(object, "code", "executionDate", "type", "correctiveActions", "link", "project");
 		object.setProject(project);
 
 	}
@@ -68,23 +68,24 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 	public void validate(final CodeAudits object) {
 		assert object != null;
 
-		Collection<String> allCodes = this.repository.findAllCodeAudits();
-		boolean isCodeChanged = false;
-		int id = super.getRequest().getData("id", int.class);
-		CodeAudits codeAudit = this.repository.findOneCodeAuditsById(id);
-		Collection<AuditRecords> auditRecords = this.repository.findAllAuditRecordsByCodeAuditsId(object.getId());
+		String markMode;
 
-		for (AuditRecords ar : auditRecords)
-			super.state(!ar.getDraftMode(), "code", "auditor.code-audits.error.draftMode");
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditsId(object.getId());
+		markMode = MarkMode.calculate(marks);
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			isCodeChanged = !object.getCode().equals(codeAudit.getCode());
-			super.state(!isCodeChanged || !allCodes.contains(object.getCode()), "code", "auditor.code-audits.error.duplicated-code");
-		}
-		if (!super.getBuffer().getErrors().hasErrors("mark")) {
-			Mark mark = object.getMark();
-			super.state(mark == Mark.A || mark == Mark.A_PLUS || mark == Mark.B || mark == Mark.C, "mark", "validation.codeAudit.mark.minimun");
-		}
+		if (!super.getBuffer().getErrors().hasErrors("markMode"))
+			if (markMode != null) {
+				boolean isMarkAtLeastC = markMode.equals("C") || markMode.equals("B") || markMode.equals("A") || markMode.equals("A_PLUS");
+				super.state(isMarkAtLeastC, "markMode", "validation.code-audits.mark.minimun");
+			} else
+				super.state(false, "markMode", "validation.code-audits.mark.minimun");
+
+		Collection<AuditRecords> auditRecords;
+
+		auditRecords = this.repository.findAllAuditRecordsByCodeAuditsId(object.getId());
+
+		super.state(auditRecords.stream().noneMatch(AuditRecords::getDraftMode), "*", "auditor.code-audits.error.draftMode");
+
 	}
 
 	@Override
@@ -98,19 +99,22 @@ public class AuditorCodeAuditsPublishService extends AbstractService<Auditor, Co
 	@Override
 	public void unbind(final CodeAudits object) {
 		assert object != null;
+
 		SelectChoices choices;
-		SelectChoices marks;
+		String markMode;
 		SelectChoices projectsChoices;
 		Collection<Project> projects;
 
+		Collection<Mark> marks = this.repository.findMarksByCodeAuditsId(object.getId());
+		markMode = MarkMode.calculate(marks);
+
 		Dataset dataset;
 		choices = SelectChoices.from(CodeAuditsType.class, object.getType());
-		marks = SelectChoices.from(Mark.class, object.getMark());
 		projects = this.repository.findAllProjects();
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
-		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "mark", "link", "project");
+		dataset = super.unbind(object, "code", "executionDate", "type", "correctiveActions", "link", "project");
 		dataset.put("codeAuditsType", choices);
-		dataset.put("mark", marks);
+		dataset.put("markMode", markMode);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);

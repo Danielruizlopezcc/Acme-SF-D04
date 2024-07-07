@@ -20,7 +20,7 @@
 	<acme:list-column code="auditor.code-audits.list.label.execution-date" path="executionDate" width="10%"/>
 	<acme:list-column code="auditor.code-audits.list.label.type" path="type" width="10%"/>	
 	<acme:list-column code="auditor.code-audits.list.label.corrective-actions" path="correctiveActions" width="10%"/>	
-	<acme:list-column code="auditor.code-audits.list.label.mark" path="mark" width="10%"/>
+	<acme:list-column code="auditor.code-audits.list.label.markMode" path="markMode" width="10%"/>
 	<acme:list-column code="auditor.code-audits.list.label.link" path="link" width="10%"/>
 	<acme:list-column code="auditor.code-audits.list.label.draft-mode" path="draftMode" width="10%"/>
 	<acme:list-column code="auditor.code-audits.list.label.project" path="project" width="10%"/>
