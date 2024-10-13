@@ -58,4 +58,6 @@ sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published = Todas la
 sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship = Todas las facturas asociadas deben tener la misma divisa que el patrocinio para que el último pueda ser publicado
 sponsor.sponsorship.form.error.invoice-already-published = No es posible actualizar la divisa ya que hay una factura publicada y el cambio de divisa no está implementado todavía
 sponsor.sponsorship.form.error.creation-moment-before-registration-time = El momento de creación debe ser anterior al momento de registro de las facturas
-
+sponsor.sponsorship.form.error.sponsorship-invoice-already-published = No puedes eliminar este patrocinio porque ya se ha publicado una factura
+sponsor.sponsorship.form.error.invoice-already-created = No puedes editar la divisa puesto que ya hay una factura creada
+sponsor.sponsorship.form.error.total-amount-less-than-invoices-sum = El total del patrocinio no puede ser menor que la suma de las facturas ya creadas

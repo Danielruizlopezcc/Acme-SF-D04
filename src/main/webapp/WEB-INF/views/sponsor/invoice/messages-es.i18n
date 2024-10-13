@@ -47,3 +47,4 @@ sponsor.invoice.form.error.quantity-must-be-positive = La cantidad de dinero deb
 sponsor.invoice.form.error.currency-not-supported = La moneda elegida no es soportada por el sistema
 sponsor.invoice.form.error.registration-time-not-valid = La fecha de registro debe ser posterior al momento de creación del patrocinio
 sponsor.invoice.form.error.currency-not-valid = La divisa del patrocinio y de las facturas deben ser la misma
+sponsor.invoice.form.error.quantity-not-valid = La suma de las facturas no puede ser mayor que la cantidad del patrocinio

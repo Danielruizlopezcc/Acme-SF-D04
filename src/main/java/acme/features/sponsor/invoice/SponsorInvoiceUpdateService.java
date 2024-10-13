@@ -2,6 +2,7 @@
 package acme.features.sponsor.invoice;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Stream;
@@ -61,6 +62,9 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	@Override
 	public void validate(final Invoice object) {
 		assert object != null;
+		Collection<Invoice> invoices;
+
+		invoices = this.repository.findAllInvoicesByMasterId(object.getSponsorship().getId());
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Invoice existing;
@@ -107,6 +111,12 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			boolean isSameCurrency;
 			isSameCurrency = object.getQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency());
 			super.state(isSameCurrency, "quantity", "sponsor.invoice.form.error.currency-not-valid");
+
+			double cantidadAnterior = this.repository.findOneInvoiceById(object.getId()).totalAmount().getAmount();
+			double cantidadTotalActual = object.totalAmount().getAmount() - cantidadAnterior;
+			for (Invoice i : invoices)
+				cantidadTotalActual += i.totalAmount().getAmount();
+			super.state(cantidadTotalActual <= object.getSponsorship().getAmount().getAmount(), "*", "sponsor.invoice.form.error.quantity-not-valid");
 		}
 	}
 

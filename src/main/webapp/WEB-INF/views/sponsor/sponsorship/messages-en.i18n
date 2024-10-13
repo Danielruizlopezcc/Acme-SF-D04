@@ -57,4 +57,6 @@ sponsor.sponsorship.form.error.sponsorship-invoices-must-be-published = All asso
 sponsor.sponsorship.form.error.invoices-must-have-same-currency-as-sponsorship = All associated invoices must have the same currency as the sponsorship for the latter to be published
 sponsor.sponsorship.form.error.invoice-already-published = Updating the currency is unavailable as there is an invoice published and the money exchange is not implemented yet
 sponsor.sponsorship.form.error.creation-moment-before-registration-time = Creation moment must be before invoices registration time
-
+sponsor.sponsorship.form.error.sponsorship-invoice-already-published = You cannot delete this sponsorship because an invoice has already been published
+sponsor.sponsorship.form.error.invoice-already-created = You cannot update the currency because an invoice has already been created
+sponsor.sponsorship.form.error.total-amount-less-than-invoices-sum = The sponsorship amount cannot be less than the total of the associated invoices
