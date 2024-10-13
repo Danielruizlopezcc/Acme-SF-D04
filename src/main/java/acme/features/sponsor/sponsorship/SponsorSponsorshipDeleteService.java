@@ -65,6 +65,14 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
+
+		Collection<Invoice> invoices;
+		boolean anyInvoicePubslihed;
+
+		invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+		anyInvoicePubslihed = invoices.stream().anyMatch(i -> i.isDraftMode() == false);
+		if (anyInvoicePubslihed)
+			super.state(!anyInvoicePubslihed, "*", "sponsor.sponsorship.form.error.sponsorship-invoice-already-published");
 	}
 
 	@Override
@@ -92,7 +100,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 		projectsChoices = SelectChoices.from(projects, "code", object.getProject());
 		dataset = super.unbind(object, "code", "moment", "durationStart", "durationEnd", "amount", "type", "emailContact", "link", "draftMode", "project");
 
-		dataset.put("type", types);
+		dataset.put("sponsorshipType", types);
 		dataset.put("project", projectsChoices.getSelected().getKey());
 		dataset.put("projects", projectsChoices);
 		super.getResponse().addData(dataset);

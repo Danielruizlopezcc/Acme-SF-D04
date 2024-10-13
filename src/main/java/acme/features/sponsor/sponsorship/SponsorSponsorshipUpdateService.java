@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.datatypes.Money;
 import acme.client.data.models.Dataset;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
@@ -121,17 +122,20 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			super.state(foundCurrency, "amount", "sponsor.sponsorship.form.error.currency-not-supported");
 
 			Collection<Invoice> invoices;
-			boolean anyInvoicePublished;
-
 			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
-			anyInvoicePublished = invoices.stream().anyMatch(i -> i.isDraftMode() == false);
-			if (anyInvoicePublished) {
-				Invoice publishedInvoice;
-				boolean isSameCurrencyThanPublished;
-				publishedInvoice = invoices.stream().filter(i -> !i.isDraftMode()).findFirst().orElse(null);
-				isSameCurrencyThanPublished = object.getAmount().getCurrency().equals(publishedInvoice.getQuantity().getCurrency());
-				super.state(isSameCurrencyThanPublished, "amount", "sponsor.sponsorship.form.error.invoice-already-published");
+			if (invoices.size() > 0) {
+				Invoice invoice = invoices.stream().findFirst().orElse(null);
+				Money m = new Money();
+				m.setAmount(0.0);
+				m.setCurrency(invoice.getQuantity().getCurrency());
+				super.state(object.getAmount().getCurrency().equals(m.getCurrency()), "amount", "sponsor.sponsorship.form.error.invoice-already-created");
 			}
+
+			double cantidadTotal = 0.;
+			for (Invoice i : invoices)
+				cantidadTotal += i.totalAmount().getAmount();
+			super.state(object.getAmount().getAmount() >= cantidadTotal, "amount", "sponsor.sponsorship.form.error.total-amount-less-than-invoices-sum");
+
 		}
 	}
 
