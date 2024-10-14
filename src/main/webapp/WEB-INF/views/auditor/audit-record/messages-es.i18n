@@ -1,0 +1,23 @@
+auditor.audit-record.list.title = Tus registros de auditoría
+auditor.audit-record.list.label.code = Código
+auditor.audit-record.list.label.audit-start-time = Fecha de inicio de registro de auditoría
+auditor.audit-record.list.label.audit-end-time = Fecha de fin de registro de auditoría
+auditor.audit-record.list.label.mark = Nota
+auditor.audit-record.list.label.link = Enlace
+auditor.audit-record.list.button.create = Crear
+
+auditor.audit-record.form.label.code = Código
+auditor.audit-record.form.label.audit-start-time = Fecha de inicio de registro de auditoría
+auditor.audit-record.form.label.audit-end-time = Fecha de fin de registro de auditoría
+auditor.audit-record.form.label.mark = Nota
+auditor.audit-record.form.label.link = Enlace
+auditor.audit-record.form.button.update = Actualizar
+auditor.audit-record.form.button.delete = Borrar
+auditor.audit-record.form.button.create = Crear
+auditor.audit-record.form.button.publish = Publicar
+auditor.audit-record.form.title = Datos de registros de auditoría
+
+auditor.audit-record.form.error.code = Este código está en uso 
+auditor.audit-record.form.error.audit-end-time = La fecha de inicio debe ser inferior a la fecha de fin y tiene que haber, al menos, una hora de diferencia entre ellas dos
+auditor.audit-record.form.error.published-code-audit = No puede crear, actualizar, eliminar o publicar un registro de auditoría relacionado con una auditoría de código publicada.
+auditor.audit-record.form.error.auditStartTime = La fecha de comiezo de registro de auditoría debe ser superior a la fecha de ejecución de su auditoría de código

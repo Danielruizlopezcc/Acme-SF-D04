@@ -1,0 +1,31 @@
+auditor.code-audit.list.label.code = Code
+auditor.code-audit.list.title = Your Code Audits
+auditor.code-audit.list.label.execution = Execution
+auditor.code-audit.list.label.type = Type
+auditor.code-audit.list.label.proposed-corrective-actions = Proposed Corrective Actions
+auditor.code-audit.list.label.link = Link
+auditor.code-audit.list.label.mark = Mark
+auditor.code-audit.list.label.project = Project
+auditor.code-audit.list.button.create = Create
+
+auditor.code-audit.form.button.audit-records= Audit records
+auditor.code-audit.form.label.code = Code
+auditor.code-audit.form.label.execution = Execution
+auditor.code-audit.form.label.type = Type
+auditor.code-audit.form.label.proposed-corrective-actions = Proposed Corrective Actions
+auditor.code-audit.form.label.link = Link
+auditor.code-audit.form.label.mark = Mark
+auditor.code-audit.form.button.update = Update
+auditor.code-audit.form.button.delete = Delete
+auditor.code-audit.form.button.create = Create
+auditor.code-audit.form.button.publish = Publish
+auditor.code-audit.form.label.project = Project
+auditor.code-audit.form.title = Code Audit data
+
+auditor.code-audit.form.error.code = This code is already in use
+auditor.code-audit.form.error.mark = For a code audit to be published, the mark must be, at least, “C”
+auditor.code-audit.form.error.published-audit-records = You cannot delete a code audit with published audit records
+auditor.code-audit.form.error.unpublished-audit-records = All the audit records of the code audit must be published
+auditor.code-audit.form.error.project = The project must be published
+auditor.code-audit.form.error.execution = The execution date must be after 1999-12-31 23:59
+auditor.code-audit.form.error.execution-ar = The execution date must be before of the earliest date of their audit records.

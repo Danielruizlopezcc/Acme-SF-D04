@@ -13,8 +13,8 @@ import acme.client.data.AbstractEntity;
 import acme.client.data.accounts.Principal;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.entities.auditRecords.AuditRecords;
-import acme.entities.codeAudits.CodeAudits;
+import acme.entities.auditRecords.AuditRecord;
+import acme.entities.codeAudits.CodeAudit;
 import acme.entities.contract.Contract;
 import acme.entities.invoice.Invoice;
 import acme.entities.progressLogs.ProgressLog;
@@ -84,8 +84,8 @@ public class ManagerProjectDeleteService extends AbstractService<Manager, Projec
 		Collection<Sponsorship> sponsorShips;
 		Collection<Invoice> invoices;
 
-		Collection<CodeAudits> codeAudits;
-		Collection<AuditRecords> auditRecords;
+		Collection<CodeAudit> codeAudits;
+		Collection<AuditRecord> auditRecords;
 
 		Collection<TrainingModule> trainingModule;
 		Collection<TrainingSession> trainingSession;

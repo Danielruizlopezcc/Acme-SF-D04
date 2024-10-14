@@ -1,0 +1,23 @@
+auditor.audit-record.list.title = Your audit records
+auditor.audit-record.list.label.code = Code
+auditor.audit-record.list.label.audit-start-time = Audit start time
+auditor.audit-record.list.label.audit-end-time = Audit end time
+auditor.audit-record.list.label.mark = Mark
+auditor.audit-record.list.label.link = Link
+auditor.audit-record.list.button.create = Create
+
+auditor.audit-record.form.label.code = Code
+auditor.audit-record.form.label.audit-start-time = Audit start time
+auditor.audit-record.form.label.audit-end-time = Audit end time
+auditor.audit-record.form.label.mark = Mark
+auditor.audit-record.form.label.link = Link
+auditor.audit-record.form.button.update = Update
+auditor.audit-record.form.button.delete = Delete
+auditor.audit-record.form.button.create = Create
+auditor.audit-record.form.button.publish = Publish
+auditor.audit-record.form.title = Audit Record data
+
+auditor.audit-record.form.error.code = This code is already in use
+auditor.audit-record.form.error.audit-end-time = The audit start time must be after the audit end time and there must also be at least one hour difference between both of them
+auditor.audit-record.form.error.published-code-audit = You cannot create, update, delete or publish an audit record related to a published code audit
+auditor.audit-record.form.error.auditStartTime = The auditStartTime date must be before the code audit's execution date

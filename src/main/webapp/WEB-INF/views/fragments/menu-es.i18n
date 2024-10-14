@@ -28,6 +28,7 @@ master.menu.anonymous.list-contracts = Ver todos los contratos publicados
 master.menu.anonymous.published-projects = Ver todos los proyectos publicados
 master.menu.anonymous.published-sponsorships = Ver todos los patrocinios publicados
 master.menu.anonymous.list.claim = Ver todas las reclamaciones
+master.menu.any.code-audit = Ver todas las auditorías de código
 
 # master.menu.authenticated #######################################################
 
@@ -97,7 +98,7 @@ master.menu.sponsor.dashboard = Panel de indicadores de patrocinador
 # master.menu.auditor ######################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.list-code-audits = Listar mis auditorías de codigo
+master.menu.auditor.code-audit.list = Listar mis auditorías de codigo
 master.menu.auditor.show = Mostrar mis auditorías de codigo
 master.menu.auditor.create = Crear una auditoría de codigo
 master.menu.auditor.update = Actualizar una auditoría de codigo
@@ -119,6 +120,8 @@ master.menu.user-account.manager = Datos de manager
 master.menu.user-account.become-manager = Hazte manager
 master.menu.user-account.sponsor = Datos de patrocinador
 master.menu.user-account.become-sponsor = Hazte patrocinador
+master.menu.user-account.auditor = Datos de auditor
+master.menu.user-account.become-auditor = Hazte auditor
 
 # master.menu.client #########################################################
 

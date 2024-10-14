@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.entities.auditRecords.AuditRecords;
-import acme.entities.codeAudits.CodeAudits;
+import acme.entities.auditRecords.AuditRecord;
+import acme.entities.codeAudits.CodeAudit;
 import acme.entities.contract.Contract;
 import acme.entities.invoice.Invoice;
 import acme.entities.progressLogs.ProgressLog;
@@ -50,10 +50,10 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	@Query("select i from Invoice i where i.sponsorship.id IN :ids")
 	Collection<Invoice> findManyInvoicesBySponsorshipIds(Set<Integer> ids);
 
-	@Query("select ca from CodeAudits ca where ca.project.id = :id")
-	Collection<CodeAudits> findManyCodeAuditsByProjectId(int id);
-	@Query("select ar from AuditRecords ar where ar.codeAudits.id IN :id")
-	Collection<AuditRecords> findManyAuditsRecordsByCodeAuditsId(Set<Integer> id);
+	@Query("select ca from CodeAudit ca where ca.project.id = :id")
+	Collection<CodeAudit> findManyCodeAuditsByProjectId(int id);
+	@Query("select ar from AuditRecord ar where ar.codeAudit.id IN :id")
+	Collection<AuditRecord> findManyAuditsRecordsByCodeAuditsId(Set<Integer> id);
 
 	@Query("select tm from TrainingModule tm where tm.project.id = :id")
 	Collection<TrainingModule> findManyTrainingModuleByProjectId(int id);

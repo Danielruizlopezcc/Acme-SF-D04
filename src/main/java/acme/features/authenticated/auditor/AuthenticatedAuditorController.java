@@ -1,5 +1,5 @@
 
-package acme.features.auditor.dashboard;
+package acme.features.authenticated.auditor;
 
 import javax.annotation.PostConstruct;
 
@@ -7,22 +7,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.client.controllers.AbstractController;
-import acme.forms.AuditorDashboard;
+import acme.client.data.accounts.Authenticated;
 import acme.roles.Auditor;
 
 @Controller
-public class AuditorDashboardController extends AbstractController<Auditor, AuditorDashboard> {
+public class AuthenticatedAuditorController extends AbstractController<Authenticated, Auditor> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuditorDashboardShowService showService;
+	private AuthenticatedAuditorCreateService	createService;
+
+	@Autowired
+	private AuthenticatedAuditorUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
 	}
 }

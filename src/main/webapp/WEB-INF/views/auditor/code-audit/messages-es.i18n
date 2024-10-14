@@ -1,0 +1,31 @@
+auditor.code-audit.list.label.code = Código
+auditor.code-audit.list.title = Tus auditorías de código
+auditor.code-audit.list.label.execution = Ejecución
+auditor.code-audit.list.label.type = Tipo
+auditor.code-audit.list.label.proposed-corrective-actions = Acciones correctivas propuestas
+auditor.code-audit.list.label.link = Enlace
+auditor.code-audit.list.label.mark = Nota
+auditor.code-audit.list.label.project = Proyecto
+auditor.code-audit.list.button.create = Crear
+
+auditor.code-audit.form.button.audit-records= Registros de auditoría
+auditor.code-audit.form.label.code = Código
+auditor.code-audit.form.label.execution = Ejecución
+auditor.code-audit.form.label.type = Tipo
+auditor.code-audit.form.label.proposed-corrective-actions = Acciones correctivas propuestas
+auditor.code-audit.form.label.link = Enlace
+auditor.code-audit.form.label.mark = Nota
+auditor.code-audit.form.button.update = Actualizar
+auditor.code-audit.form.button.delete = Borrar
+auditor.code-audit.form.button.create = Crear
+auditor.code-audit.form.button.publish = Publicar
+auditor.code-audit.form.label.project = Proyecto
+auditor.code-audit.form.title = Datos de tu auditoría de código
+
+auditor.code-audit.form.error.code = Este código está en uso
+auditor.code-audit.form.error.mark = Para que se publique una auditoría de código, la nota debe ser, al menos, “C”
+auditor.code-audit.form.error.published-audit-records = No puede eliminar una auditoría de código con registros de auditoría publicados
+auditor.code-audit.form.error.unpublished-audit-records = Todos los registros de auditoría de la auditoría de código deben publicarse.
+auditor.code-audit.form.error.project = El proyecto debe estar publicado
+auditor.code-audit.form.error.execution = La fecha de ejecución debe ser superior a 31-12-1999 23:59
+auditor.code-audit.form.error.execution-ar = La fecha de ejecución debe ser inferior a la fecha más reciente de tus registros de auditoría.

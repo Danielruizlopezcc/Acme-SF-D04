@@ -7,42 +7,38 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
-import acme.roles.Auditor;
 
 @Repository
 public interface AuditorDashboardRepository extends AbstractRepository {
 
-	@Query("select a from Auditor a where a.userAccount.id = :id")
-	Auditor findAuditorById(int id);
+	@Query("select count(ca) from CodeAudit ca where ca.type = acme.entities.codeAudits.CodeAuditType.Static and ca.auditor.id = :auditorId and ca.draftMode=false")
+	int totalCodeAuditsStatic(int auditorId);
 
-	@Query("select (select count(ar) from AuditRecords ar where ar.codeAudits.id = a.id) from CodeAudits a where a.auditor.id = :id")
-	Collection<Double> auditingRecordsPerAudit(int id);
+	@Query("select count(ca) from CodeAudit ca where ca.type = acme.entities.codeAudits.CodeAuditType.Dynamic and ca.auditor.id = :auditorId and ca.draftMode=false")
+	int totalCodeAuditsDynamic(int auditorId);
 
-	@Query("select avg(select count(ar) from AuditRecords ar where ar.codeAudits.id = a.id) from CodeAudits a where a.auditor.id = :id")
-	Double averageAuditingRecords(int id);
+	@Query("select (select count(ar) from AuditRecord ar where ar.codeAudit.id = ca.id and ar.draftMode=false) from CodeAudit ca where ca.auditor.id = :auditorId and ca.draftMode=false")
+	Collection<Double> auditRecordsPerAudit(int auditorId);
 
-	@Query("select max(select count(ar) from AuditRecords ar where ar.codeAudits.id = a.id) from CodeAudits a where a.auditor.id = :id")
-	Integer maxAuditingRecords(int id);
+	@Query("select avg(select count(ar) from AuditRecord ar where ar.codeAudit.id = ca.id and ar.draftMode=false) from CodeAudit ca where ca.auditor.id = :auditorId and ca.draftMode=false")
+	Double auditRecordsAverage(int auditorId);
 
-	@Query("select min(select count(ar) from AuditRecords ar where ar.codeAudits.id = a.id) from CodeAudits a where a.auditor.id = :id")
-	Integer minAuditingRecords(int id);
+	@Query("select min(select count(ar) from AuditRecord ar where ar.codeAudit.id = ca.id and ar.draftMode=false) from CodeAudit ca where ca.auditor.id = :auditorId and ca.draftMode=false")
+	Integer auditRecordsMinimum(int auditorId);
 
-	@Query("select avg(timestampdiff(SECOND, ar.startPeriod, ar.endPeriod) / 3600.0) from AuditRecords ar where ar.codeAudits.auditor.id = :id")
-	Double averageRecordPeriod(int id);
+	@Query("select max(select count(ar) from AuditRecord ar where ar.codeAudit.id = ca.id and ar.draftMode=false) from CodeAudit ca where ca.auditor.id = :auditorId and ca.draftMode=false")
+	Integer auditRecordsMaximum(int auditorId);
 
-	@Query("select stddev(timestampdiff(SECOND, ar.startPeriod, ar.endPeriod) / 3600.0) from AuditRecords ar where ar.codeAudits.auditor.id = :id")
-	Double deviationRecordPeriod(int id);
+	@Query("select avg(time_to_sec(timediff(ar.auditEndTime, ar.auditStartTime)) / 3600) from AuditRecord ar where ar.codeAudit.auditor.id = :auditorId and ar.draftMode=false")
+	Double periodAverageTime(int auditorId);
 
-	@Query("select min(timestampdiff(SECOND, ar.startPeriod, ar.endPeriod) / 3600.0) from AuditRecords ar where ar.codeAudits.auditor.id = :id")
-	Double minimumRecordPeriod(int id);
+	@Query("select stddev(time_to_sec(timediff(ar.auditEndTime, ar.auditStartTime)) / 3600) from AuditRecord ar where ar.codeAudit.auditor.id = :auditorId and ar.draftMode=false")
+	Double periodDeviationTime(int auditorId);
 
-	@Query("select max(timestampdiff(SECOND, ar.startPeriod, ar.endPeriod) / 3600.0) from AuditRecords ar where ar.codeAudits.auditor.id = :id")
-	Double maximumRecordPeriod(int id);
+	@Query("select min(time_to_sec(timediff(ar.auditEndTime, ar.auditStartTime)) / 3600) from AuditRecord ar where ar.codeAudit.auditor.id = :auditorId and ar.draftMode=false")
+	Double periodMinimumTime(int auditorId);
 
-	@Query("select count(a) from CodeAudits a where a.auditor.id = :auditorId and a.type = acme.entities.codeAudits.CodeAuditsType.STATIC")
-	Double totalAuditRecordsStatic(int auditorId);
-
-	@Query("select count(a) from CodeAudits a where a.auditor.id = :auditorId and a.type = acme.entities.codeAudits.CodeAuditsType.DYNAMIC")
-	Double totalAuditRecordsDynamic(int auditorId);
+	@Query("select max(time_to_sec(timediff(ar.auditEndTime, ar.auditStartTime)) / 3600) from AuditRecord ar where ar.codeAudit.auditor.id = :auditorId and ar.draftMode=false")
+	Double periodMaximumTime(int auditorId);
 
 }
