@@ -1,0 +1,18 @@
+any.code-audit.list.label.code = Código
+any.code-audit.list.title = Auditorías de código
+any.code-audit.list.label.execution = Ejecución
+any.code-audit.list.label.type = Tipo
+any.code-audit.list.label.proposed-corrective-actions = Acciones correctivas propuestas
+any.code-audit.list.label.link = Enlace
+any.code-audit.list.label.mark = Nota
+any.code-audit.list.label.project = Proyecto
+
+any.code-audit.form.button.audit-records= Registros de auditorías
+any.code-audit.form.label.code = Código
+any.code-audit.form.label.execution = Ejecución
+any.code-audit.form.label.type = Tipo
+any.code-audit.form.label.proposed-corrective-actions = Acciones correctivas propuestas
+any.code-audit.form.label.link = Enlace
+any.code-audit.form.label.mark = Nota
+any.code-audit.form.label.project = Proyecto
+any.code-audit.form.title = Datos de auditorías de código

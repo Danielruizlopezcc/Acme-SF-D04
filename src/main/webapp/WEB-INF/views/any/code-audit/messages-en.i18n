@@ -1,0 +1,18 @@
+any.code-audit.list.label.code = Code
+any.code-audit.list.title = Your Code Audits
+any.code-audit.list.label.execution = Execution
+any.code-audit.list.label.type = Type
+any.code-audit.list.label.proposed-corrective-actions = Proposed Corrective Actions
+any.code-audit.list.label.link = Link
+any.code-audit.list.label.mark = Mark
+any.code-audit.list.label.project = Project
+
+any.code-audit.form.button.audit-records= Audit records
+any.code-audit.form.label.code = Code
+any.code-audit.form.label.execution = Execution
+any.code-audit.form.label.type = Type
+any.code-audit.form.label.proposed-corrective-actions = Proposed Corrective Actions
+any.code-audit.form.label.link = Link
+any.code-audit.form.label.mark = Mark
+any.code-audit.form.label.project = Project
+any.code-audit.form.title = Code Audit data

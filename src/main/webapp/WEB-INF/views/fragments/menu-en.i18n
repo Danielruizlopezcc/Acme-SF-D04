@@ -28,6 +28,7 @@ master.menu.anonymous.list-contracts = List published contracts
 master.menu.anonymous.published-projects = List all published projects
 master.menu.anonymous.published-sponsorships = List all published sponsorships
 master.menu.anonymous.list.claim = List all claims
+master.menu.any.code-audit = List all published code audits
 
 # master.menu.authenticated #######################################################
 
@@ -81,7 +82,7 @@ master.menu.developer.dashboard = Developer Dashboard
 # master.menu.auditor ######################################################
 
 master.menu.auditor = Auditor
-master.menu.auditor.list-code-audits = List my code audits
+master.menu.auditor.code-audit.list = List my code audits
 master.menu.auditor.show = Show my code audits
 master.menu.auditor.create = Create a code audits
 master.menu.auditor.update = Update a code audits
@@ -110,6 +111,8 @@ master.menu.user-account.manager = Manager data
 master.menu.user-account.become-manager = Become a manager
 master.menu.user-account.sponsor = Sponsor data
 master.menu.user-account.become-sponsor = Become a sponsor
+master.menu.user-account.auditor = Auditor data
+master.menu.user-account.become-auditor = Become a auditor
 
 # master.menu.client #########################################################
 
